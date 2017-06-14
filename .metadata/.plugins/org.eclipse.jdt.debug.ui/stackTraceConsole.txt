@@ -1,0 +1,5 @@
+while(numbers.find()) 
+		{
+			mealsValues[index] = numbers.group();
+			index++;
+		}

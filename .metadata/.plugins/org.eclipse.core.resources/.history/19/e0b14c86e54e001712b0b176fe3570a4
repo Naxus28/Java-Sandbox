@@ -1,0 +1,149 @@
+import java.text.DecimalFormat;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JOptionPane;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class LandEnclosure {
+	
+	/**
+	 * globals
+	 */
+	final static DecimalFormat df = new DecimalFormat("#.00"); // use this variable to format two decimal points for all doubles
+	static private double lengthRatio;
+	static private double widthRatio;
+	static private double sideMeasureUnit;
+	static private double length;
+	static private double width;
+	static private String area;
+	static private String fenceTotal;
+	static private String areaInputDirections = "What is the area of the enclosure in square feet? Please input a number smaller than 1,000,000,000 and disregard the measurement unit sqft)";
+	static private String ratioInputDirections = "What is the ratio L:W of the enclosure? Please input numbers smaller than 100. i.e. (10:6)";
+	static private String [] enclosureSides = new String [2];
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+		/**
+		 * get area input
+		 */
+		do {
+			area = JOptionPane.showInputDialog(areaInputDirections);
+		}
+		while(area.length() == 0 || Double.parseDouble(area) > 1000000000);
+		
+		/**
+		 * get L:W input
+		 */
+		do {
+			String ratio = JOptionPane.showInputDialog(ratioInputDirections);
+			enclosureSides = getSides(ratio);
+			lengthRatio = converStringToDouble(enclosureSides[0]);
+			widthRatio = converStringToDouble(enclosureSides[1]);
+		}
+		while( (lengthRatio < 0 || lengthRatio > 100) || (widthRatio < 0 || widthRatio > 100));
+		
+		/**
+		 * cache computed measurements
+		 */
+		sideMeasureUnit = getMeasureUnit(converStringToDouble(area), lengthRatio, widthRatio);
+		length = getLength(lengthRatio, sideMeasureUnit);
+		width = getWidth(widthRatio, sideMeasureUnit);
+		fenceTotal = getFenceTotal(length, width);
+		
+		System.out.println("Your enclosure has dimensions " + df.format(length) + " feet by "+ df.format(width) +" feet.");
+		System.out.println("You will need " + fenceTotal + " feet of fence total.");
+		
+	}
+	
+	
+	static private String formatNumbers(double number)
+	{
+		
+	}
+	
+	/**
+	 * convenience method
+	 * @param string
+	 * @return
+	 */
+	static private double converStringToDouble(String string) 
+	{
+		return Double.parseDouble(string);
+	}
+	
+	/**
+	 * parse rectangle sides out of string input and create an array with them
+	 * @param ratio
+	 * @return
+	 */
+	static private String [] getSides(String ratio) 
+	{
+		Pattern p = Pattern.compile("\\d+"); // define regex to get numbers only
+		Matcher numbers = p.matcher(ratio); // user matcher class to match regex in string
+		String [] sides =  new String[2]; // initialize sides array to hold l and w
+		int index = 0;
+		
+		while(numbers.find()) 
+		{
+			sides[index] = numbers.group();
+			index++;
+		}
+		
+		return sides;
+	} 
+	
+	/**
+	 * this method solves for the common unit of measurement used to calculate the L and W
+	 * @param area
+	 * @param lenghtRatio
+	 * @param widthRatio
+	 * @return
+	 */
+	static private double getMeasureUnit(double area, double lenghtRatio, double widthRatio) 
+	{
+		return Math.sqrt(area / (lenghtRatio * widthRatio));
+	}
+	
+	/**
+	 * Gets the rectangle L
+	 * @param widthRatio
+	 * @param sideMeasureUnit
+	 * @return
+	 */
+	static private double getLength(double lengthRatio, double sideMeasureUnit) 
+	{
+		return lengthRatio * sideMeasureUnit;
+	}
+	
+	/**
+	 * Gets the rectangle W
+	 * @param widthRatio
+	 * @param sideMeasureUnit
+	 * @return
+	 */
+	static private double getWidth(double widthRatio, double sideMeasureUnit) 
+	{
+		return widthRatio * sideMeasureUnit;
+	}
+	
+	/**
+	 * get fence total measurements
+	 * @param length
+	 * @param width
+	 * @return
+	 */
+	private static String getFenceTotal(double length, double width) 
+	{
+		double fenceTotal = length * 2 + width * 2;
+		
+		return df.format(fenceTotal);
+	}
+
+}

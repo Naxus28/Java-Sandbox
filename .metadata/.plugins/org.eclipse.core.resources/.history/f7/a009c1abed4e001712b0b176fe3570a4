@@ -1,0 +1,68 @@
+import javax.swing.JOptionPane;
+
+/**
+ * 
+ */
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class PayCalculator {
+	
+	/**
+	 * class globals
+	 */
+	final int incentiveLeveOne = 5;
+	final int incentiveLevelTwo = 10;
+	final int incentiveLevelThree = 15;
+	static String soldKnives;
+	static String inputDirections = "Please input the number of knoves you sold this month (value needs to be less than 1,000,000)";
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		double totalPay;
+		
+		/**
+		 * get knives #
+		 */
+		do {
+			soldKnives = JOptionPane.showInputDialog(inputDirections);
+			JOptionPane.showMessageDialog(null, soldKnives, "Knives sold this month", JOptionPane.PLAIN_MESSAGE);
+		}
+		while(soldKnives.length() == 0 || converStringToDouble(soldKnives) > 1000000 || converStringToDouble(soldKnives) < 0);
+		
+		double totalKnives = converStringToDouble(soldKnives);
+		
+		if (soldKnives <= 100) {
+			totalPay = soldKnives * incentiveLeveOne;
+		} else if (soldKnives > 100 && soldKnives <= 200) {
+			totalPay = 
+		}
+	}
+	
+	/**
+	 * convenience method
+	 * @param string
+	 * @return
+	 */
+	static private double converStringToDouble(String string) 
+	{
+		return Double.parseDouble(string);
+	}
+	
+	static private double getTotalPay(soldKnives) {
+		double totalPay;
+		
+		if (soldKnives <= 100) {
+			totalPay = soldKnives * incentiveLeveOne;
+		} else if (soldKnives > 100 && soldKnives <= 200) {
+			totalPay = 
+		}
+		
+		return totalPay;
+	}
+
+}
