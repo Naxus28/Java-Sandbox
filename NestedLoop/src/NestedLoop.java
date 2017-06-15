@@ -1,13 +1,10 @@
 /**
- * 
- */
-
-/**
  * @author gabrielferraz
  *
  */
 public class NestedLoop {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		test:

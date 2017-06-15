@@ -1,0 +1,11 @@
+Beer pseudo code
+
+1. create class and main method
+2. import scanner class
+3. define 3 constants: beer-to-weight-gain, days-in-year, calories per can using data provided on the problem
+4. write method to handle scanner.in 
+5. store two user input values in variables: average amount of beer cans they will consume a day and average cost of each can
+6. write a method that calculates the amount of calories consumed a year 
+7. write a method that calculates the amount of weight gained in a year
+8. write a method that calculates the amount of money spent in a year
+9. print the output

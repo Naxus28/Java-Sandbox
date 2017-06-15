@@ -1,0 +1,66 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class Casino {
+	/**
+	 * globals
+	 */
+	
+	final static float quarterValue = (float) 0.25;
+	final int quartersInJar = 100;
+	int currMachine = 0;
+	int totalTimesPlayed = 0;
+	int mOneTotalTimesPlayed = 0;
+	int mTwoTotalTimesPlayed = 0;
+	int mThreeTotalTimesPlayed = 0;
+
+  public static void main(String[] args) {
+	  
+	  
+
+	  
+	  float dollarAmount = getQuarterAmountInDollars();
+	  System.out.println("dollarAmount: " + dollarAmount);
+  }
+  
+
+//  static private String getUserInput(String inputDirections) {
+//	System.out.println(inputDirections);
+//	Scanner sc = new Scanner(System.in);
+//  
+//	return sc.nextLine();
+//  }
+
+  
+  static private float getQuarterAmountInDollars(int quartersCount) 
+  {
+	  float dollarAmount = quartersCount * quarterValue;
+	  return dollarAmount;
+  }
+  
+  static private void printOutputToTxtFile(int currMachine, float amountWon, int quartersInJar, float dollarsInJar) 
+  {
+	  try
+	  {
+	    PrintWriter writer = new PrintWriter("src/casino.txt", "UTF-8");
+	    writer.println("Machine: " + currMachine);
+	    writer.println("Amount won: " + amountWon);
+	    writer.println("Remaining quartes in jar: " + quartersInJar);
+	    writer.println("Remaining dollars in jar: " + dollarsInJar);
+	    writer.println("");
+	    writer.println("=================");
+	    writer.println("");
+	    writer.close();
+	  } 
+	  catch (IOException e) 
+	  {
+	   // do something
+	  }
+  }
+  
+}
+
+
+
+

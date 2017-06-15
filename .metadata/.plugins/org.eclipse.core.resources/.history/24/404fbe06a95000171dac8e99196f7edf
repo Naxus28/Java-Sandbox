@@ -1,0 +1,17 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class Casino {
+
+  public static void main(String[] args) {
+	  try{
+		    PrintWriter writer = new PrintWriter("src/casino.txt", "UTF-8");
+		    writer.println("The first line");
+		    writer.println("The second line");
+		    writer.close();
+	  } catch (IOException e) {
+		   // do something
+	  }
+
+  }
+}
