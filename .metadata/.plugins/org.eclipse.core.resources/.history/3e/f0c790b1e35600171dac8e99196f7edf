@@ -1,0 +1,11 @@
+
+public class LightBulb {
+
+	private boolean lit;
+	
+	public void setLit() 
+	{
+		
+	}
+
+}

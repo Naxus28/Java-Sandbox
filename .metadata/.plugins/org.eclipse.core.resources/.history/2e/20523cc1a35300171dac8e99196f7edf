@@ -1,0 +1,62 @@
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Todos {
+	/**
+	 * class variables
+	 */
+	static ArrayList<String> todos = new ArrayList<String>();
+	static String todoListFromUser;
+	static final String inputTodosDirections = "Please input a list of todos. Separate each item by a comma";
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		todoListFromUser = JOptionPane.showInputDialog(inputTodosDirections);
+		
+
+	}
+	
+	
+	private static void getTodosFromUser() {
+		
+	}
+	
+	
+	private static void addTodo() {
+		
+	}
+	
+	private static void deleteTodo() {
+		
+	}
+	
+	private static void sortTodos() {
+		
+	}	
+	
+	/**
+	 * parse values sides out of string input and return them as elements of array "mealsValues"
+	 * @param ratio
+	 * @return
+	 */
+	static private void getTodosStringAsArray(String todoListFromUser) 
+	{
+		Pattern p = Pattern.compile("\\d+"); // define regex to get numbers only
+		Matcher values = p.matcher(mealsInput); // user matcher class to match regex in string
+		
+		while(values.find()) {
+			if (values.group() != null) {
+				todos.add(values.group());
+			}
+		}
+	} 
+}

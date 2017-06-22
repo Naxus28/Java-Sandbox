@@ -23,13 +23,7 @@ public class Casino {
   public static void main(String[] args) {
 	  // clear text file for every build/run
 	  if(totalTimesPlayed == 0) {
-		  try {
-			 printer = new PrintWriter(new FileOutputStream("src/casino.txt"));
-			 printer.println("");
-			 printer.close();
-		  } catch (FileNotFoundException e) {
-			 e.printStackTrace();
-		  }
+		  printerHelper("", false);
 	  }
 	  
 	  play();
@@ -71,15 +65,24 @@ public class Casino {
 		  machine++;
 		  
 		  if (quartersInJar == 0) {
-			try {
-				printer = new PrintWriter(new FileOutputStream("src/casino.txt", true));
-				printer.println("Total times played: " + totalTimesPlayed);
-				printer.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
+			  printerHelper("Total times played: " + Integer.toString(totalTimesPlayed), true);
 		  }
 	  }
+  }
+  
+  /**
+   * helper method to print msgs
+   * @param msg
+   * @param stream
+   */
+  static private void printerHelper(String msg, boolean stream) {
+	  try {
+			 printer = new PrintWriter(new FileOutputStream("src/casino.txt", stream));
+			 printer.println(msg);
+			 printer.close();
+		  } catch (FileNotFoundException e) {
+			 e.printStackTrace();
+		  }
   }
   
   /**

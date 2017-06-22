@@ -1,0 +1,132 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import javax.swing.JOptionPane;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Todos {
+	/**
+	 * class variables
+	 */
+	static List<String> todos = new ArrayList<String>();
+	static String todosFromUserInput;
+	static String menuChoice;
+	static String newTodo;
+	static String selectedValue;
+	static final String inputTodosDirections = "Please input a list of todos. Separate each item by a comma";
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		todosFromUserInput = getTodosFromUserInput("Please input todos", "These are your todos: ");
+		createTodosArray(todosFromUserInput);
+		menuAction();
+	}
+	
+	/**
+	 * execute a "todo" action depending on user's choice
+	 */
+	private static void menuAction() {
+		menuChoice = getUserChoiceFromMenu();
+		
+		if (menuChoice == "Add todo") {
+			addTodo();
+		} else if (menuChoice == "Delete todo") {
+			deleteTodo();
+		} else if (menuChoice == "Sort todos") {
+			sortTodos();
+		} else if (menuChoice == "Exit") {
+			JOptionPane.showMessageDialog(null, "GOODBYE");
+	    	System.exit(0);
+		}
+	}
+	
+	/**
+	 * get a list of todos as a string from the user
+	 * @param inputMsg
+	 * @param todoMsg
+	 * @return
+	 */
+	private static String getTodosFromUserInput(String inputMsg, String todoMsg) {
+		String todoListFromUser;
+		
+		do {
+			todoListFromUser = JOptionPane.showInputDialog(inputTodosDirections);
+			
+			if (todoListFromUser.length() == 0) {
+				JOptionPane.showMessageDialog(null, inputMsg, "Invalid Input", JOptionPane.ERROR_MESSAGE);
+			} else {
+				JOptionPane.showMessageDialog(null, todoMsg + todoListFromUser, "Todo List", JOptionPane.PLAIN_MESSAGE);
+			}
+		} while(todoListFromUser.length() == 0);
+		
+		return todoListFromUser;
+	}
+	
+	private static String getUserChoiceFromMenu() {
+		 String[] options = { "Add todo", "Delete todo", "Sort todos", "Exit" };
+		 String selectedValue = (String) JOptionPane.showInputDialog(null, "Choose an action", "Input",
+					JOptionPane.INFORMATION_MESSAGE, null,
+					options, options[0]);
+		 
+		return selectedValue;
+	}
+	
+	public static void showTodos() {
+		JOptionPane.showMessageDialog(null, "These are your todos: " + todos, "Todo List", JOptionPane.PLAIN_MESSAGE);
+	}
+	
+	/**
+	 * add a todo to the list and display to user
+	 */
+	private static void addTodo() {
+		newTodo = getTodosFromUserInput("Add a todo to the list: ", "This is the new todo: ");
+		todos.add(newTodo);
+		showTodos();
+		menuAction();
+	}
+	
+	/**
+	 * delete a todo from todos and display to user
+	 */
+	private static void deleteTodo() {
+		String [] todosArray = todos.toArray(new String[todos.size()]);
+		String deletedTodo = (String) JOptionPane.showInputDialog(null, "Choose a todo to delete", "Delete Todo",
+				JOptionPane.INFORMATION_MESSAGE, null,
+				todosArray, todosArray[0]);
+		
+		todos.remove(deletedTodo);
+		showTodos();
+		menuAction();
+	}
+	
+	/**
+	 * sort todos and display to user
+	 */
+	private static void sortTodos() {
+		Collections.sort(todos);
+		String sortedTodos = "";
+		String newline = System.getProperty("line.separator");
+		
+		for(String todo : todos) {
+			sortedTodos += (newline + todo); 
+		}
+		
+		JOptionPane.showMessageDialog(null, "These are your sorted todos: " + sortedTodos, "Todo List", JOptionPane.INFORMATION_MESSAGE);
+		menuAction();
+	}	
+	
+	/**
+	 * utility that splits a string into an array using comma as a delimiter
+	 * @param todoListFromUser
+	 */
+	static private void createTodosArray(String todoListFromUser) {
+		todos = new ArrayList<String>(Arrays.asList(todoListFromUser.split(",")));
+	} 
+}

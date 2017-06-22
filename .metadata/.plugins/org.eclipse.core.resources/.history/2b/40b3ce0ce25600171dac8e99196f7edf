@@ -1,0 +1,10 @@
+import LampWithBulb;
+
+public class LampWithBulbTest {
+
+	public static void main(String[] args) {
+		LightBulb bulb = new LightBulb();
+
+	}
+
+}

@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Todos {
+	/**
+	 * class variables
+	 */
+	ArrayList<String> todos = new ArrayList<String>();
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+	
+
+	}
+	
+	
+	private static void addTodo() {
+		
+	}
+	
+	private static void deleteTodo() {
+		
+	}
+	
+	private static void sortTodos() {
+		
+	}	
+}

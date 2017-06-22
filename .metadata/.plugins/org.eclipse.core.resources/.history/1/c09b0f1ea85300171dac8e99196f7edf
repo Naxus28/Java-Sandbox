@@ -1,0 +1,66 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import javax.swing.JOptionPane;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Todos {
+	/**
+	 * class variables
+	 */
+	static List<String> todos = new ArrayList<String>();
+	static String todoListFromUser;
+	static final String inputTodosDirections = "Please input a list of todos. Separate each item by a comma";
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		createTodosArrayFromUserInput();
+		
+
+	}
+	
+	private static void createTodosArrayFromUserInput() {
+		do {
+			todoListFromUser = JOptionPane.showInputDialog(inputTodosDirections);
+			
+			if (todoListFromUser.length() == 0) {
+				JOptionPane.showMessageDialog(null, "Please input some todos", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+			} else {
+				createTodosArray(todoListFromUser);
+			}
+		} while(todoListFromUser.length() == 0);
+	}
+	
+	
+	private static void getTodosFromUser() {
+		
+	}
+	
+	
+	private static void addTodo() {
+		
+	}
+	
+	private static void deleteTodo() {
+		
+	}
+	
+	private static void sortTodos() {
+		
+	}	
+	
+	/**
+	 * parse values sides out of string input and return them as elements of array "mealsValues"
+	 * @param ratio
+	 * @return
+	 */
+	static private void createTodosArray(String todoListFromUser) {
+		todos = Arrays.asList(todoListFromUser.split(","));
+	} 
+}
