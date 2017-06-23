@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Doubler {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Doubler cm = new Doubler();
+
+	}
+	
+
+}

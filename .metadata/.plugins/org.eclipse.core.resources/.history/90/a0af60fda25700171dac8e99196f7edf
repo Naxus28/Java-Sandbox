@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class Doubler {
+	
+	int index = 0;
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		callClassMethod();
+
+	}
+	
+	private void callClassMethod()
+	{	
+		if(index < 10) 
+		{
+			this.callClassMethod();
+		} 
+		
+		
+		System.out.println("index is: " + index);
+		index++;
+	}
+	
+	
+	
+	
+
+}
