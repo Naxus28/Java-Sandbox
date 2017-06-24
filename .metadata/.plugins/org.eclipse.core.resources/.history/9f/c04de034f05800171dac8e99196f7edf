@@ -1,0 +1,16 @@
+/**
+ * @author gabrielferraz
+ *
+ */
+public class LampWithBulb2 {
+	LightBulb bulb;
+	
+	// implements a constructor in place of the setter
+	public LampWithBulb2(LightBulb bulb)
+	{
+		this.bulb = bulb;
+	}
+	
+	
+
+}

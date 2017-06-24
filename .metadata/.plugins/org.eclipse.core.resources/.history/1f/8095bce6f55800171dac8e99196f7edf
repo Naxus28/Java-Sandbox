@@ -1,0 +1,15 @@
+
+public class LampWithBulb3Test {
+
+	public static void main(String[] args) {
+		LightBulb bulb = new LightBulb();
+		LampWithBulb3 lamp = new LampWithBulb3(); // constructor requires an argument
+		
+		lamp.turnOn();
+		lamp.turnOn();
+		lamp.turnOff();
+		lamp.turnOff();
+
+	}
+
+}

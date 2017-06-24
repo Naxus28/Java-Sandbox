@@ -1,0 +1,13 @@
+/**
+ * @author gabrielferraz
+ *
+ */
+public class LampWithBulb2 {
+	LightBulb bulb;
+	
+	public LampWithBulb2(LightBulb bulb)
+	{
+		this.bulb = bulb;
+	}
+
+}
