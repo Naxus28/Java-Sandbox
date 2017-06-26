@@ -1,0 +1,17 @@
+import java.util.Calendar;
+
+public class AlarmClockCalendar {
+	
+	Calendar calendar; 
+	Calendar currentDateTime;
+	
+	public AlarmClockCalendar()
+	{
+		calendar = Calendar.getInstance(); 
+	}
+	
+	public Calendar getCurrentDateTime()
+	{
+		return calendar;
+	}
+}

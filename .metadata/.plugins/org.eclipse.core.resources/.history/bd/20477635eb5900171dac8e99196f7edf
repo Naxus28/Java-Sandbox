@@ -1,0 +1,10 @@
+
+public class AlarmClockTest {
+
+	public static void main(String[] args) {
+		AlarmClock alarmClockOne = new AlarmClock();
+		AlarmClock alarmClockTwo = new AlarmClock();
+
+	}
+
+}

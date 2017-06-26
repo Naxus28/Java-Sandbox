@@ -1,0 +1,20 @@
+
+public class AlarmClockTest {
+
+	public static void main(String[] args) {
+		AlarmClock alarmClockOne = new AlarmClock();
+		AlarmClock alarmClockTwo = new AlarmClock();
+		
+		
+		alarmClockOne.turnOn(true);
+		alarmClockOne.turnOn(false);
+		alarmClockOne.turnOn(true);
+		
+		
+		alarmClockOne.turnOn(false);
+		alarmClockOne.turnOn(true);
+		alarmClockOne.turnOn(false);
+
+	}
+
+}

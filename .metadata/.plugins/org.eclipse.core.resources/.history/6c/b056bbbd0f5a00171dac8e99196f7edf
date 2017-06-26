@@ -1,0 +1,29 @@
+
+public class AlarmClockTest {
+
+	public static void main(String[] args) {
+		AlarmClock alarmClockOne = new AlarmClock();
+		AlarmClock alarmClockTwo = new AlarmClock();
+		String alarmTime;
+		
+		alarmClockOne.turnOn(true);
+		alarmClockOne.setAlarmDateTime(2017, 06, 29, 7, 40);
+		alarmTime = alarmClockOne.getAlarmDateTime();
+		System.out.println("Your alarm is set to: " + alarmTime);
+//		alarmClockOne.turnOn(true);
+//		System.out.println("==============");
+//		
+//		alarmClockOne.turnOff(false);
+//		alarmClockOne.turnOff(true);
+//		alarmClockOne.turnOff(true);
+//		alarmClockOne.turnOff(false);
+//		
+//		System.out.println("==============");
+//		
+//		alarmClockTwo.turnOn(false);
+//		alarmClockTwo.turnOn(true);
+//		alarmClockTwo.turnOn(false);
+
+	}
+
+}

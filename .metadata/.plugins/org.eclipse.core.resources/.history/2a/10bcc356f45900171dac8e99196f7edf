@@ -1,0 +1,60 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+
+public class AlarmClockCalendar {
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	SimpleDateFormat alarmDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+	Calendar calendar; 
+	Calendar currentDateTime;
+	Calendar alarmDateTime;
+	
+	/**
+	 * class constructor--initializes calendar
+	 */
+	public AlarmClockCalendar()
+	{
+		calendar = Calendar.getInstance(); 
+	}
+	
+	/**
+	 * gets calendar reference
+	 * @return
+	 */
+	public Calendar getAlarmClockCalendar()
+	{
+		return calendar;
+	}
+	
+	/**
+	 * gets current date-time
+	 * @return
+	 */
+	public String getCurrentDateTime()
+	{
+		return sdf.format(calendar.getTime());
+	}
+	
+	/**
+	 * sets alarm clock date-time
+	 * @param year
+	 * @param month
+	 * @param day
+	 * @param min
+	 * @param sec
+	 */
+	public void setAlarmDateTime(int year, int month, int day, int min)
+	{
+		alarmDateTime.set(year, month, day, min, sec);
+	}
+	
+	/**
+	 * gets alarm clock date-time
+	 * @return
+	 */
+	public String getAlarmTime () 
+	{
+		return alarmDateFormat.format(alarmDateTime.getTime());
+	}
+	
+}

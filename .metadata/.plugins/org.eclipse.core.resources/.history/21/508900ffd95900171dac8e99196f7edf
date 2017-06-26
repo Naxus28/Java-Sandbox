@@ -1,0 +1,32 @@
+
+public class SquareTwoDArray {
+
+	public static void main(String[] args) {
+		int [][] allGrades = new int [10][5];
+		int gradeIndex = 0;
+		
+		for(int row = 0; row < allGrades.length; row++)
+		{
+			for(int col = 0; col < allGrades[row].length; col++)
+			{
+				gradeIndex++;
+				allGrades[row][col] = gradeIndex;
+			}
+			
+		}
+		
+		
+		for(int row = 0; row < allGrades.length; row++)
+		{
+			for(int col = 0; col < allGrades[row].length; col++)
+			{
+				System.out.print("" + allGrades[row][col]);	
+			}
+			
+			System.out.println("");
+			
+		}	
+		
+	}
+
+}
