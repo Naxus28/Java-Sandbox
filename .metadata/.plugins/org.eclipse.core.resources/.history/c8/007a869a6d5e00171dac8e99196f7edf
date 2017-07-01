@@ -1,0 +1,21 @@
+
+public class AllMachines {
+
+	public static void main(String[] args) {
+		// use variable of type "Machine" to store all types of machine objs so we can store these objs in the "allMachs" array 
+		// arrays in Java can only have elements of the same type
+		Machine lamp = new Lamp();
+		Machine lamp2 = new Lamp();
+		Machine toaster = new Toaster();
+		Machine toaster2 = new Toaster();
+		Machine [] allMachs = { lamp, lamp2, toaster, toaster2 };
+		
+		for(Machine machine: allMachs)
+		{
+			machine.turnOn();
+			machine.turnOff();
+		}
+
+	}
+
+}

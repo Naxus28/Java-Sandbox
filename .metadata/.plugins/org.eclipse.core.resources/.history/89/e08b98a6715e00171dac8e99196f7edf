@@ -1,0 +1,17 @@
+
+public class Toaster2 extends Machine {
+	private int temp;
+	private int minTemp;
+	private int maxTemp;
+	
+	
+	public Toaster2()
+	{
+		this("Toaster");
+	}
+	
+	public Toaster2(String name)
+	{
+		setName(name);
+	}
+}
