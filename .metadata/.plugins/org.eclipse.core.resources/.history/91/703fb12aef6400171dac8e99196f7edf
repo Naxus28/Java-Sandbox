@@ -1,0 +1,95 @@
+import java.text.DecimalFormat;
+
+public class SlotMachine {
+	String machineName;
+	double machineBalance;
+	
+	Boolean noJackPotsPaid;
+	double jackpotPayoutOdds;
+	double jackpotPayoutAmount;
+	
+	Boolean noRegularWinsPaid; 
+	double regularPayoutOdds; 
+	double regularPayout;
+	
+	// use this variable to format two decimal points for all doubles
+	final static DecimalFormat df = new DecimalFormat("#.00"); 
+	
+	// constructor
+	public SlotMachine(String machineName, double machineBalance, double jackpotPayoutOdds, double jackpotPayoutAmount, double regularPayoutOdds, double regularPayout) {
+		setMachineName(machineName);
+		setMachineBalance(machineBalance);
+		setJackpotPayoutOdds(jackpotPayoutOdds);
+		setJackpotPayoutAmount(jackpotPayoutAmount);
+		setJackpotPayoutOdds(regularPayoutOdds);
+		setRegularPayout(regularPayout);
+	}
+	
+
+	@Override
+	public String toString() {
+		return "SlotMachine [machineName=" + machineName + ", machineBalance=$" + df.format(machineBalance) + ", noJackPotsPaid="
+				+ noJackPotsPaid + ", jackpotPayoutOdds=" + df.format(jackpotPayoutOdds) + ", jackpotPayoutAmount=$"
+				+ df.format(jackpotPayoutAmount) + ", noRegularWinsPaid=" + noRegularWinsPaid + ", regularPayoutOdds="
+				+ df.format(regularPayoutOdds) + ", regularPayout=$" + df.format(regularPayout) + "]";
+	}
+
+
+	// getters and setters
+	public String getMachineName() {
+		return machineName;
+	}
+	public void setMachineName(String machineName) {
+		this.machineName = machineName;
+	}
+	
+	public double getMachineBalance() {
+		return machineBalance;
+	}
+	public void setMachineBalance(double machineBalance) {
+		this.machineBalance = machineBalance;
+	}
+	
+	public Boolean getNoJackPotsPaid() {
+		return noJackPotsPaid;
+	}
+	public void setNoJackPotsPaid(Boolean noJackPotsPaid) {
+		this.noJackPotsPaid = noJackPotsPaid;
+	}
+	
+	public Boolean getNoRegularWinsPaid() {
+		return noRegularWinsPaid;
+	}
+	public void setNoRegularWinsPaid(Boolean noRegularWinsPaid) {
+		this.noRegularWinsPaid = noRegularWinsPaid;
+	}
+	
+	public double getJackpotPayoutOdds() {
+		return jackpotPayoutOdds;
+	}
+	public void setJackpotPayoutOdds(double jackpotPayoutOdds) {
+		this.jackpotPayoutOdds = jackpotPayoutOdds;
+	}
+	
+	public double getJackpotPayoutAmount() {
+		return jackpotPayoutAmount;
+	}
+	public void setJackpotPayoutAmount(double jackpotPayoutAmount) {
+		this.jackpotPayoutAmount = jackpotPayoutAmount;
+	}
+	
+	public double getRegularPayoutOdds() {
+		return regularPayoutOdds;
+	}
+	public void setRegularPayoutOdds(double regularPayoutOdds) {
+		this.regularPayoutOdds = regularPayoutOdds;
+	}
+
+	public double getRegularPayout() {
+		return regularPayout;
+	}
+	public void setRegularPayout(double regularPayout) {
+		this.regularPayout = regularPayout;
+	}
+	
+}

@@ -1,0 +1,9 @@
+
+public class CellPhoneTest {
+
+	public static void main(String[] args) {
+		CellPhone android = new CellPhone("Android", "black", "4073042987", "HTC Bolt");
+
+	}
+
+}

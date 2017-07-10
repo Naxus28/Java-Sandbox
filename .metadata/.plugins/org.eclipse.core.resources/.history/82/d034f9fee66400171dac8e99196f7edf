@@ -1,0 +1,9 @@
+
+public class Casino2Test {
+
+	public static void main(String[] args) {
+		Date birthday = new Date(31, 12, 1977);
+		System.out.println(birthday);
+	}
+
+}

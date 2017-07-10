@@ -1,0 +1,9 @@
+
+public class CellPhone 
+{
+	private Boolean powerButton;
+	private int volumeButton;
+	private int [] numbersKeyPad;
+	private Boolean callButton; 
+
+}

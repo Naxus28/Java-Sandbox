@@ -1,0 +1,14 @@
+
+public class SlotMachine {
+	String machineName;
+	double machineBalance;
+	
+	Boolean noJackPotsPaid;
+	double jackpotOdds;
+	double jackpotPayAmount;
+	
+	Boolean noRegularWinsPaid; 
+	double regularWinOdds; 
+	double regularPayout;
+	
+}

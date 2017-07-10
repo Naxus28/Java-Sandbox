@@ -1,0 +1,10 @@
+
+public class Player {
+	Name name;
+	Date birthday;
+	
+	public Player(Name name, Date birthday) {
+		
+	}
+
+}

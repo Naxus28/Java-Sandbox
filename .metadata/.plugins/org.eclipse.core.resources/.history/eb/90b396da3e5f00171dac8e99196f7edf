@@ -1,0 +1,24 @@
+
+public class RectangleTest {
+
+	public static void main(String[] args) {
+		Rectangle parentRectangle = new Rectangle();
+		System.out.println(parentRectangle);
+		System.out.println();
+		System.out.println("==========Re-setting parent rectangle values==========");
+		System.out.println();
+		parentRectangle.setWidth(13);
+		parentRectangle.setHeight(30);
+	
+		System.out.println(parentRectangle);
+		
+		System.out.println();
+		System.out.println("====================\n");
+		System.out.println();
+		
+		Rectangle rect1 = new Rectangle("Rect Child One", 10, 20);
+		System.out.println(rect1);
+
+	}
+
+}

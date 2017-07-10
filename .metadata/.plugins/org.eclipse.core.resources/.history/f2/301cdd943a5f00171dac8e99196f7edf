@@ -1,0 +1,68 @@
+/*
+ * The Rectangle Class
+
+1. Design a class for a rectangle
+2. Have two double fields (Width and Height)
+3. Default both Width and Height to 1.
+4. Create a NO-ARG constructor that creates a rectangle
+5. Create another constructor that creates a rectangle and 
+   sets the two fields.
+6. Besides your SETTERS and GETTERS and TOSTRING methods, 
+   create: 
+   A) a method called getArea() that returns the area of the 
+      rectangle
+   B) a method called getPerimeter() that returns the 
+      perimeter of the rectangle
+7. Draw the UML for the class.
+8. Include a test program that creates to rectangles and
+   and displays the width, height, area, and perimeter
+   of each rectangle.
+ * 
+ * */
+
+
+public class Rectangle 
+{
+	private String rectName;
+	private double width = 1;
+	private double height = 1;
+	
+
+	public Rectangle()
+	{
+		// allows us to instatiate the class without any arguments
+	}
+	
+	public Rectangle(double w, double h)
+	{
+		this.width = w;
+		this.height = h;
+	}
+	
+	// not sure why this in necessary since we have a constructor that takes height and width
+	public void setWidth(double w)
+	{
+		this.width = w;
+	}
+	
+	public void setHeight(double h)
+	{
+		this.height = h;
+	}
+	
+	public double getArea()
+	{
+		return this.width * this.height;
+	}
+	
+	public double getPerimeter()
+	{
+		return (this.width * 2) + (this.height * 2);
+	}
+	
+	public String toString()
+	{
+		return ;
+	}
+
+}

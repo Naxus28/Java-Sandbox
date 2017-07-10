@@ -1,0 +1,22 @@
+
+public class CellPhoneTest {
+
+	public static void main(String[] args) {
+		
+		// android
+		CellPhone android = new CellPhone("Android", "black", "4073042987", "HTC Bolt");
+		System.out.println(android);
+		android.setNumericPassword("3452");
+		System.out.println(android);
+		android.setOn(true);
+		android.setNumericPassword("3452");
+		System.out.println(android);
+		
+		
+		
+		
+		
+
+	}
+
+}

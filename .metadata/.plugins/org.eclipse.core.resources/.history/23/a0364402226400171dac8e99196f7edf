@@ -1,0 +1,35 @@
+
+public class CellPhone 
+{
+	// phone is
+	private Boolean on;
+	private Boolean onCall;
+	
+	// phone has a
+	private String brand;
+	private String color;
+	private String model;
+	private int number;
+	private int backGroundImg;
+	private int [] numberPassword;
+	
+	
+	public CellPhone()
+	{
+		
+	}
+	
+	public CellPhone(String brand, String model, String color, int number, int [] numberPassword)
+	{
+		this.brand = brand;
+		this.model = model;
+		this.color = color;
+		this.number = number;
+		this.numberPassword = numberPassword;
+	}
+	
+	
+	
+	
+
+}

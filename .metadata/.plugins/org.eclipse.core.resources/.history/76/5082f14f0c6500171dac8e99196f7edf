@@ -1,0 +1,36 @@
+
+public class Play {
+	Player player;
+	SlotMachine slotMachine;
+	
+	public Play(Player player, SlotMachine slotMachine) {
+		setPlayer(player);
+		setSlotMachine(slotMachine);
+	}
+
+	public Player getPlayer() {
+		return player;
+	}
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+
+	public SlotMachine getSlotMachine() {
+		return slotMachine;
+	}
+
+	public void setSlotMachine(SlotMachine slotMachine) {
+		this.slotMachine = slotMachine;
+	}
+
+	@Override
+	public String toString() {
+		Name playerName = player.getName();
+		String initialBalnce = player.getMoneyBalance();
+		double finalBalance = Double.parseDouble(initialBalnce) - 1;
+		
+		return "Play [player=" + player + ", slotMachine=" + slotMachine + "]";
+	}
+	
+}

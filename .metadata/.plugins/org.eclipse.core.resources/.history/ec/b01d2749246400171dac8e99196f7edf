@@ -1,0 +1,121 @@
+import java.util.Arrays;
+
+public class CellPhone 
+{
+	// phone is
+	private Boolean on = false;
+	private Boolean onCall = false;
+	
+	// phone has a
+	private String brand;
+	private String color;
+	private String model;
+	private int [] number;
+	private int [] numericPassword;
+	
+	// constructors
+	public CellPhone()
+	{
+		
+	}
+	
+	public CellPhone(String brand, String color, String model, int number)
+	{
+		setBrand(brand);
+		setColor(color);
+		setModel(model);
+		setNumber(number);
+	}
+	
+	// getters/setters
+	public Boolean getOn() {
+		return on;
+	}
+
+	public void setOn(Boolean on) {
+		this.on = on;
+	}
+
+	public Boolean getOnCall() {
+		return onCall;
+	}
+
+	public void setOnCall(Boolean onCall) {
+		if (on) 
+		{
+			this.onCall = onCall;
+		}
+		else
+		{
+			System.out.println("Phone is off.");
+		}
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int [] getNumber() {
+		return number;
+	}
+
+	public void setNumber(int [] number) {
+		if (number.length != 10)
+		{
+			System.out.println("Phone number needs to have 10 digits, including area code.");
+		}
+		else
+		{
+			this.number = number;
+		}	
+	}
+
+	public int[] getNumericPassword() {
+		return numericPassword;
+	}
+
+	public void setNumericPassword(int[] numericPassword) {
+		if (on) 
+		{
+			if (numericPassword.length != 4)
+			{
+				System.out.println("Password needs to have 4 numbers.");
+			}
+			else
+			{
+				this.numericPassword = numericPassword;
+			}
+		}
+		else 
+		{
+			System.out.println("Phone is off.");
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "CellPhone [on=" + on + ", onCall=" + onCall + ", brand=" + brand + ", color=" + color + ", model="
+				+ model + ", number=" + number + ", numericPassword=" + Arrays.toString(numericPassword) + "]";
+	}
+
+}

@@ -1,0 +1,21 @@
+
+public class Casino2Test {
+
+	public static void main(String[] args) {
+		Date DOB = new Date(31, 12, 1977);
+		Name gabriel = new Name("Gabriel", "Augusto", "Ferraz",  "Dr. ");
+		Player gabrielFerraz = new Player(gabriel, DOB, 5000);
+		System.out.println(gabrielFerraz);
+		
+		System.out.println("=================\n");
+		Date DOB1 = new Date(10, 11, 1987);
+		Name josh = new Name("Josh", "", "Smith");
+		Player joshSmith = new Player(josh, DOB1, 2000);
+		System.out.println(joshSmith);
+		
+		
+		
+		
+	}
+
+}

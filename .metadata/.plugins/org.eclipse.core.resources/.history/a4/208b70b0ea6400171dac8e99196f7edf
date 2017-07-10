@@ -1,0 +1,12 @@
+
+public class Casino2Test {
+
+	public static void main(String[] args) {
+		Date birthday = new Date(31, 12, 1977);
+		Name gabriel = new Name("Gabriel", "Augusto", "Ferraz");
+		Player gabrielFerraz = new Player(gabriel, birthday, 500.98);
+		
+		System.out.println(gabrielFerraz);
+	}
+
+}

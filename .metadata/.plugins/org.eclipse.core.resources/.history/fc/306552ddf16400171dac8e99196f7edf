@@ -1,0 +1,28 @@
+
+public class Casino2Test {
+
+	public static void main(String[] args) {
+		Date DOB = new Date(12, 31, 1977);
+		Name gabriel = new Name("Gabriel", "Augusto", "Ferraz",  "Dr. ");
+		Player gabrielFerraz = new Player(gabriel, DOB, 5000);
+		System.out.println(gabrielFerraz);
+		
+		System.out.println("=================\n");
+		Date DOB1 = new Date(10, 11, 1987);
+		Name josh = new Name("Josh", "", "Smith");
+		Player joshSmith = new Player(josh, DOB1, 2000);
+		System.out.println(joshSmith);
+		
+		System.out.println("=================\n");
+		SlotMachine lucky777 = new SlotMachine("Lucky 777", 5000, 10000, 5000, .1, 5);
+		System.out.println(lucky777);
+		
+		System.out.println("=================\n");
+		SlotMachine LuckyLotto = new SlotMachine("Lucky Lotto", 55000, 100000, 75000, .02, 25);
+		System.out.println(LuckyLotto);
+		
+		
+		Purple People Eater, with a starting balance of 1,000, jackpotOdds 1 in 50, jackpotPayout $40, regular payout odds 1 in 5, regularPayout $2.00.
+	}
+
+}

@@ -1,0 +1,94 @@
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class Casino2Test {
+
+	public static void main(String[] args) {
+		int randomMonth = ThreadLocalRandom.current().nextInt(1, 12 + 1);
+		int randomDay = ThreadLocalRandom.current().nextInt(1, 31 + 1);
+		int randomYear = ThreadLocalRandom.current().nextInt(1940, 1999 + 1);
+		int randomNumber = ThreadLocalRandom.current().nextInt(500, 5000 + 1);
+		
+		String [][] playerNames = {
+				{"Vera", "", "Smith"}, {"John", "", "Doe"}, {"Josh", "Fargo", "Dundler"}, {"Michal", "", "Scott"}, {"Jim", "", "Halpert"},
+				{"Pam", "", "Besley"}, {"Michelle", "", "Mitchel"}, {"Lina", "", "Smith"}, {"Joseph", "", "Maalouf"}, {"Toni", "", "Tornado"},
+				{"Elaine", "", "Park"}, {"John", "", "Douglas"}, {"Paul", "", "Smith"},{"John", "", "Lennon"}, {"Ringo", "", "Star"}, {"George", "", "Harrison"},
+				{"Adele", "", "Marcus"}, {"Vladimir", "", "Horowits"}, {"Geza", "", "Anda"}, {"Marcela", "Paula", "Ferraz"}, {"Fabi", "", "Ferraz"},{"Paulo", "Celso", "Ferraz"},
+				{"Chris", "", "Ferraz"}, {"Andre", "", "Luis"}, {"Bia", "", "Ferraz"}, {"Nahyr", "", "Bolinelli"}, {"Helena", "", "D'Angelo"},
+				{"Maha", "", "Matta"}, {"Sergio", "", "Ferraz"}, {"Silvio", "", "Santos"}, {"José", "", "Luis"}, {"Matha", "", "Kauffman"},
+				{"Johannes", "", "Brahms"}, {"Johann", "Sebastian", "Bach"}, {"Wolfgang", "Amadeus", "Mozart"}, {"François", "", "Couperin"}, {"Frederic", "", "Chopin"}, {"Franz", "", "Lizst"},
+				{"Gioachinno", "", "Rossini"}, {"Ludwig", "van", "Beethoven"}, {"Arnold", "", "Schoenberg"}, {"Alban", "", "Berg"}, {"Anton", "", "Webern"}, {"Geroge", "Friedrich", "Handel"},
+				{"Michael", "", "Jordan"}, {"Scott", "", "Pippen"}, {"Tiger", "", "Woods"}, {"Pete", "", "Sampras"}, {"Rafael", "", "Nadau"}	
+		};
+		
+		
+		// players
+		Date DOB = new Date(randomMonth, randomDay, randomYear);
+		Name vera = new Name(playerNames[0][0], playerNames[0][1], playerNames[0][2]);
+		Player veraSmith = new Player(vera, DOB, randomNumber);
+
+		Date DOB1 = new Date(randomMonth, randomDay, randomYear);
+		Name john = new Name(playerNames[1][0], playerNames[1][1], playerNames[1][2]);
+		Player joshSmith = new Player(john, DOB1, randomNumber);
+		
+		Date DOB2 = new Date(randomMonth, randomDay, randomYear);
+		Name josh = new Name(playerNames[2][0], playerNames[2][1], playerNames[2][2]);
+		Player JoshDundler = new Player(josh, DOB2, randomNumber);
+		
+		Date DOB3 = new Date(randomMonth, randomDay, randomYear);
+		Name michal = new Name(playerNames[3][0], playerNames[3][1], playerNames[3][2]);
+		Player michalScott = new Player(michal, DOB3, randomNumber);
+		
+		Date DOB4 = new Date(randomMonth, randomDay, randomYear);
+		Name jim = new Name(playerNames[4][0], playerNames[4][1], playerNames[4][2]);
+		Player jimHalpert = new Player(jim, DOB4, randomNumber);
+		
+		Date DOB5 = new Date(randomMonth, randomDay, randomYear);
+		Name pam = new Name(playerNames[5][0], playerNames[5][1], playerNames[5][2]);
+		Player pamBesly = new Player(pam, DOB5, randomNumber);
+		
+		Date DOB6 = new Date(randomMonth, randomDay, randomYear);
+		Name michelle = new Name(playerNames[6][0], playerNames[6][1], playerNames[6][2]);
+		Player michelleMitchel= new Player(michelle, DOB6, randomNumber);
+		
+		Date DOB7 = new Date(randomMonth, randomDay, randomYear);
+		Name lina = new Name(playerNames[7][0], playerNames[7][1], playerNames[7][2]);
+		Player linaSmith = new Player(lina, DOB7, randomNumber);
+		
+		Date DOB8 = new Date(randomMonth, randomDay, randomYear);
+		Name joseph = new Name(playerNames[8][0], playerNames[8][1], playerNames[8][2]);
+		Player josephMaalouf = new Player(joseph, DOB8, randomNumber);
+		
+		Date DOB9 = new Date(randomMonth, randomDay, randomYear);
+		Name toni = new Name(playerNames[9][0], playerNames[9][1], playerNames[9][2]);
+		Player toniTornado = new Player(toni, DOB9, randomNumber);
+		
+		Date DOB10 = new Date(randomMonth, randomDay, randomYear);
+		Name elaine = new Name(playerNames[10][0], playerNames[10][1], playerNames[10][2]);
+		Player elainePark = new Player(elaine, DOB10, randomNumber);
+		
+		Player [] players = { veraSmith, joshSmith,  JoshDundler, michalScott,  jimHalpert, pamBesly, michelleMitchel, linaSmith, josephMaalouf, toniTornado,  elainePark};
+
+		// machines
+		SlotMachine lucky777 = new SlotMachine("Lucky 777", 5000, 10000, 5000, 10, 5);
+		SlotMachine luckyLotto = new SlotMachine("Lucky Lotto", 55000, 100000, 75000, 50, 25);
+		SlotMachine purplePeopleEater = new SlotMachine("Purple People Eater", 1000, 50, 40, 5, 20);
+		
+		SlotMachine [] slotMachines = { lucky777, luckyLotto, purplePeopleEater};
+		
+		
+		
+//		// play
+//		for(int i=0; i<18; i++) {
+//			Play play = new Play(gabrielFerraz, lucky777);
+//			play.showResult();
+//		}
+//		
+//		for(int i=0; i<5; i++) {
+//			Play play = new Play(joshSmith, lucky777);
+//			play.showResult();
+//		}
+		
+	}
+
+}
