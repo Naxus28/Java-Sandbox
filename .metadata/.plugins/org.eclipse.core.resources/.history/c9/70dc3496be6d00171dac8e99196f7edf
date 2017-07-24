@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+public class Baseballer extends Athlete {
+	private String battingPosition;
+	
+	public Baseballer(String firstName, String lastName, int age, String battingPosition) {
+		super(firstName, lastName, age);
+		setBattingPosition(battingPosition);
+	}
+	
+	
+	public String getBattingPosition() {
+		return battingPosition;
+	}
+	
+	public void setBattingPosition(String battingPosition) {
+		String [] acceptedbattingPositions = {"left", "right", "left and right", "right and left"};
+		
+		if (Arrays.asList(acceptedbattingPositions).contains(battingPosition)) {
+			System.out.println("Please pass one of these values: " + acceptedbattingPositions.toString());
+			return;
+		}
+		
+		this.battingPosition = battingPosition;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Baseballer [battingPosition=" + battingPosition + ", age=" + age + ", getBattingPosition()="
+				+ getBattingPosition() + ", toString()=" + super.toString() + ", getFirstName()=" + getFirstName()
+				+ ", getLastName()=" + getLastName() + ", getFullName()=" + getFullName() + ", getAge()=" + getAge()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}	
+
+}

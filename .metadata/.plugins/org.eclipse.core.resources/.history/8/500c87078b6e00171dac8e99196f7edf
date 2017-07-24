@@ -1,0 +1,37 @@
+
+public class TestAthletes {
+
+	public static void main(String[] args) {
+		Baseballer Barry = new Baseballer("Barry", "Blank", 24, "left");
+		Baseballer Hank = new Baseballer("Hank", "Smith", 27, "right");
+
+	    Footballer Payton = new Footballer("Payton", "Manning", 29,"offense");
+	    Footballer Terry = new Footballer("Terry", "Smith", 27,"defense");
+
+	    HockeyPlayer  Mario = new HockeyPlayer("Mario", "Lanza", 30, "Bauer Vapor 1X");
+	    HockeyPlayer Wayne = new HockeyPlayer("Wayne", "Marsola", 32, "Easton Stealth CX");
+
+	    Golfer Tiger = new Golfer("Tiger", "Woods", 34, "Nike");
+	    Golfer Phil = new Golfer("Phil", "Collins", 38, "Adidas");
+	    
+	    Athlete [] athletes = {Barry, Hank, Payton, Terry, Mario, Wayne, Tiger, Phil};
+	    
+	    for(Athlete athlete: athletes) {
+	    	athlete.doThis();
+	    	
+	    	if (athlete instanceof Baseballer && athlete.getFirstName() == "Hank") {
+		    athlete.setAtheleteShape("I have always been fat and I don't care.");
+	    	} else if (athlete instanceof HockeyPlayer) {
+	    		athlete.setAtheleteShape("I am not in good shape because we are off season.");
+	    	} else if (athlete instanceof Golfer) {
+	    		athlete.setAtheleteShape("My shape is ok but I am just a golfer, I don't need to be athletic :)");
+	    	}
+	    	
+	    	System.out.println(athlete.getAtheleteShape());
+	    	System.out.println(athlete);
+	    	System.out.println("==============\n");
+	    }
+
+	}
+
+}

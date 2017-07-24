@@ -66,7 +66,7 @@ public class Casino2Test {
 	static Player [] players = { veraSmith, joshSmith,  JoshDundler, michalScott,  jimHalpert, pamBesly, michelleMitchel, linaSmith, josephMaalouf, toniTornado,  elainePark};
 
 	// machines
-	static SlotMachine lucky777 = new SlotMachine("Lucky 777", 5000, 10000, 5000, 10, 5);
+	static SlotMachine lucky777 = new SlotMachine("Lucky 777", 5000, 10, 5000, 10, 5);
 	static SlotMachine luckyLotto = new SlotMachine("Lucky Lotto", 55000, 100000, 75000, 50, 25);
 	static SlotMachine purplePeopleEater = new SlotMachine("Purple People Eater", 1000, 50, 40, 5, 20);
 	

@@ -1,0 +1,9 @@
+
+public class Footballer extends Athlete{
+
+	public Footballer(String firstName, String lastName) {
+		super(firstName, lastName);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,19 @@
+
+public class HockeyPlayer extends Athlete {
+	private String stickBrand;
+	
+	public HockeyPlayer(String firstName, String lastName, int age) {
+		super(firstName, lastName, age);
+	}
+
+	public String getStickBrand() {
+		return stickBrand;
+	}
+
+	public void setStickBrand(String stickBrand) {
+		this.stickBrand = stickBrand;
+	}
+
+
+
+}

@@ -1,0 +1,19 @@
+
+public class TestAthletes {
+
+	public static void main(String[] args) {
+		Baseballer Barry = new Baseballer("Barry", "Blank", 24, "left");
+		Baseballer Hank = new Baseballer("Hank", "Smith", 27, "right");
+
+	    Footballer Payton = new Footballer("Payton", "Manning", 29,"offense");
+	    Footballer Terry = new Footballer("Terry", "Smith", 27,"defense");
+//
+//	    HockeyPlayer  Mario = new HockeyPlayer();
+//	    HockeyPlayer Wayne new HockeyPlayer();
+//
+//	    Golfer Tiger = new Golfer();
+//	    Golfer Phil = new Golfer();
+
+	}
+
+}

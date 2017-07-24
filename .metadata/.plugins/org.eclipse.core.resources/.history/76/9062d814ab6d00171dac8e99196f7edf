@@ -1,0 +1,8 @@
+
+public class Athlete extends Person {
+
+	public Athlete(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+
+}

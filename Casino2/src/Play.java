@@ -28,21 +28,22 @@ public class Play {
 		// player
 		Name playerName = player.getName();
 		String initialBalance = player.getMoneyBalance();
-		player.setMoneyBalance(Double.parseDouble(initialBalance) - 1);
+		player.setMoneyBalance(Double.parseDouble(player.getMoneyBalance()) - 1);
+		String balanceAfterPlay = player.getMoneyBalance();
 		
-		System.out.println(playerName + ", your amount before this play was $" + initialBalance + "\n");
+		System.out.println(playerName + ", your amount before this play was $" +  initialBalance + "\n");
 		
 		// machine
 		slotMachine.setMachineBalance(slotMachine.getMachineBalance() + 1);
 		
 		if (slotMachine.isRegularWin()) {
-			player.setMoneyBalance(Double.parseDouble(initialBalance) + Double.parseDouble(slotMachine.getRegularPayout()));
+			player.setMoneyBalance(Double.parseDouble(balanceAfterPlay) + Double.parseDouble(slotMachine.getRegularPayout()));
 			slotMachine.setNoRegularWinsPaid(false);
 			System.out.println("***YOU WON A REGULAR PRIZE OF $" + slotMachine.getRegularPayout() + " ***\n");
 		}
 		
 		if (slotMachine.isJackpot()) {
-			player.setMoneyBalance(Double.parseDouble(initialBalance) + Double.parseDouble(slotMachine.getJackpotPayoutAmount()));
+			player.setMoneyBalance(Double.parseDouble(balanceAfterPlay) + Double.parseDouble(slotMachine.getJackpotPayoutAmount()));
 			slotMachine.setNoJackPotsPaid(false);
 			System.out.println("*****JACKPOT! YOU WON A PRIZE OF $" + slotMachine.getJackpotPayoutAmount() + " *****\n");
 		}

@@ -1,0 +1,34 @@
+import java.util.Arrays;
+
+public class Baseballer extends Athlete {
+	private String battingPosition;
+	private String batHand;
+	
+	public Baseballer(String firstName, String lastName) {
+		super(firstName, lastName);
+	}
+	
+	
+	public String getBattingPosition() {
+		return battingPosition;
+	}
+	public void setBattingPosition(String battingPosition) {
+		this.battingPosition = battingPosition;
+	}
+	public String getDominantHand() {
+		return batHand;
+	}
+	public void setDominantHand(String batHand) {
+		String [] acceptedBatHandValues = {"left", "right",  "left and right", "right and left"};
+		
+		if (Arrays.asList(acceptedBatHandValues).contains(batHand)) {
+			System.out.println("Please pass one of these values: " + acceptedBatHandValues.toString());
+			return;
+		}
+		
+		this.batHand = batHand;
+	} 
+	
+	
+
+}

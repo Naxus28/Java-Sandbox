@@ -1,0 +1,31 @@
+
+public class Athlete extends Person {
+
+	public Athlete(String firstName, String lastName, int age) {
+		super(firstName, lastName, age);
+	}
+	
+	public String doThis(Athlete athlete) {
+		String atheleteAction = "";
+		
+		if (athlete instanceof Baseballer) {
+			atheleteAction = "I hit something.";
+		} else if (athlete instanceof Footballer) {
+			atheleteAction = "I tackle something.";
+		} else if (athlete instanceof Golfer) {
+			atheleteAction = "I putt it in the hole.";
+		} else if (athlete instanceof HockeyPlayer) {
+			atheleteAction = "I sit in a penalty box.";
+		} 
+		
+		return atheleteAction;
+	}
+
+	@Override
+	public String toString() {
+		return "Athlete [getFirstName()=" + getFirstName() + ", getLastName()=" + getLastName() + ", toString()="
+				+ super.toString() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
+	}
+	
+
+}
