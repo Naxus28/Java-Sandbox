@@ -1,0 +1,8 @@
+
+public abstract class Building {
+	
+	/**
+	 * default constructor
+	 */
+	protected Building() {}
+}

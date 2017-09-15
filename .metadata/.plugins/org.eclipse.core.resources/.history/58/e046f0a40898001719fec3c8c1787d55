@@ -1,0 +1,8 @@
+
+public class Faculty {
+
+	public static void main(String[] args) {
+		new Faculty(); // invokes the faculty no-arg constructor
+	}
+
+}

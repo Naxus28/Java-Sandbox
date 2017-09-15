@@ -30,10 +30,12 @@ public class SlotMachine {
 
 	@Override
 	public String toString() {
-		return "SlotMachine [machineName=" + machineName + ", machineBalance=$" + machineBalance + ", noJackPotsPaid="
+		/*return "SlotMachine [machineName=" + machineName + ", machineBalance=$" + machineBalance + ", noJackPotsPaid="
 				+ noJackPotsPaid + ", jackpotPayoutOdds=1/" + jackpotPayoutOdds + ", jackpotPayoutAmount=$"
 				+ df2.format(jackpotPayoutAmount) + ", noRegularWinsPaid=" + noRegularWinsPaid + ", regularPayoutOdds=1/"
-				+ regularPayoutOdds + ", regularPayout=$" + df2.format(regularPayout) + "]";
+				+ regularPayoutOdds + ", regularPayout=$" + df2.format(regularPayout) + "]";*/
+		return machineName;
+				
 	}
 	
 

@@ -1,0 +1,17 @@
+import java.util.Date;
+
+public class SimpleGeometricObject {
+	private String color = "white";
+	private boolean filled;
+	private Date dateCreated;
+	
+	// default constructor
+	public SimpleGeometricObject() {
+		dateCreated = new Date();
+	}
+	
+	// default constructor
+		public SimpleGeometricObject() {
+			dateCreated = new Date();
+		}
+}

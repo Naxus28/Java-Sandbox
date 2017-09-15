@@ -18,7 +18,6 @@ public class CellPhone
 	
 
 	// static variables
-	private static int phoneDigits = 10;
 	private static int passwordLength = 4;
 	
 	// constructors
@@ -44,9 +43,9 @@ public class CellPhone
 		setColor(color);
 		setModel(model);
 		setNumber(number);
+		setExtendedWarranty(extendedWarranty);
 		setImessage(imessage);
 		setHeadPhones(headPhones);
-		setExtendedWarranty(extendedWarranty);
 	}
 
 
@@ -57,6 +56,7 @@ public class CellPhone
 
 	public void setOn(Boolean on) {
 		this.on = on;
+		System.out.println("Phone is on.");
 	}
 
 	public Boolean getOnCall() {
@@ -120,11 +120,12 @@ public class CellPhone
 			
 			if (numericPassword.length() != passwordLength)
 			{
-				System.out.println("======Plese set a 4-number password.======");
+				System.out.println("======Your password is too long. Plese set a 4-number password.======");
 			}
 			else
 			{
 				this.numericPassword = numericPassword;
+				System.out.println("Setting password: " + numericPassword);
 			}
 		}
 		else 

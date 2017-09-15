@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TestBuilding {
+
+	public static void main(String[] args) {
+		
+		/*
+		 * build first house
+		 */
+		Room mainRoomOne = new Room(12, 12, "wood", 2);
+		Room guestRoomOne = new Room(8, 12, "tile", 1);
+		Room[] rooms = {mainRoomOne, guestRoomOne};
+		House houseOne = new House(3, rooms);
+		
+		/*
+		 * build second house
+		 */
+		Room mainRoomTwo = new Room(14, 11, "carpet", 2);
+		Room guestRoomTwo = new Room(10, 9, "wood", 1);
+		Room[] roomstwo = {mainRoomTwo, guestRoomTwo};
+		House houseTwo = new House(4, roomstwo);
+		
+		
+		/*
+		 * build garages 
+		 */
+		Garage garageOne = new Garage(2, 10, 10, "cement"); 
+		Garage garageTwo = new Garage(1, 6, 6, "gravel");
+		
+		
+		/*
+		 * build array list 
+		 */
+		Building[] buildings = {houseOne, houseTwo, garageOne, garageTwo};
+		ArrayList<Building> buildingList = new ArrayList<>(Arrays.asList(buildings));
+		
+		for(Building building: buildingList) {
+			System.out.println(building);
+		}
+
+	}
+
+}

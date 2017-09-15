@@ -1,0 +1,10 @@
+
+public class ArrrayListType {
+
+	public static void main(String[] args) {
+		// array list allows to add any number of elements to the array (size is not fixed like a common array)
+		// used to store objects
+
+	}
+
+}

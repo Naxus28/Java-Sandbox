@@ -1,5 +1,0 @@
-
-public interface Team {
-	// public final
-	String team = "";
-}

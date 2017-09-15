@@ -1,0 +1,12 @@
+
+public class Faculty extends Employee {
+
+	public static void main(String[] args) {
+		new Faculty(); // invokes the faculty no-arg constructor
+	}
+	
+	public Faculty() {
+		System.out.println("4 - Faculty constructor");
+	}
+
+}

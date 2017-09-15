@@ -1,0 +1,7 @@
+
+public class Garage {
+	private int cars, length, width;
+	private String floorType;
+
+
+}

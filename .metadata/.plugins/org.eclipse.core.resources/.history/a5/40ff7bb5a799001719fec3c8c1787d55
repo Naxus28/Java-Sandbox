@@ -1,0 +1,71 @@
+import java.text.DecimalFormat;
+
+public class House extends Building{
+	private int bathrooms;
+	private Room[] roams;
+	
+	// format two decimal points for all doubles
+	final static DecimalFormat df2 = new DecimalFormat("#.00"); 
+	
+	/**
+	 * default constructor
+	 */
+	public House() {}
+	
+	public House(int bathrooms, Room[] roams) {
+		this.bathrooms = bathrooms;
+		this.roams = roams;
+	}
+	
+	
+	/**
+	 * @return the bathrooms
+	 */
+	public int getBathrooms() {
+		return bathrooms;
+	}
+
+	/**
+	 * @param bathrooms the bathrooms to set
+	 */
+	public void setBathrooms(int bathrooms) {
+		this.bathrooms = bathrooms;
+	}
+
+	/**
+	 * @return the rooms
+	 */
+	public Room[] getRooms() {
+		return roams;
+	}
+
+	/**
+	 * @param rooms the rooms to set
+	 */
+	public void setRooms(Room[] rooms) {
+		this.roams = rooms;
+	}
+	
+	@Override
+	public int getArea() {
+		int area = 0;
+		
+		for(Room room: roams) {
+			room.getArea();
+		}
+		
+		return area;
+	}
+	
+	public String averageRoomArea() {
+		return df2.format(getArea() / roams.length);
+	}
+	
+	@Override
+	public String toString() {
+		return "This house has " + roams.length + " rooms and " + bathrooms + 
+				" bathrooms. The total area of the rooms is: " + getArea() + 
+					" and the average room area is " + averageRoomArea();
+	}
+	
+}

@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class TestBuilding {
+
+	public static void main(String[] args) {
+		/*
+		 * build first house
+		 */
+		Room houseOneMainRoom = new Room(12, 12, "wood", 2);
+		Room houseOneGuestRoomOne = new Room(7, 7, "tile", 1);
+		Room houseOneGuestRoomTwo = new Room(7, 7, "tile", 1);
+		Room[] rooms = {houseOneMainRoom, houseOneGuestRoomOne, houseOneGuestRoomTwo};
+		Building houseOne = new House(3, rooms);
+		houseOne.setFloors(2);
+		
+		/*
+		 * build second house
+		 */
+		Room houseTwoMainRoom = new Room(14, 11, "carpet", 2);
+		Room houseTwoGuestRoom = new Room(10, 9, "wood", 1);
+		Room[] roomstwo = {houseTwoMainRoom, houseTwoGuestRoom};
+		Building houseTwo = new House(4, roomstwo);
+		
+		/*
+		 * build garages 
+		 */
+		Building garageOne = new Garage(2, 10, 10, "cement"); 
+		Building garageTwo = new Garage(1, 6, 6, "gravel");
+		
+		
+		/*
+		 * build array list 
+		 */
+		Building[] buildings = {houseOne, houseTwo, garageOne, garageTwo};
+		ArrayList<Building> buildingList = new ArrayList<>(Arrays.asList(buildings));
+		
+		for(Building building: buildingList) {
+			System.out.println(building);
+		}
+
+		
+		/*
+		 * check if property is of type MLSListable and print information
+		 */
+		for(Building building : buildings) {
+			if (building instanceof MLSListable) {
+				listPropertiesForSale((MLSListable)building);
+			} else {
+				System.out.println("I AM A " + building.getClass().getTypeName().toUpperCase() + " AND I AM NOT FOR SALE");
+			}
+		}
+	}
+	
+
+	/*
+	 * static method that takes MLSListable type
+	 */
+	public static void listPropertiesForSale(MLSListable property) {
+		System.out.println("I AM FOR SALE! " + property);
+	}
+
+}

@@ -1,0 +1,25 @@
+
+public class StrBuilder {
+
+	public static void main(String[] args) {
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append("Welcome");
+		strBuilder.append(" ");
+		strBuilder.append("to");
+		strBuilder.append(" ");
+		strBuilder.append("JAVA");
+		System.out.println(strBuilder);
+		
+		strBuilder.insert(11, "HTML and ");
+		System.out.println(strBuilder);
+		
+		strBuilder.delete(8, 11);
+		System.out.println(strBuilder);
+		
+		strBuilder.deleteCharAt(8);
+		System.out.println(strBuilder);
+		
+		
+	}
+
+}

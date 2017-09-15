@@ -1,0 +1,8 @@
+
+public class TestSimpleGeometricObject {
+
+	public static void main(String[] args) {
+		CircleFromSimpleGeometricObject = new CircleFromSimpleGeometricObject(1);
+	}
+
+}

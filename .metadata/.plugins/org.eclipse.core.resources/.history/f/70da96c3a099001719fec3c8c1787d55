@@ -1,0 +1,9 @@
+
+public class House extends Building{
+	private int bathrooms;
+	private Room[] rooms;
+	
+	public int getArea() {
+		return 1;
+	}
+}

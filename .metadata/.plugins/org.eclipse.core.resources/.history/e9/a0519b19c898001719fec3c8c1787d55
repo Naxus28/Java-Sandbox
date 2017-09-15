@@ -1,0 +1,6 @@
+
+public class OverridingSubclass extends Overriding {
+	public OverridingSubclass() {
+		getName();
+	}
+}

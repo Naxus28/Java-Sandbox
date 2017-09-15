@@ -1,0 +1,48 @@
+
+public abstract class Building {
+	private int floors, windows;
+	
+	/**
+	 * default constructor
+	 */
+	protected Building() {}
+	
+	protected Building(int floors, int windows) {
+		this.floors = floors;
+		this.windows = windows;
+	}
+
+	/**
+	 * @return the floors
+	 */
+	public int getFloors() {
+		return floors;
+	}
+
+	/**
+	 * @param floors the floors to set
+	 */
+	public void setFloors(int floors) {
+		this.floors = floors;
+	}
+
+	/**
+	 * @return the windows
+	 */
+	public int getWindows() {
+		return windows;
+	}
+
+	/**
+	 * @param windows the windows to set
+	 */
+	public void setWindows(int windows) {
+		this.windows = windows;
+	}
+	
+	@Override
+	public String toString() {
+		return "This building has " + floors + " and " + windows + " windows.";
+	}
+	
+}

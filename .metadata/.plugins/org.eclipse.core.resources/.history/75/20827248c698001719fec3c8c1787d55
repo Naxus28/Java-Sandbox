@@ -1,0 +1,10 @@
+
+public class Person {
+	public Person() {
+		System.out.println("1 - Person");
+	}
+	
+	private void test() {
+		System.out.println("hello");
+	}
+}

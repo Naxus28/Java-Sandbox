@@ -1,0 +1,16 @@
+
+public class Room {
+	private int length; 
+	private int width; 
+	private int floorCovering;
+	private int closets;
+	
+	public Room() {}
+	
+	public Room(int length, int width, int floorCovering, int closets) {
+		this.length = length;
+		this.width = width;
+		this.floorCovering = floorCovering;
+		this.closets = closets;
+	}
+}

@@ -1,0 +1,4 @@
+
+public interface MLSListable {
+	public abstract String getMLSListing();
+}

@@ -1,0 +1,12 @@
+
+public class OverridingSubclass extends Overriding {
+	public OverridingSubclass() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// subclass inherits parent's static method
+		String name = getName();
+		System.out.println(name); 
+	}
+}

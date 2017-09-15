@@ -1,0 +1,9 @@
+
+public class TestBuilding {
+
+	public static void main(String[] args) {
+		Room livingRoomOne = new Room(, int width, "wood", 2)
+
+	}
+
+}

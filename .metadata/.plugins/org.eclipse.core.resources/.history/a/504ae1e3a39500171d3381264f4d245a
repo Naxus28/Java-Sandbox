@@ -1,0 +1,10 @@
+
+public class PrimitiveAsObjects {
+
+	public static void main(String[] args) {
+		double d = new Double(12.5); // takes strings too: "12.5"
+		double doub = new Double(12.5).intValue(); // 12
+		System.out.println(d.intValue());
+	}
+
+}

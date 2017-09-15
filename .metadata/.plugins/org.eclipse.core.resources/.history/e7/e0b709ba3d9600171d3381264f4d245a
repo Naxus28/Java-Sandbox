@@ -1,0 +1,14 @@
+
+public class Strings {
+
+	public static void main(String[] args) {
+		String str = "stringing";
+		
+		// common static methods
+		System.out.println(str.charAt(1)); // char at index -- t
+		System.out.println(str.indexOf('r')); // index of char -- 2
+		System.out.println(str.indexOf("ing")); // index of substring -- 3
+		System.out.println(str.lastIndexOf('g')); // index of char -- 8
+		System.out.println(str.substring(2, 5)); // substring -- rin
+	}
+}

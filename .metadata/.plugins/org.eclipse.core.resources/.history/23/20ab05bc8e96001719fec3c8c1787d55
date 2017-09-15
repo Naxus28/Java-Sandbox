@@ -1,0 +1,18 @@
+
+public class StrBuilder {
+
+	public static void main(String[] args) {
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append("Hello");
+		strBuilder.append(" ");
+		strBuilder.append("JAVA");
+		
+		System.out.println(strBuilder);
+		
+		strBuilder.insert(11, " HTML and ");
+		
+		System.out.println(strBuilder);
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+
+public class Strings {
+
+	public static void main(String[] args) {
+		String str = "stringing";
+		
+		// common static methods
+		System.out.println(str.charAt(1)); // char at index -- t
+		System.out.println(str.indexOf('r')); // index of char -- 2
+		System.out.println(str.indexOf("ing")); // index of substring -- 3
+		System.out.println(str.lastIndexOf('g')); // index of char -- 8
+		System.out.println(str.substring(2, 5)); // substring -- rin
+		
+		// common ways to create a string
+		String str1 = new String("This is a string."); // creates obj--too verbose
+		String str2 = "This is a string."; //creates obj--preferred
+		
+		// string from chars
+		char[] charArray = {'T', 'h', 'i', 's', ' ', 'i', 's', ' ', "a", "s", "t", "r", "i", "n", "g", "."};
+	}
+}

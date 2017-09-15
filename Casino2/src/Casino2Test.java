@@ -1,4 +1,3 @@
-import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
 
 public class Casino2Test {

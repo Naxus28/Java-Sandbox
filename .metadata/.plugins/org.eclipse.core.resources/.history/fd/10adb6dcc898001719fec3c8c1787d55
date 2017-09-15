@@ -1,0 +1,13 @@
+
+public class OverridingStaticMethod {
+	
+	public static String getName() {
+		return "Gabriel in subclass";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
