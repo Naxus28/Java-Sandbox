@@ -1,8 +1,8 @@
 
 public class Garage extends Building {
-	private int carsCount, 
-				length, 
-				width;
+	private int carsCount;
+	private int	length; 
+	private int	width;
 	private String floorType;
 	
 	/**

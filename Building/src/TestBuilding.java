@@ -12,7 +12,6 @@ public class TestBuilding {
 		Room houseOneGuestRoomTwo = new Room(7, 7, "tile", 1, "houseOneGuestRoomTwo");
 		Room[] rooms = {houseOneMainRoom, houseOneGuestRoomOne, houseOneGuestRoomTwo};
 		Building houseOne = new House(3, rooms, 2, 8);
-		houseOne.setFloors(2);
 		
 		/*
 		 * build second house

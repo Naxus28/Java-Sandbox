@@ -1,0 +1,133 @@
+
+public class ExceptionsVideoExamples {
+
+	public static void main(String[] args) {
+		exceptionOne();
+		
+		exceptionTwo();
+		System.out.println("In main"); // If there is an unhandled exception on lower levels of this stack call, this statement will not be printed
+		
+		exceptionThree();
+		
+		exceptionFour();
+		
+		exceptionFive();
+	}
+	
+	/**
+	 * first exception example
+	 */
+	public static void exceptionOne() {
+		int a, b = 6;
+		 
+		 try {
+			 a = b / 0;
+		 } catch(ArithmeticException ae) {
+			 System.out.println("Arithmetic Exception in exceptionOne: " + ae.getMessage());
+		 }
+	}
+	
+	/**
+	 * second exception example -- exception handled where it first occurs on the stack
+	 */
+	public static void exceptionTwo() {
+		System.out.println("\nIn exceptionTwo");
+		exceptionTwoStackOne(); // If there is an unhandled exception on lower levels of this stack call, this statement will not be printed
+		System.out.println("Not printed if there is an unhandled excpetion in exceptionTwoStackOne");
+	}
+	
+	public static void exceptionTwoStackOne() {
+		int num;
+		System.out.println("In exceptionTwoStackOne");
+		
+		/**
+		 * num = 1 / 0
+		 * This line throws an exception. If the exception is not handled no code will be executed after this line; 
+		 * this includes code below the function callers (written in functions up in the stack) that invoked "exceptionTwoStackOne": exceptionTwoStackOne() and exceptionTwo()
+		 */
+
+		// handled exception
+		try {
+			num = 1 / 0;
+			System.out.println("This line doesn't get executed");
+		 } catch (ArithmeticException ae) {
+			 System.out.println("Arithmetic Exception in exceptionTwoStackOne: " + ae.getMessage());
+		 }
+	}
+	
+	
+	/**
+	 * third exception example -- exception handled on the caller of the function that throws the exception
+	 */
+	public static void exceptionThree() {
+		System.out.println("\nIn exceptionThree");
+		
+		// exception can be handled here since this is the caller of the function that throws the exception
+		try {
+			exceptionThreeStackOne(); 
+			System.out.println("This line doesn't get executed");
+		 } catch (ArithmeticException ae) {
+			 System.out.println("Arithmetic Exception in exceptionThree: " + ae.getMessage());
+		 }
+	}
+	
+	public static void exceptionThreeStackOne() {
+		System.out.println("In exceptionThreeStackOne");
+		
+		/**
+		 * num = 1 / 0
+		 * This line throws an exception. If the exception is not handled no code will be executed after this line; 
+		 * this includes code below the function callers (written in functions up in the stack) that invoked "exceptionTwoStackOne": exceptionTwoStackOne() and exceptionTwo()
+		 */
+
+		// unhandled exception -- handled up the call stack
+		int num = 1 / 0;
+		System.out.println("This line doesn't get executed");
+	}
+	
+	/**
+	 * fourth exception example -- multiple catch blocks in inverse hierarchical order (more specific exceptions--child classes--to more generic exceptions--parent classes)
+	 * if parent exception types are placed before their children in the try/catch block the code doesn't compile 
+	 * (it wouldn't make sense since the parent would catch any exception of its children's types). 
+	 * 
+	 * i.e. 
+	 * 
+	 * catch (Exception e) {
+	 *    // some code
+	 * } catch (ArithmeticException ae) {
+	 *   // some code that will never run since type Exception is a parent of type ArithmeticException and catches all Arithmetic Exceptions
+	 * }
+	 */
+	public static void exceptionFour() {
+		System.out.println("\nIn exceptionFour");
+		
+		// exception can be handled here since this is the caller of the function that throws the exception
+		try {
+			int num = 1 / 0;
+			System.out.println("This line doesn't get executed");
+		 } catch (ArithmeticException ae) {
+			System.out.println("Arithmetic Exception in exceptionFour: " + ae.getMessage());
+		 } catch (RuntimeException re) {
+			// this line only gets executed if exception is not of type ArithmeticException (which extends RuntimeException) and is of type RuntimeException
+			System.out.println("Runtime Exception in exceptionFour: " + re.getMessage()); 
+		 } catch (Exception e) {
+			// this line only gets executed if the exception is not of one of the  more specific exceptions on the above "catch" blocks 
+			System.out.println("Exception in exceptionFour: " + e.getMessage()); 
+		 } finally {
+			 System.out.println("This line always gets executed--opportunity to clean up operations that are hanging"); 
+		 }
+	}
+	
+	
+	/**
+	 * fifth exception example -- using the "throws" clause to handle exceptions that are not of type RuntimeException (which the JVM handles implicitly by default in all methods)
+	 */
+	public static void exceptionFive() {
+		System.out.println("\nIn exceptionFive");
+		
+		FileReader fileReader = new FileReader("somefileThatDoesNotExist");
+		
+	}
+	
+	
+}

@@ -6,9 +6,9 @@
  * have a runtime error
  */
 public class Room implements Comparable<Room> {
-	private int length, 
-				width, 
-				closets;
+	private int length; 
+	private int	width; 
+	private int	closets;
 	
 	private String floorCovering, roomName;
 	
@@ -121,12 +121,16 @@ public class Room implements Comparable<Room> {
 	
 	@Override
 	public boolean equals(Object obj) {
+		if (obj == null || !(obj instanceof Room)) {
+			return false;
+		}
+		
 		boolean isEqual = this.width == ((Room)obj).width 
 				&& this.length == ((Room)obj).length
 				&& this.closets == ((Room)obj).closets
 				&& this.floorCovering.equals(((Room)obj).floorCovering);
 		
-		if (obj == null || !(obj instanceof Room) || !isEqual) {
+		if (!isEqual) {
 			return false;
 		}
 		
