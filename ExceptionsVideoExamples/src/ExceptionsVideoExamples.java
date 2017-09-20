@@ -16,6 +16,8 @@ public class ExceptionsVideoExamples {
 		exceptionFive();
 		
 		exceptionSix();
+		
+		exceptionSeven();
 	}
 	
 	/**
@@ -171,5 +173,32 @@ public class ExceptionsVideoExamples {
 			throw new ArithmeticException("This exception is thrown imperatively");
 		}
 	}
+	
+	/**
+	 * seventh exception example -- using custom type CustomerRecordMissingException to throw an exception imperatively
+	 * @throws CustomerRecordMissingException 
+	 */
+	public static void exceptionSeven() {
+		System.out.println("\nIn exceptionSeven");
+		
+		// exception can be handled here or in the call to exceptionSeven() in the main method
+		try {
+			exceptionSevenStackOne();
+		} catch (CustomerRecordMissingException crme) {
+			System.out.println(crme.getMessage());
+		}
+		
+	}
+	
+	public static void exceptionSevenStackOne() throws CustomerRecordMissingException {
+		System.out.println("\nIn exceptionSevenStackOne");
+		
+		// this needs to be handled up the call stack since we are delegating the exception via a "throws" clause
+		// as opposed to handling it locally via try/catch
+		if (true) {
+			throw new CustomerRecordMissingException("This custom exception is thrown imperatively");
+		}
+	}
+	
 	
 }
