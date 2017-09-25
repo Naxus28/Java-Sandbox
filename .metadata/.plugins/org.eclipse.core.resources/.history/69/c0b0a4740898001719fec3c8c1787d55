@@ -1,8 +1,0 @@
-
-public class Employee {
-	public Employee() {
-		this("2 - Overloaded eomployee constructor");
-		System.out.println("1 - Person");
-	}
-
-}

@@ -1,0 +1,10 @@
+import java.util.Arrays;
+
+public class InvalidGradeException extends Exception{
+	public InvalidGradeException(){}
+	
+	public InvalidGradeException(int[] numbers){
+		super("Array has invalid integers: " + Arrays.asList(numbers).toString()); // use super's message property to set and get message
+	}
+	
+}

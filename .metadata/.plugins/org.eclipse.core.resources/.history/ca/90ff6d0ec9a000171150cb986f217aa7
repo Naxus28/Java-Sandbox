@@ -1,0 +1,10 @@
+
+public class MultipleCatchBlocks {
+	public static void main(String[] args) {
+		Random r = new Random();
+		int[] array = {10, 20};
+
+		int result = array[r.nextInt(array.length + 1)] / r.nextInt(2);
+
+	}
+}

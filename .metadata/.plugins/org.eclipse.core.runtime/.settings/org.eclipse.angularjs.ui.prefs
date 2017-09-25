@@ -1,5 +1,10 @@
-angularExpression=\#2AA198 | null | null | null | null | null
-angularExpressionBorder=\#DC322F | null | null | null | null | null
-directiveName=\#B58900 | null | null | null | null | null
-directiveParameterName=\#268BD2 | null | null | null | null | null
+angularExpression=\#ECE47E | null | null | null | null | null
+angularExpressionBorder=\#F9FAF4 | null | null | null | null | null
+directiveName=\#FF007F | null | null | null | null | null
+directiveParameterName=\#CFBFAD | null | null | null | null | null
 eclipse.preferences.version=1
+overriddenByCSS=,angularExpression,directiveName,angularExpressionBorder,directiveParameterName,
+predarkestdark.angularExpression=\#2AA198 | null | null | null | null | null
+predarkestdark.angularExpressionBorder=\#DC322F | null | null | null | null | null
+predarkestdark.directiveName=\#B58900 | null | null | null | null | null
+predarkestdark.directiveParameterName=\#268BD2 | null | null | null | null | null

@@ -1,6 +1,0 @@
-
-public class Overriding {
-	public static String getName() {
-		return "Gabriel";
-	}
-}

@@ -1,0 +1,26 @@
+import java.text.DecimalFormat;
+
+public class CalculateAverage {
+	// format two decimal points for all doubles
+	final static DecimalFormat df2 = new DecimalFormat("#.00"); 
+	
+	public static void main(String[] args) {
+
+		int [] nums = {1, 2, 3, 4, 5, 5};
+		
+		System.out.println(getAverage(nums));
+		
+		
+	}
+	
+	public static double getAverage(int [] nums) {
+		int sum = 0;
+		
+		for (int num : nums) {
+			sum+=num;
+		}
+		
+		return (double)sum / nums.length;
+	}
+
+}

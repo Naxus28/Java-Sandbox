@@ -1,0 +1,22 @@
+
+public class CalculateAverage {
+
+	public static void main(String[] args) {
+		int [] nums = {1, 2, 3, 4, 5, 5};
+		
+		System.out.println(getAverage(nums));
+		
+		
+	}
+	
+	public static double getAverage(int [] nums) {
+		int sum = 0;
+		
+		for (int num : nums) {
+			sum+=num;
+		}
+		
+		return sum / nums.length;
+	}
+
+}

@@ -1,4 +1,0 @@
-
-public class Room {
-	private int length, width, floorCovering, closets;
-}

@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class InvalidGradeException extends Exception{
+	private int[] numbers;
+	
+	public InvalidGradeException(){}
+	
+	public InvalidGradeException(int[] numbers){
+		super("Array has invalid integer(s). Integer range: 0 < integer < 100." + Arrays.asList(numbers).toString()); // use super's message property to set and get message
+		this.numbers = numbers;
+	}
+
+	/**
+	 * @return the numbers
+	 */
+	public int[] getNumbers() {
+		return numbers;
+	}
+	
+	public String getError() {
+		ArrayList<String> invalidNumbers = new ArrayList<String>();
+	}
+
+	
+}

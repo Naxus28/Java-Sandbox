@@ -1,0 +1,14 @@
+
+public class CatchExceptions {
+
+	public static void main(String[] args) {
+		/**
+		 * ArrayIndexOutOfBoundsException
+		 */
+		String [] names = {"Paul", "Ringo", "John"};
+		// String harry = names[3];
+		
+
+	}
+
+}

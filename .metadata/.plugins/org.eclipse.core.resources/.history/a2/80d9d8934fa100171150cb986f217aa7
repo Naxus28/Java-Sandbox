@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class InvalidGradeException extends Exception{
+	private int[] numbers;
+	
+	public InvalidGradeException(){}
+	
+	public InvalidGradeException(int[] numbers){
+		super("Array has invalid integer(s). Integer range: 0 < integer < 100." + Arrays.asList(numbers).toString()); // use super's message property to set and get message
+		this.numbers = numbers;
+	}
+
+	/**
+	 * @return the numbers
+	 */
+	public int[] getNumbers() {
+		return numbers;
+	}
+	
+	public StringBuilder getError() {
+		int[] numbers = this.numbers;
+		StringBuilder error = new StringBuilder("InvalidGradeException: ");
+		ArrayList<Integer> invalidNumbers = new ArrayList<Integer>();
+		ArrayList<Integer> invalidIndexes = new ArrayList<Integer>();
+		
+		for (int i=0; i < numbers.length; i++) {
+			if (numbers[i] <= 0 || numbers[i] > 100) {
+				//invalidNumbers.add(numbers[i]);
+				//invalidIndexes.add(i);
+				error.append("invalid number " + numbers[i] + " at index " + i + ";");
+				System.out.println("error: " + error);
+			}
+		}
+		
+		// check if exception was thrown correctly
+		// testing for either "invalidNumbers" or "invalidIndexes" suffices
+		if (invalidNumbers.isEmpty()) {
+			error.append("No exception needs to be thrown. Please make sure you are throwing the exception for the right reasons.");
+			
+		}
+		
+		return error;
+	}
+
+	
+}

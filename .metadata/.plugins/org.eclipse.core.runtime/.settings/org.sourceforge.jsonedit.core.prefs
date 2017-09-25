@@ -1,5 +1,9 @@
-colorDefault=131,148,150
-colorNull=131,148,150
-colorString=42,161,152
-colorValue=103,140,177
+colorDefault=207,191,173
+colorNull=207,191,173
+colorString=236,228,126
+colorValue=207,191,173
 eclipse.preferences.version=1
+predarkestdark.colorDefault=131,148,150
+predarkestdark.colorNull=131,148,150
+predarkestdark.colorString=42,161,152
+predarkestdark.colorValue=103,140,177

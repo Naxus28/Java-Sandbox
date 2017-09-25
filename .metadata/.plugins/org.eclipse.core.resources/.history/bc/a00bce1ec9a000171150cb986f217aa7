@@ -1,0 +1,13 @@
+import java.util.Random;
+
+public class MultipleCatchBlocks {
+	public static void main(String[] args) {
+		Random r = new Random();
+		int[] array = {10, 20};
+		
+		// r.nextInt() generates a random number
+		// r.nextInt(somenumber) generates a random number from 0 to <somenumber> i.e.  r.nextInt(10); 0 - 10
+		int result = array[r.nextInt(array.length + 1)] / r.nextInt(2);
+
+	}
+}

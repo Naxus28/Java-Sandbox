@@ -1,6 +1,7 @@
 
 public abstract class Building {
-	private int floors, windows;
+	private int floors;
+	private int windows;
 	
 	/**
 	 * default constructor

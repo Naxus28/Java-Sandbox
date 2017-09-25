@@ -51,6 +51,8 @@ IEclipsePreferences#org-eclipse-jdt-ui {
 		'semanticHighlighting.annotationElementReference.color=235,75,100'
 		'semanticHighlighting.annotationElementReference.enabled=true'
 		'semanticHighlighting.class.bold=true'
+		'semanticHighlighting.deprecatedMember.strikethrough=true'
+		'semanticHighlighting.deprecatedMember.underline=false'
 		'semanticHighlighting.enum.italic=true'
 }
 IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {

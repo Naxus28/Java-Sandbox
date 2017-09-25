@@ -1,5 +1,10 @@
 eclipse.preferences.version=1
-xsltagAttributeName=\#678CB1 | null | null | null | null | null
-xsltagAttributeValue=\#2AA198 | null | null | null | null | null
-xsltagBorder=\#268BD2 | null | null | null | null | null
-xsltagName=\#268BD2 | null | null | null | null | null
+overriddenByCSS=,xsltagAttributeValue,xsltagBorder,xsltagName,xsltagAttributeName,
+predarkestdark.xsltagAttributeName=\#678CB1 | null | null | null | null | null
+predarkestdark.xsltagAttributeValue=\#2AA198 | null | null | null | null | null
+predarkestdark.xsltagBorder=\#268BD2 | null | null | null | null | null
+predarkestdark.xsltagName=\#268BD2 | null | null | null | null | null
+xsltagAttributeName=\#CFBFAD | null | null | null | null | null
+xsltagAttributeValue=\#ECE47E | null | null | null | null | null
+xsltagBorder=\#CFBFAD | null | null | null | null | null
+xsltagName=\#CFBFAD | null | null | null | null | null
