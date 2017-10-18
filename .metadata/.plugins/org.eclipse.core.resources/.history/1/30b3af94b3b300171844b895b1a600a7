@@ -1,0 +1,23 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class RegexValenciaCourses {
+	public static void main(String[] args) {
+		
+		try(FileReader file = new FileReader("valencia.txt")) {
+			
+			file.
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+		
+		
+
+	}
+	
+	
+}

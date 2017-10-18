@@ -1,0 +1,14 @@
+
+public class TelephoneTest {
+
+	public static void main(String[] args) {
+		try {
+			Telephone tel = new Telephone("407.582.2213");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

@@ -40,7 +40,6 @@ public class InvalidGradeException extends Exception {
 		// testing for either "invalidNumbers" or "invalidIndexes" suffices
 		if (!hasErrors) {
 			error.append("No exception needs to be thrown. Please make sure you are throwing the exception for the right reason.");
-			
 		}
 		
 		System.out.println(error);

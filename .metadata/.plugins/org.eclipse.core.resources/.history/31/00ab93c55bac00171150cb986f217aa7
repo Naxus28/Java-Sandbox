@@ -1,0 +1,16 @@
+
+public class JavaComment {
+
+	public static void main(String[] args) {
+		printName("Gabriel");
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 */
+	public static void printName(String name) {
+		System.out.println(name);
+	}
+
+}

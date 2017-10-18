@@ -1,0 +1,51 @@
+
+public class Telephone {
+	
+	private String telephone;
+	
+	public Telephone () {}
+	
+	public Telephone  (String telephone) throws InvalidTelephoneException {
+		if (!telephone.matches("[0-9]+") && telephone.length() != 10) {
+			throw new InvalidTelephoneException("");
+		}
+	
+		this.telephone = telephone;
+	}
+
+	/**
+	 * @return the telephone
+	 */
+	public String getTelephone() {
+		return telephone;
+	}
+
+
+	/**
+	 * @param telephone the telephone to set
+	 */
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+	
+	/**
+	 * @return the area code
+	 */
+	public String getExchange() {
+		return telephone;
+	}
+	
+	/**
+	 * @return the area code
+	 */
+	public String getLocalNumber() {
+		return telephone;
+	}
+
+	@Override
+	public String toString() {
+		return "";
+	}
+	
+
+}

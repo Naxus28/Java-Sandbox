@@ -1,0 +1,16 @@
+
+/**
+ * 
+ * @author gabrielferraz
+ * InvalidTelephoneException tests if phone numbers comply with this format xxx xxx xxxx or xxxxxxxxx 
+ */
+public class InvalidTelephoneException extends Exception {
+	private static final long serialVersionUID = 1L;
+
+	public InvalidTelephoneException() {}
+	
+	public InvalidTelephoneException(String telephone) {
+		super("The phone number" + telephone + " is not a valid format. Please use this format 'xxx xxx xxxx'");
+	}
+	
+}

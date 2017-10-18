@@ -53,6 +53,8 @@ IEclipsePreferences#org-eclipse-jdt-ui {
 		'semanticHighlighting.class.bold=true'
 		'semanticHighlighting.deprecatedMember.strikethrough=true'
 		'semanticHighlighting.deprecatedMember.underline=false'
+		'semanticHighlighting.enum.color=204,129,186'
+		'semanticHighlighting.enum.enabled=true'
 		'semanticHighlighting.enum.italic=true'
 }
 IEclipsePreferences#org-eclipse-mylyn-wikitext-ui {

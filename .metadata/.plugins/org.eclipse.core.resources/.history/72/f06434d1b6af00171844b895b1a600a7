@@ -1,0 +1,18 @@
+
+public class InvalidTelephoneException extends Exception {
+	private String telephone;
+	private static final long serialVersionUID = 1L;
+
+	public InvalidTelephoneException() {}
+	
+	public InvalidTelephoneException(String telephone) {
+		super("The phone number" + telephone + " is not a valid format. Please use this format 'xxx xxx xxxx'");
+		this.telephone = telephone;
+	}
+
+//	@Override
+//	public String toString() {
+//		return getMessage(); //inherited from parent Exception
+//	}
+	
+}
