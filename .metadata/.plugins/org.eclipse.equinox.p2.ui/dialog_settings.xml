@@ -16,7 +16,7 @@
 		<item value="200" key="AvailableDetailsSashWeight"/>
 		<item value="true" key="ResolveInstallWithAllSites"/>
 		<item value="450" key="AvailableNameColumnWidth"/>
-		<item value="false" key="FilterOnEnv"/>
+		<item value="true" key="FilterOnEnv"/>
 	</section>
 	<section name="org.eclipse.equinox.internal.p2.ui.dialogs.UpdateWizard.WizardSettings">
 		<item value="871" key="DIALOG_WIDTH"/>

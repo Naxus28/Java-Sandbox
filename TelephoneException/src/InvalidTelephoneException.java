@@ -13,7 +13,7 @@ public class InvalidTelephoneException extends Exception {
 	public InvalidTelephoneException() {}
 	
 	public InvalidTelephoneException(String telephone) {
-		super("The phone number" + telephone + " is not a valid format. Please use this format 'xxx xxx xxxx'");
+		super("The phone number " + telephone + " is not a valid format. Please use this format 'xxx xxx xxxx'");
 	}
 	
 }

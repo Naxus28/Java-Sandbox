@@ -15,7 +15,7 @@ public class Telephone {
 		telephone = telephone.replaceAll("\\s+",""); // removes white space to accept this format xxx xxx xxxx
 		
 		if (!telephone.matches("[0-9]+") || telephone.length() != 10) {
-			throw new InvalidTelephoneException("");
+			throw new InvalidTelephoneException(telephone);
 		}
 	
 		this.telephone = telephone;

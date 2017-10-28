@@ -25,7 +25,8 @@ public class Milk {
 			} catch(ArithmeticException ae) {
 				System.out.println();
 				long finishTimeMills = System.currentTimeMillis();
-				throw new OutOfMilkException(finishTimeMills - startTimeMills);
+				
+				throw new OutOfMilkException(finishTimeMills - startTimeMills); // throw exception
 			} 
 		}
 	}

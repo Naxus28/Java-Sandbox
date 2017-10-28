@@ -1,0 +1,4 @@
+#Sat Oct 21 20:50:36 EDT 2017
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=WindowBuilder

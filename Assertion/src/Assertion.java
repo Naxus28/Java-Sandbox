@@ -20,9 +20,12 @@
 public class Assertion {
 	
 	public static void main(String[] args) {
+		
+		// passes 
 		String pass = assertionTest(1);
 		System.out.println(pass);
 		
+		// fails
 		String fail = assertionTest(-1);
 		System.out.println(fail);
 	}

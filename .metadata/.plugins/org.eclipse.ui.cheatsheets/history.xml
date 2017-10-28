@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cheatsheet version="3.0.0">
 <cheatsheetHistory>
+<element IMemento.internal.id="org.eclipse.jdt.helloworld.swt"/>
 <element IMemento.internal.id="org.obeonetwork.dsl.uml2.design.doc.cheatsheets.createProject"/>
 <element IMemento.internal.id="org.obeonetwork.dsl.uml2.design.doc.cheatsheets.createRepresentation"/>
 <element IMemento.internal.id="org.eclipse.jdt.helloworld"/>
