@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;WindowCaptureEvents&apos; to &apos;WindowCaptureMouseEvents&apos;&#x0A;- Original element: &apos;WindowCaptureEvents&apos;&#x0A;- Renamed element: &apos;WindowCaptureEvents&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;WindowCaptureEvents&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=WindowCaptureEvents" name="WindowCaptureMouseEvents" references="true" stamp="1508890710378" version="1.0"/>
+</session>

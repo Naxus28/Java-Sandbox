@@ -1,0 +1,14 @@
+
+public class Triangle {
+	private int sideOne;
+	private int sideTwo;
+	private int sideThree;
+	
+	public Triangle() {}
+	
+	public Triangle(int sideOne, int sideTwo, int sideThree) {
+		
+	}
+	
+	
+}

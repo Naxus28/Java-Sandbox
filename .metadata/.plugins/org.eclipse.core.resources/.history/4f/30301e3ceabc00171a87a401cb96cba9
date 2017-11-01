@@ -1,0 +1,50 @@
+
+public class Triangle {
+	private int sideOne;
+	private int sideTwo;
+	private int sideThree;
+	
+	public Triangle() { }
+	
+	public Triangle(int sideOne, int sideTwo, int sideThree)  throws InvalidTriangleException {
+		isValid(sideOne, sideTwo, sideThree);
+		this.sideOne = sideOne;
+		this.sideTwo = sideTwo;
+		this.sideThree = sideThree;
+
+	}
+	
+	public int getPerimeter() {
+		return sideOne + sideTwo + sideThree;
+	}
+	
+	public Boolean isValid(int sideOne, int sideTwo, int sideThree) throws InvalidTriangleException {
+		Boolean isValid = true;
+		
+		if (sideOne <= 0 || sideTwo <= 0 || sideThree <= 0 ) {
+			isValid = false;
+		}
+		
+		Boolean checkSideOne = sideOne + sideTwo > sideThree;
+		Boolean checkSideTwo = sideOne + sideThree > sideTwo;
+		Boolean checkSideThree = sideTwo + sideThree> sideOne;
+		 
+		if ( !(checkSideOne || checkSideTwo || checkSideThree)) {
+			 isValid = false;
+		}
+		
+		if (!isValid) {
+			throw new InvalidTriangleException("passed wrong values");
+		}
+		
+		return isValid;
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "This is the perimeter: " + getPerimeter();
+	}
+	
+	
+}

@@ -1,0 +1,68 @@
+package application;
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
+
+/**
+ * UI components (parent to children)
+ * stage
+ * scene
+ * pane
+ * node
+ * 
+ * we need to create components from the bottom of hierarchy up because children 
+ * need to have been created before they are added to the parents
+ 
+ */
+
+public class Main extends Application {
+	@Override
+	public void start(Stage primaryStage) {
+		
+		// create nodes
+		Button button = new Button("click me");
+		Button button2 = new Button("submit form");
+		
+		Label label = new Label("Enter name");
+		
+		RadioButton radio = new RadioButton("Choose gender");
+		
+		
+		
+		// create pane
+//		StackPane pane = new StackPane();
+		
+		// create flow pane
+		FlowPane flowPane = new FlowPane();
+		
+		
+		// add node to pane
+//		pane.getChildren().add(button);
+		
+		// add all nodes to flow pane
+		flowPane.getChildren().addAll(button, button2, label, radio);
+	
+		// create scene
+		Scene scene = new Scene(flowPane, 400, 400);
+		
+		// add scene to stage
+		primaryStage.setScene(scene);
+		
+		// set title to stage--this could be set at the top because it has no children
+		primaryStage.setTitle("First Fx App");
+		
+		// show stage
+		primaryStage.show();
+
+	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+}
