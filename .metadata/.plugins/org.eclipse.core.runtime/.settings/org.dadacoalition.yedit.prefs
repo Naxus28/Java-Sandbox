@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 colorAliasPreferences=216,216,216
 colorAnchorPreferences=216,216,216
 colorCommentPreference=199,221,12
@@ -10,3 +11,27 @@ colorScalarPreference=255,198,0
 colorTagPropertyPreferences=216,216,216
 eclipse.preferences.version=1
 overriddenByCSS=,colorDocumentPreference,colorDefaultPreference,colorTagPropertyPreferences,colorKeyPreference,colorFlowCharacterPreferences,colorAliasPreferences,colorAnchorPreferences,colorCommentPreference,colorConstantPreferences,colorScalarPreference,
+=======
+colorAliasPreferences=207,191,173
+colorAnchorPreferences=207,191,173
+colorCommentPreference=255,255,255
+colorConstantPreferences=167,236,33
+colorDefaultPreference=207,191,173
+colorDocumentPreference=207,191,173
+colorFlowCharacterPreferences=207,191,173
+colorKeyPreference=167,236,33
+colorScalarPreference=236,228,126
+colorTagPropertyPreferences=207,191,173
+eclipse.preferences.version=1
+overriddenByCSS=,colorDocumentPreference,colorDefaultPreference,colorTagPropertyPreferences,colorKeyPreference,colorFlowCharacterPreferences,colorAliasPreferences,colorAnchorPreferences,colorCommentPreference,colorConstantPreferences,colorScalarPreference,
+predarkestdark.colorAliasPreferences=131,148,150
+predarkestdark.colorAnchorPreferences=131,148,150
+predarkestdark.colorCommentPreference=88,110,117
+predarkestdark.colorConstantPreferences=103,140,177
+predarkestdark.colorDefaultPreference=131,148,150
+predarkestdark.colorDocumentPreference=131,148,150
+predarkestdark.colorFlowCharacterPreferences=131,148,150
+predarkestdark.colorKeyPreference=103,140,177
+predarkestdark.colorScalarPreference=42,161,152
+predarkestdark.colorTagPropertyPreferences=131,148,150
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

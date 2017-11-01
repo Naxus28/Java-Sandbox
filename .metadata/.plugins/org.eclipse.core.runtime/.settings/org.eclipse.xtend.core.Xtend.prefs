@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 AbstractTextEditor.Color.Background=32,36,37
 AbstractTextEditor.Color.Foreground=216,216,216
 eclipse.preferences.version=1
@@ -13,3 +14,33 @@ org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.field.color=190,214
 org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.field.color=239,192,144
 org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color=190,214,255
 overriddenByCSS=,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.comment.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.string.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.number.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.keyword.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.default.color,AbstractTextEditor.Color.Foreground,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.field.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.annotation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.punctuation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.extension.method.invacation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.field.color,AbstractTextEditor.Color.Background,
+=======
+AbstractTextEditor.Color.Background=34,34,34
+AbstractTextEditor.Color.Foreground=207,191,173
+eclipse.preferences.version=1
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.comment.color=255,255,255
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.default.color=207,191,173
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.keyword.color=255,0,127
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.number.color=196,140,255
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.punctuation.color=255,0,127
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.string.color=236,228,126
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.annotation.color=255,255,255
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.extension.method.invacation.color=167,236,33
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.field.color=207,191,173
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.field.color=207,191,173
+org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color=167,236,33
+overriddenByCSS=,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.comment.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.string.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.number.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.keyword.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.default.color,AbstractTextEditor.Color.Foreground,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.field.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.annotation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.punctuation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.extension.method.invacation.color,org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.field.color,AbstractTextEditor.Color.Background,
+predarkestdark.AbstractTextEditor.Color.Background=0,43,54
+predarkestdark.AbstractTextEditor.Color.Foreground=131,148,150
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.comment.color=88,110,117
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.default.color=131,148,150
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.keyword.color=181,137,0
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.number.color=42,161,152
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.punctuation.color=181,137,0
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.string.color=42,161,152
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.annotation.color=203,75,22
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.extension.method.invacation.color=103,140,177
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.field.color=103,140,177
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.field.color=103,140,177
+predarkestdark.org.eclipse.xtend.core.Xtend.syntaxColorer.tokenStyles.xbase.static.method.invocation.color=224,226,228
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

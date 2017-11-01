@@ -1,4 +1,5 @@
 import java.awt.EventQueue;
+<<<<<<< HEAD
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -7,20 +8,50 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.Dimension;
+=======
+import java.awt.ScrollPane;
+
+import javax.swing.JFrame;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
+import javax.swing.BoxLayout;
+import com.jgoodies.forms.layout.FormSpecs;
+import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import java.awt.Color;
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
 import javax.swing.SpringLayout;
 import javax.swing.JTabbedPane;
 import javax.swing.JList;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
+<<<<<<< HEAD
 import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+=======
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.JScrollBar;
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
 
 public class BusyBox {
 
 	private JFrame frame;
 	private JTable table;
+<<<<<<< HEAD
+=======
+	private JTable table_1;
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
 
 	/**
 	 * Launch the application.
@@ -119,6 +150,7 @@ public class BusyBox {
 			{"Martha", "33", "Lawyer"},
 			{"Marcus", "23", "Engineer"}
 		};
+<<<<<<< HEAD
 
 		table = new JTable(people, columns);
 		table.setPreferredScrollableViewportSize(new Dimension(200, 100));
@@ -129,6 +161,14 @@ public class BusyBox {
 		springLayout.putConstraint(SpringLayout.WEST, scrollPane, 10, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(scrollPane);
 		
+=======
+		table = new JTable(people, columns);
+		springLayout.putConstraint(SpringLayout.WEST, table, 174, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, comboBox, 100, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, table, 0, SpringLayout.SOUTH, frame.getContentPane());
+		
+//		frame.getContentPane().add(new JScrollPane(table));
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
 
 	}
 }

@@ -1,0 +1,39 @@
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MainSwing extends JFrame {
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {
+		JFrame myMainFrame = new MainSwing();
+		
+		// set the frame layout
+		// see more options here: https://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html
+		myMainFrame.setLayout(new FlowLayout());
+		
+		/**
+		 * create container
+		 */
+		myMainFrame.setTitle("I am the title");
+		myMainFrame.setLocation(400, 250); // location on the viewport
+		myMainFrame.setSize(500, 500); // GUI size
+		myMainFrame.setVisible(true);  // make frame visible
+		
+		/**
+		 * create components and add to the container -- can also put containers inside containers
+		 */
+		JButton myButton = new JButton();
+		myMainFrame.add(myButton);
+		
+		// what to do when it closes
+		// if console is open when the application is ran 
+		// the "stop" button is visible, which means the application is running
+		// When the application is closed the stop button is grayed out
+		myMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		
+
+	}
+
+}

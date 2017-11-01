@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 dtdComment=\#C7DD0C | null | null | false | null | null
 dtdData=\#D8D8D8 | null | null | null | null | null
 dtdDefault=\#D8D8D8 | null | null | null | null | null
@@ -8,3 +9,22 @@ dtdTag=\#BED6FF | null | null | null | null | null
 dtdTagName=\#BED6FF | null | null | null | null | null
 eclipse.preferences.version=1
 overriddenByCSS=,dtdKeyword,dtdTag,dtdString,dtdTagName,dtdDefault,dtdData,dtdSymbol,dtdComment,
+=======
+dtdComment=\#FFFFFF | null | null | null | null | null
+dtdData=\#CFBFAD | null | null | null | null | null
+dtdDefault=\#CFBFAD | null | null | null | null | null
+dtdKeyword=\#FF007F | null | null | null | null | null
+dtdString=\#ECE47E | null | null | null | null | null
+dtdSymbol=\#CFBFAD | null | null | null | null | null
+dtdTag=\#CFBFAD | null | null | null | null | null
+dtdTagName=\#CFBFAD | null | null | null | null | null
+eclipse.preferences.version=1
+predarkestdark.dtdComment=\#586E75 | null | null | true | null | null
+predarkestdark.dtdData=\#839496 | null | null | null | null | null
+predarkestdark.dtdDefault=\#839496 | null | null | null | null | null
+predarkestdark.dtdKeyword=\#B58900 | null | null | null | null | null
+predarkestdark.dtdString=\#2AA198 | null | null | null | null | null
+predarkestdark.dtdSymbol=\#678CB1 | null | null | null | null | null
+predarkestdark.dtdTag=\#268BD2 | null | null | null | null | null
+predarkestdark.dtdTagName=\#268BD2 | null | null | null | null | null
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

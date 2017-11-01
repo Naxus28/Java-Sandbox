@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 angularExpression=\#FFC600 | null | null | null | null | null
 angularExpressionBorder=\#D8D8D8 | null | null | null | null | null
 directiveName=\#8DCBE2 | null | null | null | null | null
 directiveParameterName=\#BED6FF | null | null | null | null | null
 eclipse.preferences.version=1
 overriddenByCSS=,angularExpression,directiveName,angularExpressionBorder,directiveParameterName,
+=======
+angularExpression=\#ECE47E | null | null | null | null | null
+angularExpressionBorder=\#F9FAF4 | null | null | null | null | null
+directiveName=\#FF007F | null | null | null | null | null
+directiveParameterName=\#CFBFAD | null | null | null | null | null
+eclipse.preferences.version=1
+overriddenByCSS=,angularExpression,directiveName,angularExpressionBorder,directiveParameterName,
+predarkestdark.angularExpression=\#2AA198 | null | null | null | null | null
+predarkestdark.angularExpressionBorder=\#DC322F | null | null | null | null | null
+predarkestdark.directiveName=\#B58900 | null | null | null | null | null
+predarkestdark.directiveParameterName=\#268BD2 | null | null | null | null | null
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

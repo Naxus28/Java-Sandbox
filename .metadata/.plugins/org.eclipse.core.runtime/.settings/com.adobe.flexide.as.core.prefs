@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asASDocColor=\#CCDF32
 asASDocItalic=false
 asBracketColor=\#D8D8D8
@@ -19,3 +20,41 @@ asTraceColor=\#BED6FF
 asVarColor=\#79ABFF
 eclipse.preferences.version=1
 overriddenByCSS=,asMetadataColor,asReservedColor,asCommentColor,asFunctionColor,asTraceColor,asStringColor,asASDocItalic,asClassUnderline,asCommentItalic,asPackageColor,asBracketColor,asClassBold,asVarColor,asASDocColor,asTextColor,asInterfaceColor,asOperatorColor,asClassColor,asClassStrikethrough,
+=======
+asASDocColor=\#FFFFFF
+asASDocItalic=false
+asBracketColor=\#F9FAF4
+asClassBold=false
+asClassColor=\#52E3F6
+asClassStrikethrough=false
+asClassUnderline=false
+asCommentColor=\#FFFFFF
+asCommentItalic=true
+asFunctionColor=\#A7EC21
+asInterfaceColor=\#52E3F6
+asMetadataColor=\#FFFFFF
+asOperatorColor=\#FF007F
+asPackageColor=\#52E3F6
+asReservedColor=\#FF007F
+asStringColor=\#ECE47E
+asTextColor=\#CFBFAD
+asTraceColor=\#A7EC21
+asVarColor=\#CFBFAD
+eclipse.preferences.version=1
+overriddenByCSS=,asMetadataColor,asReservedColor,asCommentColor,asFunctionColor,asTraceColor,asStringColor,asCommentItalic,asPackageColor,asBracketColor,asVarColor,asASDocColor,asTextColor,asInterfaceColor,asOperatorColor,asClassColor,
+predarkestdark.asASDocColor=\#7D8C93
+predarkestdark.asBracketColor=\#DC322F
+predarkestdark.asClassColor=\#678CB1
+predarkestdark.asCommentColor=\#586E75
+predarkestdark.asCommentItalic=true
+predarkestdark.asFunctionColor=\#678CB1
+predarkestdark.asInterfaceColor=\#678CB1
+predarkestdark.asMetadataColor=\#CB4B16
+predarkestdark.asOperatorColor=\#B58900
+predarkestdark.asPackageColor=\#678CB1
+predarkestdark.asReservedColor=\#B58900
+predarkestdark.asStringColor=\#2AA198
+predarkestdark.asTextColor=\#839496
+predarkestdark.asTraceColor=\#E0E2E4
+predarkestdark.asVarColor=\#268BD2
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

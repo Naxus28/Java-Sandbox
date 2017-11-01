@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 color_comment=199,221,12
 color_doc=204,223,50
 color_keyword=141,203,226
@@ -6,3 +7,19 @@ color_number=127,179,71
 color_string=255,198,0
 eclipse.preferences.version=1
 overriddenByCSS=,color_normal,color_string,color_number,color_comment,color_doc,color_keyword,
+=======
+color_comment=255,255,255
+color_doc=255,255,255
+color_keyword=255,0,127
+color_normal=207,191,173
+color_number=196,140,255
+color_string=236,228,126
+eclipse.preferences.version=1
+overriddenByCSS=,color_normal,color_string,color_number,color_comment,color_doc,color_keyword,
+predarkestdark.color_comment=88,110,117
+predarkestdark.color_doc=125,140,147
+predarkestdark.color_keyword=181,137,0
+predarkestdark.color_normal=131,148,150
+predarkestdark.color_number=42,161,152
+predarkestdark.color_string=42,161,152
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

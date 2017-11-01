@@ -1,0 +1,44 @@
+
+Machine played: 3
+Machine paid: $1.75
+Remaining quarters in jar: 80
+Remaining dollars in jar: $20.0
+
+=================
+
+Machine played: 3
+Machine paid: $1.75
+Remaining quarters in jar: 60
+Remaining dollars in jar: $15.0
+
+=================
+
+Machine played: 3
+Machine paid: $1.75
+Remaining quarters in jar: 40
+Remaining dollars in jar: $10.0
+
+=================
+
+Machine played: 1
+Machine paid: $6.25
+Remaining quarters in jar: 49
+Remaining dollars in jar: $12.25
+
+=================
+
+Machine played: 3
+Machine paid: $1.75
+Remaining quarters in jar: 45
+Remaining dollars in jar: $11.25
+
+=================
+
+Machine played: 3
+Machine paid: $1.75
+Remaining quarters in jar: 25
+Remaining dollars in jar: $6.25
+
+=================
+
+Total times played: 160

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color=216,216,216
 com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.deprecatedKey.color=210,82,82
 com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.keyword.color=141,203,226
@@ -7,3 +8,21 @@ com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color
 com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.task.color=204,223,50
 eclipse.preferences.version=1
 overriddenByCSS=,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.keyword.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.task.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.deprecatedKey.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.number.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.punctuation.color,
+=======
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color=207,191,173
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.deprecatedKey.color=255,0,0
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.keyword.color=255,0,127
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.number.color=196,140,255
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.punctuation.color=207,191,173
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color=236,228,126
+com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.task.color=255,255,255
+eclipse.preferences.version=1
+overriddenByCSS=,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.keyword.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.task.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.deprecatedKey.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.number.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color,com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.punctuation.color,
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.default.color=131,148,150
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.deprecatedKey.color=224,226,228
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.keyword.color=181,137,0
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.number.color=42,161,152
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.punctuation.color=131,148,150
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.string.color=42,161,152
+predarkestdark.com.puppetlabs.geppetto.module.dsl.Module.syntaxColorer.tokenStyles.task.color=211,54,130
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

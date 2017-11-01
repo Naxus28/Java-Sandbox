@@ -1,0 +1,5 @@
+		try {
+			FileReader fl = new FileReader("valencia.txt");
+		} catch(IOException ioe) {
+			ioe.getMessage();
+		}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 color.comment=199,221,12
 color.directive=255,255,255
 color.interpolation=141,203,226
@@ -8,3 +9,23 @@ color.xmlComment=199,221,12
 color.xmlTag=121,171,255
 eclipse.preferences.version=1
 overriddenByCSS=,color.oppositeRegion,color.string,color.text,color.interpolation,color.xmlComment,color.xmlTag,color.directive,color.comment,
+=======
+color.comment=255,255,255
+color.directive=167,236,33
+color.interpolation=255,0,127
+color.oppositeRegion=0,0,0
+color.string=236,228,126
+color.text=207,191,173
+color.xmlComment=255,255,255
+color.xmlTag=207,191,173
+eclipse.preferences.version=1
+overriddenByCSS=,color.oppositeRegion,color.string,color.text,color.interpolation,color.xmlComment,color.xmlTag,color.directive,color.comment,
+predarkestdark.color.comment=88,110,117
+predarkestdark.color.directive=103,140,177
+predarkestdark.color.interpolation=181,137,0
+predarkestdark.color.oppositeRegion=7,54,66
+predarkestdark.color.string=42,161,152
+predarkestdark.color.text=131,148,150
+predarkestdark.color.xmlComment=88,110,117
+predarkestdark.color.xmlTag=38,139,210
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

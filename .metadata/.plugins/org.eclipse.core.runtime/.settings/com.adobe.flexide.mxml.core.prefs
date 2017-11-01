@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 asASDocColor=\#CCDF32
 asASDocItalic=false
 eclipse.preferences.version=1
@@ -9,3 +10,24 @@ mxmlStringColor=\#FFC600
 mxmlTagColor=\#79ABFF
 mxmlTextColor=\#D8D8D8
 overriddenByCSS=,mxmlTagColor,mxmlTextColor,asASDocColor,mxmlCommentItalic,mxmlProcessingInstructionColor,asASDocItalic,mxmlCommentColor,mxmlStringColor,mxmlComponentTagColor,
+=======
+asASDocColor=\#FFFFFF
+asASDocItalic=false
+eclipse.preferences.version=1
+mxmlCommentColor=\#FFFFFF
+mxmlCommentItalic=true
+mxmlComponentTagColor=\#CFBFAD
+mxmlProcessingInstructionColor=\#A7EC21
+mxmlStringColor=\#ECE47E
+mxmlTagColor=\#CFBFAD
+mxmlTextColor=\#CFBFAD
+overriddenByCSS=,mxmlTagColor,mxmlTextColor,asASDocColor,mxmlCommentItalic,mxmlProcessingInstructionColor,mxmlCommentColor,mxmlStringColor,mxmlComponentTagColor,
+predarkestdark.asASDocColor=\#7D8C93
+predarkestdark.mxmlCommentColor=\#586E75
+predarkestdark.mxmlCommentItalic=true
+predarkestdark.mxmlComponentTagColor=\#678CB1
+predarkestdark.mxmlProcessingInstructionColor=\#678CB1
+predarkestdark.mxmlStringColor=\#2AA198
+predarkestdark.mxmlTagColor=\#268BD2
+predarkestdark.mxmlTextColor=\#839496
+>>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

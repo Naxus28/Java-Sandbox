@@ -1,0 +1,45 @@
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+/**
+ * @author gabrielferraz
+ *
+ */
+public class BestDeal {
+	
+	/**
+	 * format doubles to 2 decimal points
+	 */
+	final static DecimalFormat df = new DecimalFormat("#.00"); // use this variable to format two decimal points for all doubles
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		double measureUnit;
+		double lenghtRatio;
+		double widthRatio;
+		String area = JOptionPane.showInputDialog("What is the area of the enclosure in square feet? Please input a number smaller than 1,000,000,000 and disregard the measurement unit sqft)");
+		String ratio = JOptionPane.showInputDialog("What is the ratio L:W of the enclosure?");
+	}
+	
+	static private String getMeasureUnit(String area, String lenghtRatio, String widthRatio) {
+		double measureUnit = Double.parseDouble(area) / (Double.parseDouble(lenghtRatio) * 2 + Double.parseDouble(widthRatio)* 2);
+		
+		return df.format(measureUnit);
+	}
+	
+	static private String getWidth(String widthRatio, String measureUnit) {
+		double width = Double.parseDouble(widthRatio) * Double.parseDouble(measureUnit);
+		
+		return df.format(width);
+	}
+	
+	static private String getLength(String lenghtRatio, String measureUnit) {
+		double length = Double.parseDouble(lenghtRatio) * Double.parseDouble(measureUnit);
+		
+		return df.format(length);
+	}
+
+}
