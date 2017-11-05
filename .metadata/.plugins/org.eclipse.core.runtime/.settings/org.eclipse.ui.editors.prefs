@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 AbstractTextEditor.Color.Background=28,31,34
 AbstractTextEditor.Color.Background.SystemDefault=false
 AbstractTextEditor.Color.FindScope=29,116,150
@@ -40,33 +39,3 @@ searchResultTextStyle=BOX
 secondaryIPColor=46,52,56
 spellingIndicationColor=253,170,211
 writeOccurrenceIndicationColor=65,65,4
-=======
-AbstractTextEditor.Color.Background=34,34,34
-AbstractTextEditor.Color.Background.SystemDefault=false
-AbstractTextEditor.Color.FindScope=0,0,0
-AbstractTextEditor.Color.Foreground=207,191,173
-AbstractTextEditor.Color.Foreground.SystemDefault=false
-AbstractTextEditor.Color.SelectionBackground=204,153,0
-AbstractTextEditor.Color.SelectionBackground.SystemDefault=false
-AbstractTextEditor.Color.SelectionForeground=51,51,51
-AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
-PHPReadOccurrenceIndicationColor=0,0,0
-PHPWriteOccurrenceIndicationColor=0,0,0
-asOccurencesIndicationColor=0,0,0
-currentIPColor=47,47,47
-currentLineColor=47,47,47
-deletionIndicationColor=255,0,0
-eclipse.preferences.version=1
-filteredSearchResultIndicationColor=216,216,216
-javaScriptOccurrenceIndicationColor=0,0,0
-lineNumberColor=141,141,138
-matchingTagIndicationColor=0,0,0
-occurrenceIndicationColor=0,0,0
-org.eclipse.cdt.ui.occurrenceIndicationColor=0,0,0
-overviewRuler_migration=migrated_3.1
-printMarginColor=141,141,138
-pydevOccurrenceIndicationColor=0,0,0
-searchResultIndicationColor=216,216,216
-secondaryIPColor=47,47,47
-writeOccurrenceIndicationColor=0,0,0
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

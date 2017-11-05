@@ -1,5 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 eclipse.preferences.version=1
-<<<<<<< HEAD
 org.eclipse.cdt.make.ui.editor.comment=199,221,12
 org.eclipse.cdt.make.ui.editor.default=216,216,216
 org.eclipse.cdt.make.ui.editor.function=255,255,255
@@ -7,18 +9,9 @@ org.eclipse.cdt.make.ui.editor.keyword=141,203,226
 org.eclipse.cdt.make.ui.editor.macro_def=190,214,255
 org.eclipse.cdt.make.ui.editor.macro_ref=190,214,255
 overriddenByCSS=,org.eclipse.cdt.make.ui.editor.comment,org.eclipse.cdt.make.ui.editor.macro_ref,org.eclipse.cdt.make.ui.editor.macro_def,org.eclipse.cdt.make.ui.editor.default,org.eclipse.cdt.make.ui.editor.function,org.eclipse.cdt.make.ui.editor.keyword,
-=======
-org.eclipse.cdt.make.ui.editor.comment=255,255,255
-org.eclipse.cdt.make.ui.editor.default=207,191,173
-org.eclipse.cdt.make.ui.editor.function=167,236,33
-org.eclipse.cdt.make.ui.editor.keyword=255,0,127
-org.eclipse.cdt.make.ui.editor.macro_def=167,236,33
-org.eclipse.cdt.make.ui.editor.macro_ref=167,236,33
-overriddenByCSS=,org.eclipse.cdt.make.ui.editor.comment,org.eclipse.cdt.make.ui.editor.macro_ref,org.eclipse.cdt.make.ui.editor.macro_def,org.eclipse.cdt.make.ui.editor.default,org.eclipse.cdt.make.ui.editor.function,org.eclipse.cdt.make.ui.editor.keyword,
-predarkestdark.org.eclipse.cdt.make.ui.editor.comment=88,110,117
-predarkestdark.org.eclipse.cdt.make.ui.editor.default=131,148,150
-predarkestdark.org.eclipse.cdt.make.ui.editor.function=103,140,177
-predarkestdark.org.eclipse.cdt.make.ui.editor.keyword=181,137,0
-predarkestdark.org.eclipse.cdt.make.ui.editor.macro_def=38,139,210
-predarkestdark.org.eclipse.cdt.make.ui.editor.macro_ref=38,139,210
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
+predarkestdark.org.eclipse.cdt.make.ui.editor.comment=255,255,255
+predarkestdark.org.eclipse.cdt.make.ui.editor.default=207,191,173
+predarkestdark.org.eclipse.cdt.make.ui.editor.function=167,236,33
+predarkestdark.org.eclipse.cdt.make.ui.editor.keyword=255,0,127
+predarkestdark.org.eclipse.cdt.make.ui.editor.macro_def=167,236,33
+predarkestdark.org.eclipse.cdt.make.ui.editor.macro_ref=167,236,33

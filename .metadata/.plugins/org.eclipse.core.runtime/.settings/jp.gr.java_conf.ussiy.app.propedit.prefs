@@ -1,22 +1,15 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 backgroundColor=32,36,37
 commentColor=199,221,12
 eclipse.preferences.version=1
 keyColor=216,216,216
 overriddenByCSS=,separatorColor,backgroundColor,keyColor,commentColor,valueColor,
+predarkestdark.backgroundColor=34,34,34
+predarkestdark.commentColor=255,255,255
+predarkestdark.keyColor=207,191,173
+predarkestdark.separatorColor=207,191,173
+predarkestdark.valueColor=236,228,126
 separatorColor=216,216,216
 valueColor=255,198,0
-=======
-backgroundColor=34,34,34
-commentColor=255,255,255
-eclipse.preferences.version=1
-keyColor=207,191,173
-overriddenByCSS=,separatorColor,backgroundColor,keyColor,commentColor,valueColor,
-predarkestdark.backgroundColor=0,43,54
-predarkestdark.commentColor=88,110,117
-predarkestdark.keyColor=131,148,150
-predarkestdark.separatorColor=131,148,150
-predarkestdark.valueColor=42,161,152
-separatorColor=207,191,173
-valueColor=236,228,126
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

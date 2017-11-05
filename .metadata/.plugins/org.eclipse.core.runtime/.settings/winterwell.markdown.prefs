@@ -1,19 +1,13 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 Pref_Comment=199,221,12
 Pref_Default=216,216,216
 Pref_Header=204,223,50
 Pref_Link=217,229,119
 eclipse.preferences.version=1
 overriddenByCSS=,Pref_Default,Pref_Header,Pref_Comment,Pref_Link,
-=======
-Pref_Comment=255,255,255
-Pref_Default=207,191,173
-Pref_Header=255,255,255
-Pref_Link=207,191,173
-eclipse.preferences.version=1
-overriddenByCSS=,Pref_Default,Pref_Header,Pref_Comment,Pref_Link,
-predarkestdark.Pref_Comment=88,110,117
-predarkestdark.Pref_Default=131,148,150
-predarkestdark.Pref_Header=211,54,130
-predarkestdark.Pref_Link=38,139,210
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
+predarkestdark.Pref_Comment=255,255,255
+predarkestdark.Pref_Default=207,191,173
+predarkestdark.Pref_Header=255,255,255
+predarkestdark.Pref_Link=207,191,173

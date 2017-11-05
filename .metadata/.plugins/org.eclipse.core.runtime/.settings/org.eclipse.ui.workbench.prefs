@@ -1,5 +1,4 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
-<<<<<<< HEAD
 ACTIVE_HYPERLINK_COLOR=255,200,0
 CONFLICTING_COLOR=232,14,64
 CONTENT_ASSIST_BACKGROUND_COLOR=48,54,59
@@ -122,11 +121,3 @@ tagAttributeName=255,0,255
 tagAttributeValue=212,0,255
 tagBorder=0,254,254
 tagName=89,179,179
-=======
-ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.jdt.ui.presentation
-ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jdt.ui.editors.textfont
-ENABLED_DECORATORS=org.eclipse.m2e.core.mavenVersionDecorator\:false,org.eclipse.buildship.ui.gradledecorator\:true,org.eclipse.egit.ui.internal.decorators.GitLightweightDecorator\:true,org.eclipse.jdt.ui.override.decorator\:true,org.eclipse.jdt.ui.interface.decorator\:true,org.eclipse.jdt.ui.buildpath.decorator\:true,org.eclipse.m2e.core.maven2decorator\:true,org.eclipse.mylyn.context.ui.decorator.interest\:true,org.eclipse.mylyn.tasks.ui.decorators.task\:true,org.eclipse.mylyn.team.ui.changeset.decorator\:true,org.eclipse.pde.ui.binaryProjectDecorator\:false,org.eclipse.ui.LinkedResourceDecorator\:true,org.eclipse.ui.SymlinkDecorator\:true,org.eclipse.ui.VirtualResourceDecorator\:true,org.eclipse.ui.ContentTypeDecorator\:true,org.eclipse.ui.ResourceFilterDecorator\:false,
-PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
-eclipse.preferences.version=1
-org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands/>
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

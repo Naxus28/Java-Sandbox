@@ -1,31 +1,21 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 SCRIPT_AREA_BORDER=\#D8D8D8 | null | null | null | null | null
 commentBorder=\#C7DD0C | null | null | false | null | null
 commentText=\#C7DD0C | null | null | false | null | null
 eclipse.preferences.version=1
 jsp_content=\#D8D8D8 | null | null | null | null | null
 overriddenByCSS=,SCRIPT_AREA_BORDER,tagBorder,tagAttributeValue,tagAttributeEquals,jsp_content,commentBorder,tagAttributeName,commentText,
+predarkestdark.SCRIPT_AREA_BORDER=\#F9FAF4 | null | null | null | null | null
+predarkestdark.commentBorder=\#FFFFFF | null | null | null | null | null
+predarkestdark.commentText=\#FFFFFF | null | null | null | null | null
+predarkestdark.jsp_content=\#CFBFAD | null | null | null | null | null
+predarkestdark.tagAttributeEquals=\#CFBFAD | null | null | null | null | null
+predarkestdark.tagAttributeName=\#FF007F | null | null | null | null | null
+predarkestdark.tagAttributeValue=\#ECE47E | null | null | null | null | null
+predarkestdark.tagBorder=\#A7EC21 | null | null | null | null | null
 tagAttributeEquals=\#D8D8D8 | null | null | null | null | null
 tagAttributeName=\#8DCBE2 | null | null | null | null | null
 tagAttributeValue=\#FFC600 | null | null | null | null | null
 tagBorder=\#FFFFFF | null | null | null | null | null
-=======
-SCRIPT_AREA_BORDER=\#F9FAF4 | null | null | null | null | null
-commentBorder=\#FFFFFF | null | null | null | null | null
-commentText=\#FFFFFF | null | null | null | null | null
-eclipse.preferences.version=1
-jsp_content=\#CFBFAD | null | null | null | null | null
-overriddenByCSS=,SCRIPT_AREA_BORDER,tagBorder,tagAttributeValue,tagAttributeEquals,jsp_content,commentBorder,tagAttributeName,commentText,
-predarkestdark.SCRIPT_AREA_BORDER=\#DC322F | null | null | null | null | null
-predarkestdark.commentBorder=\#586E75 | null | null | true | null | null
-predarkestdark.commentText=\#586E75 | null | null | true | null | null
-predarkestdark.jsp_content=\#839496 | null | null | null | null | null
-predarkestdark.tagAttributeEquals=\#839496 | null | null | null | null | null
-predarkestdark.tagAttributeName=\#B58900 | null | null | null | null | null
-predarkestdark.tagAttributeValue=\#2AA198 | null | null | null | null | null
-predarkestdark.tagBorder=\#678CB1 | null | null | null | null | null
-tagAttributeEquals=\#CFBFAD | null | null | null | null | null
-tagAttributeName=\#FF007F | null | null | null | null | null
-tagAttributeValue=\#ECE47E | null | null | null | null | null
-tagBorder=\#A7EC21 | null | null | null | null | null
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2

@@ -1,5 +1,7 @@
 package application;
 
+import java.util.*;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +17,11 @@ import javafx.scene.layout.GridPane;
 
 
 public class Main extends Application {
+	
+	// initialize person list
+	static List<Person> personList = new ArrayList<>();
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		// button
@@ -49,6 +56,24 @@ public class Main extends Application {
 		launch(args);
 	}
 	
+	public static void addPersonToList(Person person) {
+		personList.add(person);
+		printPersonList(personList); 
+	}
+
+	
+	public static void sortList(List<Person> personList) {
+		Collections.sort(personList);
+		System.out.println("Sorted List: ");
+		printPersonList(personList);
+	}
+	
+	public static void printPersonList(List<Person> personList) {
+		for(Person person : personList) {
+			System.out.println(person);
+		}
+	}
+	
 	public static void alertBox() {
 		// create nodes
 		Label labelOne = new Label("Name: ");
@@ -61,6 +86,7 @@ public class Main extends Application {
 		
 		Button buttonOk = new Button("Ok");
 		Button buttonCancel = new Button("Cancel");
+		Button buttonSort = new Button("Sort");
 		
 		// create grid pane and add nodes
 		GridPane pane = new GridPane();
@@ -75,6 +101,7 @@ public class Main extends Application {
 		pane.add(fieldThree, 1, 3);
 		pane.add(buttonOk, 0, 4);
 		pane.add(buttonCancel, 1, 4);
+		pane.add(buttonSort, 2, 4);
 		
 		// create new stage and set properties
 		Stage dialog = new Stage();
@@ -83,18 +110,27 @@ public class Main extends Application {
 		dialog.setMinHeight(400);
 		dialog.setMinWidth(400);
 		
-
 		
 		// button listeners
 		buttonOk.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		    		System.out.println(String.format("Name: %s, Eemail: %s, phone#: %s", fieldOne.getText(), fieldTwo.getText(), fieldThree.getText()));
+		    @Override public void handle(ActionEvent e) {  	
+				String name = fieldOne.getText();
+				String email = fieldTwo.getText();
+				String phone = fieldThree.getText();
+				
+				addPersonToList(new Person(name, email, phone));
 		    }
 		});
 		
 		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
 		    		dialog.close();
+		    }
+		});
+		
+		buttonSort.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    		sortList(personList);
 		    }
 		});
 		

@@ -1,6 +1,19 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 eclipse.preferences.version=1
 overriddenByCSS=,syntaxcolor.private.non.system.symbol,syntaxcolor.number.literal,syntaxcolor.symbol.conflict.local,syntaxcolor.live.bracket.matching.color,syntaxcolor.public.non.system.symbols,syntaxcolor.live.bracket.matching.enabled,syntaxcolor.comment,syntaxcolor.string.literal,syntaxcolor.symbol.package,syntaxcolor.symbol.system,syntaxcolor.symbol.local,
-<<<<<<< HEAD
+predarkestdark.syntaxcolor.comment=88,110,117
+predarkestdark.syntaxcolor.live.bracket.matching.color=42,161,152
+predarkestdark.syntaxcolor.live.bracket.matching.enabled=true
+predarkestdark.syntaxcolor.number.literal=42,161,152
+predarkestdark.syntaxcolor.private.non.system.symbol=103,140,177
+predarkestdark.syntaxcolor.public.non.system.symbols=103,140,177
+predarkestdark.syntaxcolor.string.literal=42,161,152
+predarkestdark.syntaxcolor.symbol.conflict.local=224,226,228
+predarkestdark.syntaxcolor.symbol.local=38,139,210
+predarkestdark.syntaxcolor.symbol.package=38,139,210
+predarkestdark.syntaxcolor.symbol.system=181,137,0
 syntaxcolor.comment=199,221,12
 syntaxcolor.live.bracket.matching.color=255,198,0
 syntaxcolor.live.bracket.matching.enabled=true
@@ -12,16 +25,3 @@ syntaxcolor.symbol.conflict.local=210,82,82
 syntaxcolor.symbol.local=121,171,255
 syntaxcolor.symbol.package=190,214,255
 syntaxcolor.symbol.system=141,203,226
-=======
-syntaxcolor.comment=88,110,117
-syntaxcolor.live.bracket.matching.color=42,161,152
-syntaxcolor.live.bracket.matching.enabled=true
-syntaxcolor.number.literal=42,161,152
-syntaxcolor.private.non.system.symbol=103,140,177
-syntaxcolor.public.non.system.symbols=103,140,177
-syntaxcolor.string.literal=42,161,152
-syntaxcolor.symbol.conflict.local=224,226,228
-syntaxcolor.symbol.local=38,139,210
-syntaxcolor.symbol.package=38,139,210
-syntaxcolor.symbol.system=181,137,0
->>>>>>> 65abce6455457db43c0c89bfebfbb7fff421b4f2
