@@ -1,9 +1,12 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=65abce6455457db43c0c89bfebfbb7fff421b4f2
 applyBackground=false
 approved.defs.file.last.changed.time=1507839272000
 eclipse.preferences.version=1
-iconcolormode=primary
-last.download.attempt.time=1509495206651
+iconcolormode=pastel
+last.download.attempt.time=1510001426443
 lastConfiguration=1.509309662689E12
-newinstall=false
+newinstall=true
 showWelcomeDialog=false
 workbench.theme=Dark Gray
