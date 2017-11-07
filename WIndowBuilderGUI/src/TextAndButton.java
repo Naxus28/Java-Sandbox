@@ -1,7 +1,4 @@
 
-public class WindowClass {
-
-}
 import java.awt.Color;
 import java.awt.EventQueue;
 
