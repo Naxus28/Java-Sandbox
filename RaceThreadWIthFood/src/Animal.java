@@ -34,25 +34,22 @@ public class Animal implements Runnable {
 	public void run() {
 		for(int i = initialPosition; i <= raceYards; i++) {
 			
-			yardsRan += speed;
-			
-			System.out.println("Winner 1: " + winner);
-			if (!winner) {
-				food.eat(name);
-				
-				System.out.printf("%s is running at %dy/h. It has ran %d yards.\n", name.toUpperCase(), speed, yardsRan);
-				
-				if (yardsRan >= raceYards) {
-					System.out.printf("%s is the winner!\n",  name.toUpperCase());
-					winner = true;
-				}
-			} else {
+			// break out of loop if there is winner
+			if (winner) {
 				break;
 			}
 			
-			System.out.println("Winner 2: " + winner);
+			yardsRan += speed;
 			
-
+			System.out.printf("%s is running at %dy/h. It has ran %d yards.\n", name.toUpperCase(), speed, yardsRan);
+			
+			if (yardsRan >= raceYards) {
+				System.out.printf("\n*****%s IS THE WINNER!*****\n\n",  name.toUpperCase());
+				winner = true;
+			} else {
+				food.eat(name);
+			}
+	
 		}
 	}
 

@@ -1,15 +1,18 @@
 
 public class Food {
-	String foodType;
+	String[] foodTypes = {"carrot", "lettuce", "potato", "banana"};
 
 	public Food() {}
 	
-	public void eat(String animal) {
+	synchronized public void eat(String animal) {
 		String animalName = animal.toUpperCase();
+		int foodIndex = (int) Math.round((foodTypes.length -1) * Math.random());
+		int timeEating = animalName.equals("TURTLE") ? 80 : 130;
+		float eatingTime = (float)timeEating/100;
 		
-		int timeEating = animal == "TURTLE" ? 83 : 150;
-		System.out.println("======================");
-		System.out.println(animalName + " started eating.");
+		
+		System.out.println("\n============EATING TIME==============");
+		System.out.println(animalName + " started eating " + foodTypes[foodIndex]);
 		
 		try {
 			Thread.sleep((long) (timeEating * Math.random()));
@@ -17,16 +20,9 @@ public class Food {
 			e.printStackTrace();
 		}
 		
-		System.out.println(animalName + " is done eating.");
-		System.out.println("======================");
+		System.out.println("It took " + animalName + " " + eatingTime + "s to eat.");
+		System.out.println("===========END EATING TIME===========\n");
 	}
 	
-	public String getFoodType() {
-		return foodType;
-	}
-
-	public void setFoodType(String foodType) {
-		this.foodType = foodType;
-	}
 
 }
