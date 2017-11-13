@@ -1,21 +1,29 @@
-//STEP 1. Import required packages
-import java.sql.*;
+import java.sql.SQLException;
 
 public class JDBCDemo {
-   // JDBC driver name and database URL
-   static final String dbURL = "jdbc:mysql://localhost/";
 
    //  Database credentials
    static final String user = "root";
    static final String pass = "UFPhD2012";
    
-   // Database info
-   static String dbName = "STORE";
+   // Database name 
+   static String dbName = "PEOPLE";
    
    public static void main(String[] args) {
-	   // creates db on instantiation
-	   DataBase db = new DataBase(dbName, user, pass, dbURL);
-
+	   DataBase db = new DataBase(dbName, user, pass);
 	   
-   }
+	   try {
+		   db.connect();
+	   } catch (SQLException e) {
+		   e.printStackTrace();
+	   }
+	
+	
+	   try {
+		   db.printAll("person");
+	   } catch (SQLException e) {
+		   e.printStackTrace();
+	   }
+ 
+  }
 }
