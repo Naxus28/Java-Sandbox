@@ -1,9 +1,13 @@
+package application;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class DataBase {
 	// JDBC driver name and database URL--query string 'autoReconnect=true' will
@@ -49,7 +53,7 @@ public abstract class DataBase {
 	protected synchronized void createDBConnection(String dbURL) throws SQLException {
 		conn = DriverManager.getConnection(dbURL, user, pass);
 		setConn(conn);
-		
+
 		System.out.println("Connection created...");
 	}
 
@@ -84,21 +88,25 @@ public abstract class DataBase {
 		System.out.println("Table " + table + " created!");
 	}
 
-	abstract void insert(String table) throws SQLException;
+	public abstract void insert(String table) throws SQLException;
 
-	abstract void findOne() throws SQLException;
+	public abstract ResultSet findOne(String ssn) throws SQLException;
 
-	abstract void delete() throws SQLException;
+	public abstract void deleteOne(String ssn) throws SQLException;
 
+	
 	/**
-	 * printAll from DB
-	 * 
 	 * @param table
+	 * @return
 	 * @throws SQLException
 	 */
-	public void printAll(String table) throws SQLException {
+	public List<People> findAll(String table) throws SQLException {
+		People person;
+		List<People> people = new ArrayList<>();
+
 		System.out.println("\nALL RESULTS: \n");
-		ResultSet rs = stmt.executeQuery("select * from " + table);
+		String sql = "select * from " + table;
+		ResultSet rs = stmt.executeQuery(sql);
 		ResultSetMetaData metadata = rs.getMetaData();
 		int columnCount = metadata.getColumnCount();
 
@@ -111,6 +119,12 @@ public abstract class DataBase {
 
 		// print rows
 		while (rs.next()) {
+			person = new People(rs.getString("first_name"), rs.getString("last_name"),
+					Integer.parseInt(rs.getString("age")), Long.parseLong(rs.getString("ssn")),
+					Long.parseLong(rs.getString("credit_card")));
+			
+			people.add(person);
+
 			String row = "";
 
 			for (int i = 1; i <= columnCount; i++) {
@@ -118,7 +132,10 @@ public abstract class DataBase {
 			}
 
 			System.out.println(row);
+			
 		}
+		
+		return people;
 	}
 
 	/**
@@ -182,7 +199,7 @@ public abstract class DataBase {
 	public void setDbURL(String dbURL) {
 		this.dbURL = dbURL;
 	}
-	
+
 	// defaultDBUrl
 	public String getDefaultDBUrl() {
 		return defaultDBUrl;
@@ -191,7 +208,7 @@ public abstract class DataBase {
 	public void setDefaultDBUrl(String defaultDBUrl) {
 		this.defaultDBUrl = defaultDBUrl;
 	}
-	
+
 	// connection
 	public Connection getConn() {
 		return conn;
@@ -200,7 +217,7 @@ public abstract class DataBase {
 	public void setConn(Connection conn) {
 		this.conn = conn;
 	}
-	
+
 	// statement
 	public Statement getStmt() {
 		return stmt;

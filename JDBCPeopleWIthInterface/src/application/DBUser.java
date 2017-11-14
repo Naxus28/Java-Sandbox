@@ -1,3 +1,5 @@
+package application;
+
 /**
  * this class holds state for db user
  * @author gferraz
