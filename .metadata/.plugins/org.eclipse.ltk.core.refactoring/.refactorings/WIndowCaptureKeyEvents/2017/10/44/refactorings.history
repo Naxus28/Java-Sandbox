@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename field &apos;table_2&apos; in &apos;BusyBox&apos; to &apos;table&apos;&#x0A;- Original project: &apos;WIndowCaptureKeyEvents&apos;&#x0A;- Original element: &apos;BusyBox.table_2&apos;&#x0A;- Renamed element: &apos;BusyBox.table&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;table_2&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;{BusyBox.java[BusyBox^table_2" name="table" references="true" setter="false" stamp="1509311045857" textual="false" version="1.0"/>
-</session>

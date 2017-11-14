@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;personalInfo&apos; in &apos;application.Main.alertBox()&apos; to &apos;dialog&apos;&#x0A;- Original project: &apos;UsefulFxGUI&apos;&#x0A;- Original element: &apos;application.Main.alertBox().personalInfo&apos;&#x0A;- Renamed element: &apos;personalInfo&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;personalInfo&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;application{Main.java[Main~alertBox@personalInfo!1246!1278!1252!1263!QStage;!0!false" name="dialog" references="true" stamp="1509414361452" version="1.0"/>
-</session>

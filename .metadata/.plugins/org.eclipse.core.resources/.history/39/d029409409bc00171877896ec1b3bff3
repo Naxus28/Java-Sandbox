@@ -1,8 +1,0 @@
-
-public class TriangleTest {
-
-	Triangle t = new Triangle(1,2,3);
-	
-	
-	Triangle tOne = new Triangle(0,3,4);
-}
