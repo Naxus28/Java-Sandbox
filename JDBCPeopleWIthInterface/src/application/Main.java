@@ -38,7 +38,7 @@ public class Main extends Application {
 		// button listeners
 		createDB.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    		insertUserPanel();
+		    		createDBPanel();
 		    }
 		});
 		
@@ -47,7 +47,6 @@ public class Main extends Application {
 		    		insertUserPanel();
 		    }
 		});
-		
 		
 		insert.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
@@ -60,7 +59,6 @@ public class Main extends Application {
 		    		deleteUserPanel();
 		    }
 		});
-		
 		
 		findAll.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
@@ -118,7 +116,7 @@ public class Main extends Application {
 	 * @param creditCard
 	 * @throws SQLException
 	 */
-	public static void insertPerson(String firstName, String lastName, String age, String ssn, String creditCard)
+	private static void insertPerson(String firstName, String lastName, String age, String ssn, String creditCard)
 			throws SQLException {
 
 		// person obj
@@ -128,9 +126,6 @@ public class Main extends Application {
 		//// create DB instance with second overloaded constructor
 		db = new PeopleDB(person, dbName, dbCredentials.getUser(), dbCredentials.getPass());
 
-		// use once for every new DB
-		// createDB();
-
 		// use once for every new table
 		// createTable();
 
@@ -139,13 +134,81 @@ public class Main extends Application {
 		db.getConn().close();
 	}
 	
-	@SuppressWarnings("unused")
-	private static void createDB() {
-		try {
-			db.create();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	private void createDBPanel() {
+		// labels
+		Label labelOne = new Label("Enter tabe name: ");
+
+		// inputs
+		TextField fieldOne = new TextField();
+
+		// buttons
+		Button buttonDelete = new Button("Create");
+		Button buttonCancel = new Button("Cancel");
+		
+		// create grid pane and add nodes
+		GridPane pane = new GridPane();
+		pane.setAlignment(Pos.CENTER);
+		pane.add(labelOne, 0, 0);
+		pane.add(fieldOne, 1, 0);
+		pane.add(buttonDelete, 0, 2);
+		pane.add(buttonCancel, 1, 2);
+
+		// create new stage and set properties
+		Stage dialog = new Stage();
+		dialog.initModality(Modality.APPLICATION_MODAL);
+		dialog.setTitle("Database Name");
+		dialog.setMinHeight(500);
+		dialog.setMinWidth(500);
+
+		// button ok listener
+		buttonDelete.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				// create DB instance with first overloaded constructor
+				String dbName = fieldOne.getText();
+				
+				// creates db with first overloaded constructor
+				db = new PeopleDB(dbName.toUpperCase(), dbCredentials.getUser(), dbCredentials.getPass());
+				
+				try {
+					db.create();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				} finally {
+					clearInputs();
+				}
+			}
+			
+			/**
+			 * clear inputs
+			 */
+			private void clearInputs() {
+				fieldOne.setText("");
+			}
+		});
+
+		// button cancel listener
+		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				
+				dialog.close();
+				
+				try {
+					db.getConn().close();
+					System.out.println("DB Connection closed.");
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		// create new scene and add pane
+		Scene personalInfo = new Scene(pane);
+		dialog.setScene(personalInfo);
+		
+		personalInfo.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		dialog.showAndWait();
 	}
 
 	@SuppressWarnings("unused")
@@ -162,7 +225,7 @@ public class Main extends Application {
 	/**
 	 * insert user panel
 	 */
-	public void insertUserPanel() {
+	private void insertUserPanel() {
 		// labels
 		Label labelOne = new Label("First Name: ");
 		Label labelTwo = new Label("Last Name: ");
@@ -283,8 +346,7 @@ public class Main extends Application {
 	/**
 	 * delete user panel
 	 */
-	public void deleteUserPanel() {
-		
+	private void deleteUserPanel() {
 		// create DB instance with first overloaded constructor
 		db = new PeopleDB("PEOPLE", dbCredentials.getUser(), dbCredentials.getPass());
 		
@@ -309,7 +371,7 @@ public class Main extends Application {
 		// create new stage and set properties
 		Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
-		dialog.setTitle("Personal Information");
+		dialog.setTitle("Delete Entry");
 		dialog.setMinHeight(500);
 		dialog.setMinWidth(500);
 
@@ -389,7 +451,7 @@ public class Main extends Application {
 		// create new stage and set properties
 		Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
-		dialog.setTitle("Personal Information");
+		dialog.setTitle("Find Entry");
 		dialog.setMinHeight(500);
 		dialog.setMinWidth(500);
 
