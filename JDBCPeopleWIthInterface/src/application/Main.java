@@ -44,7 +44,7 @@ public class Main extends Application {
 		
 		createTable.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    		insertUserPanel();
+		    		createTablePanel();
 		    }
 		});
 		
@@ -136,7 +136,7 @@ public class Main extends Application {
 	
 	private void createDBPanel() {
 		// labels
-		Label labelOne = new Label("Enter tabe name: ");
+		Label labelOne = new Label("Enter database name: ");
 
 		// inputs
 		TextField fieldOne = new TextField();
@@ -211,14 +211,90 @@ public class Main extends Application {
 		dialog.showAndWait();
 	}
 
-	@SuppressWarnings("unused")
-	private static void createTable() {
-		try {
-			db.connect();
-			((PeopleDB) db).createTable();
-		} catch (SQLException e1) {
-			e1.printStackTrace();
-		}
+	
+	private void createTablePanel() {
+		// labels
+		Label labelOne = new Label("Enter database name: ");
+		Label labelTwo = new Label("Enter table name: ");
+		Label labelThree = new Label("Enter column names in snake case format and separated by comma (i.e. first_name, last_name, etc): ");
+
+		// inputs
+		TextField fieldOne = new TextField();
+		TextField fieldTwo = new TextField();
+
+		// buttons
+		Button buttonDelete = new Button("Create");
+		Button buttonCancel = new Button("Cancel");
+		
+		// create grid pane and add nodes
+		GridPane pane = new GridPane();
+		pane.setAlignment(Pos.CENTER);
+		pane.add(labelOne, 0, 0);
+		pane.add(fieldOne, 1, 0);
+		pane.add(labelTwo, 0, 2);
+		pane.add(fieldTwo, 1, 2);
+		pane.add(buttonDelete, 0, 3);
+		pane.add(buttonCancel, 1, 3);
+
+		// create new stage and set properties
+		Stage dialog = new Stage();
+		dialog.initModality(Modality.APPLICATION_MODAL);
+		dialog.setTitle("Table Name");
+		dialog.setMinHeight(500);
+		dialog.setMinWidth(500);
+
+		// button ok listener
+		buttonDelete.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				// create DB instance with first overloaded constructor
+				String dbName = fieldOne.getText();
+				String tableName = fieldTwo.getText();
+				
+				// creates db with first overloaded constructor
+				db = new PeopleDB(dbName.toUpperCase(), dbCredentials.getUser(), dbCredentials.getPass());
+				
+				try {
+					db.connect();
+					((PeopleDB) db).createTable();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+
+			}
+			
+			/**
+			 * clear inputs
+			 */
+			private void clearInputs() {
+				fieldOne.setText("");
+			}
+		});
+
+		// button cancel listener
+		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				
+				dialog.close();
+				
+				try {
+					db.getConn().close();
+					System.out.println("DB Connection closed.");
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		// create new scene and add pane
+		Scene personalInfo = new Scene(pane);
+		dialog.setScene(personalInfo);
+		
+		personalInfo.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		dialog.showAndWait();
+		
+		
 
 	}
 	
