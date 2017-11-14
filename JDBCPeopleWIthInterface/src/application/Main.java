@@ -48,13 +48,6 @@ public class Main extends Application {
 		Button findAll = new Button("Find all people");
 		Button findOne  = new Button("Find person");
 		
-		// set buttons width
-//		insert.setPrefWidth(250);
-//		delete.setPrefWidth(250);
-//		findAll.setPrefWidth(250);
-//		findOne.setPrefWidth(250);
-
-		
 		insert.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
 		    		modalWindow();
@@ -76,7 +69,7 @@ public class Main extends Application {
 		pane.add(findOne, 0, 3);
 		
 		// scene
-		Scene scene = new Scene(pane,  400, 400);
+		Scene scene = new Scene(pane,  500, 500);
 		
 		
 		// stage
@@ -149,7 +142,7 @@ public class Main extends Application {
 	/**
 	 * alert box
 	 */
-	public static void modalWindow() {
+	public void modalWindow() {
 		// create grid pane and add nodes
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
@@ -170,8 +163,8 @@ public class Main extends Application {
 		Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
 		dialog.setTitle("Personal Information");
-		dialog.setMinHeight(400);
-		dialog.setMinWidth(400);
+		dialog.setMinHeight(500);
+		dialog.setMinWidth(500);
 
 		// button ok listener
 		buttonOk.setOnAction(new EventHandler<ActionEvent>() {
@@ -207,19 +200,23 @@ public class Main extends Application {
 		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent e) {
+				
 				dialog.close();
-				 try {
+				
+				try {
 					db.getConn().close();
+					System.out.println("DB Connection closed.");
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
-				 System.out.println("DB Connection closed.");
 			}
 		});
 
 		// create new scene and add pane
 		Scene personalInfo = new Scene(pane);
 		dialog.setScene(personalInfo);
+		
+		personalInfo.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		dialog.showAndWait();
 	}
 
