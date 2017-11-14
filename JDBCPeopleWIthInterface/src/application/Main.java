@@ -1,3 +1,5 @@
+package application;
+
 import java.sql.SQLException;
 
 import javafx.application.Application;
@@ -47,10 +49,10 @@ public class Main extends Application {
 		Button findOne  = new Button("Find person");
 		
 		// set buttons width
-		insert.setPrefWidth(250);
-		delete.setPrefWidth(250);
-		findAll.setPrefWidth(250);
-		findOne.setPrefWidth(250);
+//		insert.setPrefWidth(250);
+//		delete.setPrefWidth(250);
+//		findAll.setPrefWidth(250);
+//		findOne.setPrefWidth(250);
 
 		
 		insert.setOnAction(new EventHandler<ActionEvent>() {
@@ -62,12 +64,11 @@ public class Main extends Application {
 		// pane
 		GridPane pane = new GridPane();
 		
-		pane.setAlignment(Pos.TOP_CENTER);
+		pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(10,10,10,10));
 		pane.setHgap(5);
-		pane.setVgap(20);
-		
-		
+		pane.setVgap(25);
+
 		
 		pane.add(insert, 0, 0);
 		pane.add(delete, 0, 1);
@@ -77,11 +78,15 @@ public class Main extends Application {
 		// scene
 		Scene scene = new Scene(pane,  400, 400);
 		
+		
 		// stage
 		primaryStage.setTitle("Choose an action");
 		primaryStage.setScene(scene);
-		primaryStage.show();
 		
+		// adds stylesheet to scene
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		
+		primaryStage.show();
 	}
 
 	public static void main(String[] args) throws SQLException {

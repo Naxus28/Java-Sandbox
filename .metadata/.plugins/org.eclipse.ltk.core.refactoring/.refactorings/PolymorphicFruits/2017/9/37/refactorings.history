@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;Fruits&apos; to &apos;Fruit&apos;&#x0A;- Original project: &apos;PolymorphicFruits&apos;&#x0A;- Original element: &apos;Fruits&apos;&#x0A;- Renamed element: &apos;Fruit&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Fruits&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Fruits.java[Fruits" matchStrategy="1" name="Fruit" qualified="false" references="true" similarDeclarations="false" stamp="1505410406833" textual="false" version="1.0"/>
-</session>

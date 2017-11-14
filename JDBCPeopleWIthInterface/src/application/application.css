@@ -1,0 +1,9 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+.button {
+	-fx-min-width: 250px;
+	-fx-padding: 20px;
+	-fx-background-color: #1268FF;
+	-fx-text-fill: white;
+}

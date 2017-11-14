@@ -1,7 +1,0 @@
-
-public class CustomerRecordMissingException extends Exception {
-	
-	public CustomerRecordMissingException(String message) {
-		super(message); // the super class has a message property, as well as a getter and a setter for the message
-	}
-}
