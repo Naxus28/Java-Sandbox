@@ -1,6 +1,6 @@
 package application;
 
-import java.sql.ResultSet;
+import java.util.List;
 import java.sql.SQLException;
 
 import javafx.application.Application;
@@ -64,14 +64,15 @@ public class Main extends Application {
 		
 		findAll.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    		insertUserPanel();
+				findALl();
 		    }
 		});
 		
 		findOne.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
-		    		insertUserPanel();
+		    		findOneUserPanel();
 		    }
+
 		});
 		
 		// pane
@@ -82,7 +83,6 @@ public class Main extends Application {
 		pane.setVgap(25);
 
 		// add buttons to pane
-		
 		pane.add(createDB, 0, 0);
 		pane.add(createTable, 0, 1);
 		pane.add(insert, 0, 2);
@@ -158,7 +158,7 @@ public class Main extends Application {
 		}
 
 	}
-
+	
 	/**
 	 * insert user panel
 	 */
@@ -259,6 +259,28 @@ public class Main extends Application {
 	}
 	
 	/**
+	 * find all and print
+	 */
+	private void findALl() {
+		// create DB instance with first overloaded constructor
+		db = new PeopleDB("PEOPLE", dbCredentials.getUser(), dbCredentials.getPass());
+		
+		try {
+			db.connect();
+			List<People> results = db.findAll("PERSON");
+
+			
+			for(People person : results) {
+				System.out.println("\n" + person);
+			}
+			
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+		
+	}
+	
+	/**
 	 * delete user panel
 	 */
 	public void deleteUserPanel() {
@@ -300,6 +322,86 @@ public class Main extends Application {
 				try {
 					db.connect();
 					db.deleteOne(ssn);
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				} finally {
+					clearInputs();
+				}
+			}
+			
+			/**
+			 * clear inputs
+			 */
+			private void clearInputs() {
+				fieldOne.setText("");
+			}
+		});
+
+		// button cancel listener
+		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				
+				dialog.close();
+				
+				try {
+					db.getConn().close();
+					System.out.println("DB Connection closed.");
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		// create new scene and add pane
+		Scene personalInfo = new Scene(pane);
+		dialog.setScene(personalInfo);
+		
+		personalInfo.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		dialog.showAndWait();
+	}
+	
+	/**
+	 * find one entry panel
+	 */
+	private void findOneUserPanel()  {
+		// create DB instance with first overloaded constructor
+		db = new PeopleDB("PEOPLE", dbCredentials.getUser(), dbCredentials.getPass());
+		
+		// labels
+		Label labelOne = new Label("Enter ssn: ");
+
+		// inputs
+		TextField fieldOne = new TextField();
+
+		// buttons
+		Button buttonDelete = new Button("Delete");
+		Button buttonCancel = new Button("Cancel");
+		
+		// create grid pane and add nodes
+		GridPane pane = new GridPane();
+		pane.setAlignment(Pos.CENTER);
+		pane.add(labelOne, 0, 0);
+		pane.add(fieldOne, 1, 0);
+		pane.add(buttonDelete, 0, 2);
+		pane.add(buttonCancel, 1, 2);
+
+		// create new stage and set properties
+		Stage dialog = new Stage();
+		dialog.initModality(Modality.APPLICATION_MODAL);
+		dialog.setTitle("Personal Information");
+		dialog.setMinHeight(500);
+		dialog.setMinWidth(500);
+
+		// button ok listener
+		buttonDelete.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent e) {
+				String ssn = fieldOne.getText();
+
+				try {
+					db.connect();
+					db.findOne(ssn);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				} finally {

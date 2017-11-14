@@ -16,14 +16,13 @@ public class PeopleDB extends DataBase {
 	private String dbPass;
 	private String dbURL;
 	final static String[] personColumns = { "first_name", "last_name", "age", "ssn", "credit_card" };
-	
-	
-	
+
 	/**
 	 * default constructor
 	 */
-	public PeopleDB() {}
-	
+	public PeopleDB() {
+	}
+
 	/**
 	 * overloaded constructor
 	 * 
@@ -38,7 +37,6 @@ public class PeopleDB extends DataBase {
 		this.dbPass = dbPass;
 	}
 
-	
 	/**
 	 * overloaded constructor
 	 * 
@@ -51,31 +49,33 @@ public class PeopleDB extends DataBase {
 		super(dbName, dbUser, dbPass);
 		this.person = person;
 	}
-	
+
 	/**
 	 * create table helper
 	 */
 	public void createTable() {
 		// table
 		final String table = "PERSON";
-		
+
 		// create table query
 		final String columns = "person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
-				+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, " + "age INT UNSIGNED NOT NULL, "
-				+ "ssn BIGINT UNSIGNED UNIQUE NOT NULL, " + "credit_card BIGINT UNSIGNED";
-		
+				+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, "
+				+ "age INT UNSIGNED NOT NULL, " + "ssn BIGINT UNSIGNED UNIQUE NOT NULL, "
+				+ "credit_card BIGINT UNSIGNED";
+
 		try {
 			createTable(table, columns);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	 * overrides parent abstract method
-	 * invokes insert methods for specific tables passed from parameter
+	 * overrides parent abstract method invokes insert methods for specific tables
+	 * passed from parameter
 	 * 
-	 * @param the target table
+	 * @param the
+	 *            target table
 	 */
 	@Override
 	public void insert(String table) throws SQLException {
@@ -84,14 +84,14 @@ public class PeopleDB extends DataBase {
 		StringBuilder valuesQuery = new StringBuilder("values(?, ");
 		StringBuilder sql;
 		String[] columns = getTableColumns(table);
-		
+
 		// if table is "person", append the first column name
-		// this control structure allows to append the auto_increment field 
+		// this control structure allows to append the auto_increment field
 		// for different tables--perhaps not the best design
 		if (table.toLowerCase().equals("person")) {
 			columnsQuery.append("person_id, ");
 		}
-		
+
 		// generate columns and values for query
 		for (int i = 0; i <= columns.length - 1; i++) {
 			if (i == columns.length - 1) {
@@ -102,17 +102,17 @@ public class PeopleDB extends DataBase {
 				valuesQuery.append("?, ");
 			}
 		}
-		
+
 		// create full query string
 		sql = columnsQuery.append(valuesQuery);
-		
+
 		// control structure that allows insertion of data into different tables
 		if (table.toLowerCase().equals("person")) {
 			insertIntoPersonTable(sql);
 		}
 
 	}
-	
+
 	/**
 	 * insert person into person table
 	 * 
@@ -132,39 +132,46 @@ public class PeopleDB extends DataBase {
 		preparedStmt.execute();
 		System.out.println("Inserted new record into PERSON");
 	}
-	
+
 	@Override
 	public ResultSet findOne(String ssn) throws SQLException {
-		String sql = "SELECT * FROM PERSON "
-				+ "WHERE ssn=" + ssn;
-		
+		String sql = "SELECT * FROM PERSON " + "WHERE ssn=" + ssn;
+
+		String row = null;
+
 		ResultSet rs = getStmt().executeQuery(sql);
+
+		while (rs.next()) {
+			row = rs.getString("first_name") + " " + rs.getString("last_name") + ", " + rs.getString("age") + ", ssn: "
+					+ rs.getString("ssn") + ", credit card #: " + rs.getString("credit_card");
+		}
+
+		System.out.println("Found record " + row + " from database " + dbName);
 		
 		return rs;
 	}
 
 	@Override
 	public void deleteOne(String ssn) throws SQLException {
-		String sql = "DELETE FROM PERSON "
-				+ "WHERE ssn=" + ssn;
-		
+		String sql = "DELETE FROM PERSON " + "WHERE ssn=" + ssn;
+
 		String row = null;
-	
+
 		ResultSet rs = findOne(ssn);
-		
+
 		while (rs.next()) {
 			row = rs.getString("first_name") + " " + rs.getString("last_name");
 		}
-		
+
 		getStmt().executeUpdate(sql);
-		System.out.println("Deleted record " + row +  " from database " + dbName);
+		System.out.println("Deleted record " + row + " from database " + dbName);
 	}
-	
-	
+
 	/**
-	 * get table columns 
+	 * get table columns
 	 * 
-	 * @param table the table whose columns we want to get
+	 * @param table
+	 *            the table whose columns we want to get
 	 * @return
 	 */
 	private String[] getTableColumns(String table) {
@@ -182,8 +189,6 @@ public class PeopleDB extends DataBase {
 		return columns;
 	}
 
-
-	
 	// person
 	public People getPerson() {
 		return person;
@@ -192,7 +197,7 @@ public class PeopleDB extends DataBase {
 	public void setPerson(People person) {
 		this.person = person;
 	}
-	
+
 	// db name
 	public String getDbName() {
 		return dbName;
@@ -201,7 +206,7 @@ public class PeopleDB extends DataBase {
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
 	}
-	
+
 	// db user
 	public String getDbUser() {
 		return dbUser;
@@ -210,7 +215,7 @@ public class PeopleDB extends DataBase {
 	public void setDbUser(String user) {
 		this.dbUser = user;
 	}
-	
+
 	// db password
 	public String getDbPass() {
 		return dbPass;
@@ -219,7 +224,7 @@ public class PeopleDB extends DataBase {
 	public void setDbPass(String pass) {
 		this.dbPass = pass;
 	}
-	
+
 	// db url
 	public String getDbURL() {
 		return dbURL;
@@ -228,6 +233,5 @@ public class PeopleDB extends DataBase {
 	public void setDbURL(String dbURL) {
 		this.dbURL = dbURL;
 	}
-
 
 }

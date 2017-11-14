@@ -70,5 +70,10 @@ public class People {
 	public void setCreditCard(long creditCard) {
 		this.creditCard = creditCard;
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("DB entry: %-10s %-10s age: %-10d ssn: %-10d credit card: %10d", getFirstName(), getLastName(),  getAge(), getSsn(), getCreditCard());
+	}
 
 }
