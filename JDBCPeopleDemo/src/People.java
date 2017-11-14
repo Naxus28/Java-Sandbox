@@ -1,16 +1,18 @@
 /**
  * this class holds state for People objs
+ * 
  * @author gferraz
  *
  */
 public class People {
-	String firstName; 
-	String lastName; 
-	int age; 
-	long ssn; 
-	long creditCard;
+	private String firstName;
+	private String lastName;
+	private int age;
+	private long ssn;
+	private long creditCard;
 
-	public People() {}
+	public People() {
+	}
 
 	public People(String firstName, String lastName, int age, long ssn, long creditCard) {
 		this.firstName = firstName;
@@ -19,11 +21,10 @@ public class People {
 		this.ssn = ssn;
 		this.creditCard = creditCard;
 	}
-	
-	
-	/***GETTERS AND SETTERS***/
-	
-	//first name
+
+	/*** GETTERS AND SETTERS ***/
+
+	// first name
 	public String getFirstName() {
 		return firstName;
 	}
@@ -31,8 +32,8 @@ public class People {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	
-	//last name
+
+	// last name
 	public String getLastName() {
 		return lastName;
 	}
@@ -40,8 +41,8 @@ public class People {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	//age
+
+	// age
 	public int getAge() {
 		return age;
 	}
@@ -49,8 +50,8 @@ public class People {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	//ssn
+
+	// ssn
 	public long getSsn() {
 		return ssn;
 	}
@@ -58,8 +59,8 @@ public class People {
 	public void setSsn(long ssn) {
 		this.ssn = ssn;
 	}
-	
-	//credit card
+
+	// credit card
 	public long getCreditCard() {
 		return creditCard;
 	}

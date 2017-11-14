@@ -30,6 +30,7 @@ public abstract class DataBase {
 
 	/**
 	 * overloaded constructor
+	 * 
 	 * @param dbName
 	 * @param user
 	 * @param pass
@@ -42,6 +43,7 @@ public abstract class DataBase {
 
 	/**
 	 * create db connection
+	 * 
 	 * @param dbURL
 	 * @throws SQLException
 	 */
@@ -52,6 +54,7 @@ public abstract class DataBase {
 
 	/**
 	 * create db statement
+	 * 
 	 * @throws SQLException
 	 */
 	protected synchronized void createStmt() throws SQLException {
@@ -61,14 +64,16 @@ public abstract class DataBase {
 
 	/**
 	 * create database
+	 * 
 	 * @throws SQLException
 	 */
 	protected synchronized void createDataBase() throws SQLException {
 		stmt.executeUpdate("CREATE DATABASE " + dbName);
 	}
-	
+
 	/**
 	 * execute update to create table
+	 * 
 	 * @param sql
 	 * @throws SQLException
 	 */
@@ -77,16 +82,16 @@ public abstract class DataBase {
 		stmt.executeUpdate(sql);
 		System.out.println("Table " + table + " created!");
 	}
-	
-	abstract void insert(String table) throws SQLException;
-	
-	abstract void findOne() throws SQLException;
-	
-	abstract void delete() throws SQLException;
 
+	abstract void insert(String table) throws SQLException;
+
+	abstract void findOne() throws SQLException;
+
+	abstract void delete() throws SQLException;
 
 	/**
 	 * printAll from DB
+	 * 
 	 * @param table
 	 * @throws SQLException
 	 */
@@ -117,17 +122,19 @@ public abstract class DataBase {
 
 	/**
 	 * execute methods to create database
+	 * 
 	 * @throws SQLException
 	 */
 	public void create() throws SQLException {
 		createDBConnection(defaultDBUrl);
 		createStmt();
 		createDataBase();
-		System.out.println("DB " + dbName + "created!");
+		System.out.println("DB " + dbName + " created!");
 	}
 
 	/**
 	 * connect to database
+	 * 
 	 * @throws SQLException
 	 */
 	public void connect() throws SQLException {
@@ -175,5 +182,28 @@ public abstract class DataBase {
 		this.dbURL = dbURL;
 	}
 
+	public String getDefaultDBUrl() {
+		return defaultDBUrl;
+	}
+
+	public void setDefaultDBUrl(String defaultDBUrl) {
+		this.defaultDBUrl = defaultDBUrl;
+	}
+
+	public Connection getConn() {
+		return conn;
+	}
+
+	public void setConn(Connection conn) {
+		this.conn = conn;
+	}
+
+	public Statement getStmt() {
+		return stmt;
+	}
+
+	public void setStmt(Statement stmt) {
+		this.stmt = stmt;
+	}
 
 }
