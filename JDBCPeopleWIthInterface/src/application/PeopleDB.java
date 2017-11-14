@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -14,14 +15,9 @@ public class PeopleDB extends DataBase {
 	private String dbUser;
 	private String dbPass;
 	private String dbURL;
-
-	// table
-	static final String table = "PERSON";
-	static final String columns = "person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
-			+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, " + "age INT UNSIGNED NOT NULL, "
-			+ "ssn BIGINT UNSIGNED UNIQUE NOT NULL, " + "credit_card BIGINT UNSIGNED";
-
-	static private String[] personColumns = { "first_name", "last_name", "age", "ssn", "credit_card" };
+	final static String[] personColumns = { "first_name", "last_name", "age", "ssn", "credit_card" };
+	
+	
 	
 	/**
 	 * default constructor
@@ -31,13 +27,28 @@ public class PeopleDB extends DataBase {
 	/**
 	 * overloaded constructor
 	 * 
+	 * @param dbName
+	 * @param dbUser
+	 * @param dbPass
+	 */
+	public PeopleDB(String dbName, String dbUser, String dbPass) {
+		super(dbName, dbUser, dbPass);
+		this.dbName = dbName;
+		this.dbUser = dbUser;
+		this.dbPass = dbPass;
+	}
+
+	
+	/**
+	 * overloaded constructor
+	 * 
 	 * @param person
 	 * @param dbName
 	 * @param user
 	 * @param pass
 	 */
-	public PeopleDB(People person, String dbName, String user, String pass) {
-		super(dbName, user, pass);
+	public PeopleDB(People person, String dbName, String dbUser, String dbPass) {
+		super(dbName, dbUser, dbPass);
 		this.person = person;
 	}
 	
@@ -45,6 +56,14 @@ public class PeopleDB extends DataBase {
 	 * create table helper
 	 */
 	public void createTable() {
+		// table
+		final String table = "PERSON";
+		
+		// create table query
+		final String columns = "person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
+				+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, " + "age INT UNSIGNED NOT NULL, "
+				+ "ssn BIGINT UNSIGNED UNIQUE NOT NULL, " + "credit_card BIGINT UNSIGNED";
+		
 		try {
 			createTable(table, columns);
 		} catch (SQLException e) {
@@ -59,7 +78,7 @@ public class PeopleDB extends DataBase {
 	 * @param the target table
 	 */
 	@Override
-	void insert(String table) throws SQLException {
+	public void insert(String table) throws SQLException {
 		// the mysql insert statement
 		StringBuilder columnsQuery = new StringBuilder("INSERT INTO " + table + "(");
 		StringBuilder valuesQuery = new StringBuilder("values(?, ");
@@ -111,8 +130,36 @@ public class PeopleDB extends DataBase {
 
 		// execute statement
 		preparedStmt.execute();
-		System.out.println("Inserted new record into PEOPLE.PERSON");
+		System.out.println("Inserted new record into PERSON");
 	}
+	
+	@Override
+	public ResultSet findOne(String ssn) throws SQLException {
+		String sql = "SELECT * FROM PERSON "
+				+ "WHERE ssn=" + ssn;
+		
+		ResultSet rs = getStmt().executeQuery(sql);
+		
+		return rs;
+	}
+
+	@Override
+	public void deleteOne(String ssn) throws SQLException {
+		String sql = "DELETE FROM PERSON "
+				+ "WHERE ssn=" + ssn;
+		
+		String row = null;
+	
+		ResultSet rs = findOne(ssn);
+		
+		while (rs.next()) {
+			row = rs.getString("first_name") + " " + rs.getString("last_name");
+		}
+		
+		getStmt().executeUpdate(sql);
+		System.out.println("Deleted record " + row +  " from database " + dbName);
+	}
+	
 	
 	/**
 	 * get table columns 
@@ -135,15 +182,7 @@ public class PeopleDB extends DataBase {
 		return columns;
 	}
 
-	@Override
-	void findOne() throws SQLException {
 
-	}
-
-	@Override
-	void delete() throws SQLException {
-
-	}
 	
 	// person
 	public People getPerson() {

@@ -86,11 +86,11 @@ public abstract class DataBase {
 		System.out.println("Table " + table + " created!");
 	}
 
-	abstract void insert(String table) throws SQLException;
+	public abstract void insert(String table) throws SQLException;
 
-	abstract void findOne() throws SQLException;
+	public abstract ResultSet findOne(String ssn) throws SQLException;
 
-	abstract void delete() throws SQLException;
+	public abstract void deleteOne(String ssn) throws SQLException;
 
 	/**
 	 * printAll from DB
@@ -100,7 +100,8 @@ public abstract class DataBase {
 	 */
 	public void printAll(String table) throws SQLException {
 		System.out.println("\nALL RESULTS: \n");
-		ResultSet rs = stmt.executeQuery("select * from " + table);
+		String sql = "select * from " + table;
+		ResultSet rs = stmt.executeQuery(sql);
 		ResultSetMetaData metadata = rs.getMetaData();
 		int columnCount = metadata.getColumnCount();
 
