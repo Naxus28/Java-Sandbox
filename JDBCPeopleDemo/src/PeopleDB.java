@@ -1,19 +1,17 @@
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * this class holds state for people db it inherits from {@link}DataBase
+ * this class holds state for people db; it inherits from {@link}DataBase
  * 
  * @author gferraz
  */
 public class PeopleDB extends DataBase {
 	private People person;
 	private String dbName;
-	private String user;
-	private String pass;
+	private String dbUser;
+	private String dbPass;
 	private String dbURL;
-	private Connection conn = getConn();
 
 	// table
 	static final String table = "PERSON";
@@ -22,14 +20,28 @@ public class PeopleDB extends DataBase {
 			+ "ssn BIGINT UNSIGNED UNIQUE NOT NULL, " + "credit_card BIGINT UNSIGNED";
 
 	static private String[] personColumns = { "first_name", "last_name", "age", "ssn", "credit_card" };
-
+	
+	/**
+	 * default constructor
+	 */
 	public PeopleDB() {}
-
+	
+	/**
+	 * overloaded constructor
+	 * 
+	 * @param person
+	 * @param dbName
+	 * @param user
+	 * @param pass
+	 */
 	public PeopleDB(People person, String dbName, String user, String pass) {
 		super(dbName, user, pass);
 		this.person = person;
 	}
-
+	
+	/**
+	 * create table helper
+	 */
 	public void createTable() {
 		try {
 			createTable(table, columns);
@@ -37,15 +49,29 @@ public class PeopleDB extends DataBase {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * overrides parent abstract method
+	 * invokes insert methods for specific tables passed from parameter
+	 * 
+	 * @param the target table
+	 */
 	@Override
 	void insert(String table) throws SQLException {
 		// the mysql insert statement
-		StringBuilder columnsQuery = new StringBuilder("INSERT INTO " + table + "(person_id, ");
+		StringBuilder columnsQuery = new StringBuilder("INSERT INTO " + table + "(");
 		StringBuilder valuesQuery = new StringBuilder("values(?, ");
 		StringBuilder sql;
 		String[] columns = getTableColumns(table);
-
+		
+		// if table is "person", append the first column name
+		// this control structure allows to append the auto_increment field 
+		// for different tables--perhaps not the best design
+		if (table.toLowerCase().equals("person")) {
+			columnsQuery.append("person_id, ");
+		}
+		
+		// generate columns and values for query
 		for (int i = 0; i <= columns.length - 1; i++) {
 			if (i == columns.length - 1) {
 				columnsQuery.append(columns[i] + ") ");
@@ -55,19 +81,25 @@ public class PeopleDB extends DataBase {
 				valuesQuery.append("?, ");
 			}
 		}
-
+		
+		// create full query string
 		sql = columnsQuery.append(valuesQuery);
-
-		System.out.println("sql: " + sql);
-
+		
+		// control structure that allows insertion of data into different tables
 		if (table.toLowerCase().equals("person")) {
 			insertIntoPersonTable(sql);
 		}
 
 	}
-
+	
+	/**
+	 * insert person into person table
+	 * 
+	 * @param sql
+	 * @throws SQLException
+	 */
 	private void insertIntoPersonTable(StringBuilder sql) throws SQLException {
-		PreparedStatement preparedStmt = super.getConn().prepareStatement(sql.toString());
+		PreparedStatement preparedStmt = getConn().prepareStatement(sql.toString());
 		preparedStmt.setNull(1, java.sql.Types.NULL);
 		preparedStmt.setString(2, person.getFirstName());
 		preparedStmt.setString(3, person.getLastName());
@@ -77,9 +109,15 @@ public class PeopleDB extends DataBase {
 
 		// execute statement
 		preparedStmt.execute();
-		System.out.println("Inserted into PEOPLE.PERSON");
+		System.out.println("Inserted new record into PEOPLE.PERSON");
 	}
-
+	
+	/**
+	 * get table columns 
+	 * 
+	 * @param table the table whose columns we want to get
+	 * @return
+	 */
 	private String[] getTableColumns(String table) {
 		String[] columns;
 
@@ -104,7 +142,8 @@ public class PeopleDB extends DataBase {
 	void delete() throws SQLException {
 
 	}
-
+	
+	// person
 	public People getPerson() {
 		return person;
 	}
@@ -112,7 +151,8 @@ public class PeopleDB extends DataBase {
 	public void setPerson(People person) {
 		this.person = person;
 	}
-
+	
+	// db name
 	public String getDbName() {
 		return dbName;
 	}
@@ -120,23 +160,26 @@ public class PeopleDB extends DataBase {
 	public void setDbName(String dbName) {
 		this.dbName = dbName;
 	}
-
-	public String getUser() {
-		return user;
+	
+	// db user
+	public String getDbUser() {
+		return dbUser;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setDbUser(String user) {
+		this.dbUser = user;
+	}
+	
+	// db password
+	public String getDbPass() {
+		return dbPass;
 	}
 
-	public String getPass() {
-		return pass;
+	public void setDbPass(String pass) {
+		this.dbPass = pass;
 	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-
+	
+	// db url
 	public String getDbURL() {
 		return dbURL;
 	}
@@ -145,12 +188,5 @@ public class PeopleDB extends DataBase {
 		this.dbURL = dbURL;
 	}
 
-	public Connection getConn() {
-		return conn;
-	}
-
-	public void setConn(Connection conn) {
-		this.conn = conn;
-	}
 
 }

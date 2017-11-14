@@ -4,14 +4,14 @@
  *
  */
 public class DBUser {
-	static String user;
-	static String pass;
+	private String user;
+	private String pass;
 	
 	public DBUser() {}
 	
 	public DBUser(String user, String pass) {
-		DBUser.user = user;
-		DBUser.pass = pass;
+		this.user = user;
+		this.pass = pass;
 	}
 	
 	
@@ -20,7 +20,7 @@ public class DBUser {
 	}
 
 	public void setUser(String user) {
-		DBUser.user = user;
+		this.user = user;
 	}
 
 	public String getPass() {
@@ -28,7 +28,7 @@ public class DBUser {
 	}
 
 	public void setPass(String pass) {
-		DBUser.pass = pass;
+		this.pass = pass;
 	}
 
 

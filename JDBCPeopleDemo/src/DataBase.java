@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.List;
 
 public abstract class DataBase {
 	// JDBC driver name and database URL--query string 'autoReconnect=true' will
@@ -19,8 +18,8 @@ public abstract class DataBase {
 	private String pass;
 	private String dbURL;
 
-	private Connection conn = null;
-	private Statement stmt = null;
+	private Connection conn;
+	private Statement stmt;
 
 	/**
 	 * default constructor
@@ -49,6 +48,8 @@ public abstract class DataBase {
 	 */
 	protected synchronized void createDBConnection(String dbURL) throws SQLException {
 		conn = DriverManager.getConnection(dbURL, user, pass);
+		setConn(conn);
+		
 		System.out.println("Connection created...");
 	}
 
@@ -156,20 +157,20 @@ public abstract class DataBase {
 	}
 
 	// user
-	public String getUser() {
+	public String getDbUser() {
 		return user;
 	}
 
-	public void setUser(String user) {
+	public void setDbUser(String user) {
 		this.user = user;
 	}
 
 	// pass
-	public String getPass() {
+	public String getDbPass() {
 		return pass;
 	}
 
-	public void setPass(String pass) {
+	public void setDbPass(String pass) {
 		this.pass = pass;
 	}
 
@@ -181,7 +182,8 @@ public abstract class DataBase {
 	public void setDbURL(String dbURL) {
 		this.dbURL = dbURL;
 	}
-
+	
+	// defaultDBUrl
 	public String getDefaultDBUrl() {
 		return defaultDBUrl;
 	}
@@ -189,7 +191,8 @@ public abstract class DataBase {
 	public void setDefaultDBUrl(String defaultDBUrl) {
 		this.defaultDBUrl = defaultDBUrl;
 	}
-
+	
+	// connection
 	public Connection getConn() {
 		return conn;
 	}
@@ -197,7 +200,8 @@ public abstract class DataBase {
 	public void setConn(Connection conn) {
 		this.conn = conn;
 	}
-
+	
+	// statement
 	public Statement getStmt() {
 		return stmt;
 	}

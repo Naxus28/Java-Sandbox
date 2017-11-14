@@ -13,71 +13,95 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class Main extends Application {
-	
-	// database 
-	static DBUser gabrielCredentials = new DBUser("root", "root");
-	
-	// create nodes
+
+	// database
+	static DBUser dbCredentials = new DBUser("root", "UFPhD2012");
+	static DataBase db;
+
+	// labels
 	static Label labelOne = new Label("First Name: ");
 	static Label labelTwo = new Label("Last Name: ");
 	static Label labelThree = new Label("Age: ");
 	static Label labelFour = new Label("SSN: ");
 	static Label labelFive = new Label("Credit Card: ");
-	
+
+	// inputs
 	static TextField fieldOne = new TextField();
 	static TextField fieldTwo = new TextField();
 	static TextField fieldThree = new TextField();
 	static TextField fieldFour = new TextField();
 	static TextField fieldFive = new TextField();
-	
+
+	// buttons
 	static Button buttonOk = new Button("Ok");
 	static Button buttonCancel = new Button("Cancel");
-	
+
 	@Override
 	public void start(Stage primaryStage) {
-		alertBox();
+		modalWindow();
 	}
 
 	public static void main(String[] args) throws SQLException {
 		launch(args);
 	}
-	
+
 	/**
 	 * insert into DB
+	 * 
 	 * @param firstName
 	 * @param lastName
 	 * @param age
 	 * @param ssn
 	 * @param creditCard
+	 * @throws SQLException
 	 */
-	public static void insert(String firstName, String lastName, String age, String ssn, String creditCard) {
+	public static void insert(String firstName, String lastName, String age, String ssn, String creditCard)
+			throws SQLException {
 
 		// Database name
 		String dbName = "PEOPLE";
 
 		// person obj
-		People person = new People(firstName, lastName, Integer.parseInt(age), Long.parseLong(ssn), Long.parseLong(creditCard));
+		People person = new People(firstName, lastName, Integer.parseInt(age), Long.parseLong(ssn),
+				Long.parseLong(creditCard));
 
 		// db Instance
-		DataBase db = new PeopleDB(person, dbName, DBUser.user, DBUser.pass);
+		db = new PeopleDB(person, dbName, dbCredentials.getUser(), dbCredentials.getPass());
 
+		// use once for every new DB
+		// createDB();
+
+		// use once for every new table
+		// createTable();
+
+		db.connect();
+		db.insert("PERSON");
+	}
+
+	@SuppressWarnings("unused")
+	private static void createDB() {
 		try {
 			db.create();
-		} catch (SQLException e2) {
-			try {
-				
-				db.connect();
-				((PeopleDB) db).createTable();
-			} catch (SQLException e1) {
-				e1.printStackTrace();
-			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+	}
+
+	@SuppressWarnings("unused")
+	private static void createTable() {
+		try {
+			db.connect();
+			((PeopleDB) db).createTable();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+
 	}
 
 	/**
 	 * alert box
 	 */
-	public static void alertBox() {
+	public static void modalWindow() {
 		// create grid pane and add nodes
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
@@ -93,36 +117,58 @@ public class Main extends Application {
 		pane.add(fieldFive, 1, 5);
 		pane.add(buttonOk, 0, 6);
 		pane.add(buttonCancel, 1, 6);
-		
+
 		// create new stage and set properties
 		Stage dialog = new Stage();
 		dialog.initModality(Modality.APPLICATION_MODAL);
 		dialog.setTitle("Personal Information");
 		dialog.setMinHeight(400);
 		dialog.setMinWidth(400);
-		
-		
-		// button listeners
+
+		// button ok listener
 		buttonOk.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {  	
+			@Override
+			public void handle(ActionEvent e) {
 				String firstName = fieldOne.getText();
 				String lastName = fieldTwo.getText();
 				String age = fieldThree.getText();
 				String ssn = fieldFour.getText();
 				String creditCard = fieldFive.getText();
-				
-				insert(firstName, lastName, age, ssn, creditCard);
-		    }
+
+				try {
+					insert(firstName, lastName, age, ssn, creditCard);
+					clearInputs();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+			
+			/**
+			 * clear inputs
+			 */
+			private void clearInputs() {
+				fieldOne.setText("");
+				fieldTwo.setText("");
+				fieldThree.setText("");
+				fieldFour.setText("");
+				fieldFive.setText("");
+			}
 		});
-		
-		
+
+		// button cancel listener
 		buttonCancel.setOnAction(new EventHandler<ActionEvent>() {
-		    @Override public void handle(ActionEvent e) {
-		    		dialog.close();
-		    }
+			@Override
+			public void handle(ActionEvent e) {
+				dialog.close();
+				 try {
+					db.getConn().close();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+				 System.out.println("DB Connection closed.");
+			}
 		});
-		
-		
+
 		// create new scene and add pane
 		Scene personalInfo = new Scene(pane);
 		dialog.setScene(personalInfo);

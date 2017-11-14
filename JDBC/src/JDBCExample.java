@@ -4,7 +4,13 @@ import java.sql.*;
 public class JDBCExample {
    // JDBC driver name and database URL
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://localhost/";
+   
+	// JDBC driver name and database URL--query string 'autoReconnect=true' will
+	// attempt to auto reconnect to DB if connection is dead or stale;
+	// 'useSSL=false' disables ssl
+	// see query string options here:
+	// https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-reference-configuration-properties.html
+   static final String DB_URL = "jdbc:mysql://localhost?autoReconnect=true&useSSL=false";
 
    //  Database credentials
    static final String USER = "root";
