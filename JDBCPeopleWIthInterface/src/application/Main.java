@@ -39,6 +39,7 @@ public class Main extends Application {
 		// buttons
 		Button createDB = new Button("Create new database");
 		Button createTable = new Button("Create new table");
+		Button createPersonTable = new Button("Create PERSON table");
 		Button insert = new Button("Insert entry into PEOPLE DB");
 		Button delete = new Button("Delete entry from PEOPLE DB");
 		Button findAll = new Button("Find all entries in PEOPLE DB");
@@ -54,6 +55,12 @@ public class Main extends Application {
 		createTable.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override public void handle(ActionEvent e) {
 		    		createTablePanel();
+		    }
+		});
+		
+		createPersonTable.setOnAction(new EventHandler<ActionEvent>() {
+		    @Override public void handle(ActionEvent e) {
+		    		createPersonTable();
 		    }
 		});
 		
@@ -92,10 +99,11 @@ public class Main extends Application {
 		// add buttons to pane
 		pane.add(createDB, 0, 0);
 		pane.add(createTable, 0, 1);
-		pane.add(insert, 0, 2);
-		pane.add(delete, 0, 3);
-		pane.add(findAll, 0, 4);
-		pane.add(findOne, 0, 5);
+		pane.add(createPersonTable, 0, 2);
+		pane.add(insert, 0, 3);
+		pane.add(delete, 0, 4);
+		pane.add(findAll, 0, 5);
+		pane.add(findOne, 0, 6);
 		
 		// scene
 		Scene scene = new Scene(pane,  500, 500);
@@ -143,6 +151,9 @@ public class Main extends Application {
 		db.getConn().close();
 	}
 	
+	/**
+	 * panel to create database
+	 */
 	private void createDBPanel() {
 		// labels
 		Label labelOne = new Label("Enter database name: ");
@@ -314,6 +325,20 @@ public class Main extends Application {
 		
 		
 
+	}
+	
+	/**
+	 * create person table -- specific to this application -- need to make it global
+	 */
+	private void createPersonTable() {
+		db = new PeopleDB(dbName.toUpperCase(), dbCredentials.getUser(), dbCredentials.getPass());
+		
+    		try {
+			db.connect();
+			((PeopleDB)db).createTable();
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
 	}
 	
 	/**

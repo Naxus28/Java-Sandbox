@@ -46,6 +46,7 @@ public class PeopleDB extends DataBase {
 	 */
 	public PeopleDB(People person, String dbName, String dbUser, String dbPass) {
 		super(dbName, dbUser, dbPass);
+		System.out.println("dbName: " + dbName);
 		this.person = person;
 	}
 
@@ -58,7 +59,7 @@ public class PeopleDB extends DataBase {
 
 		// create table query
 		final String columns = "person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
-				+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, "
+				+ "first_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, "
 				+ "age INT UNSIGNED NOT NULL, " + "ssn VARCHAR(100) UNIQUE NOT NULL, "
 				+ "credit_card VARCHAR(100)";
 
@@ -144,28 +145,25 @@ public class PeopleDB extends DataBase {
 
 	@Override
 	public ResultSet findOne(String ssn) throws SQLException {
-		String sql = "SELECT * FROM PERSON WHERE `ssn`=" + ssn;
-		System.out.println("sql: " + sql);
+		String sql =  String.format("SELECT * FROM PERSON WHERE `ssn`='%s'", ssn.toString());
 
 		String row = null;
 
 		ResultSet rs = getStmt().executeQuery(sql);
-		
-		System.out.println("rs: " + rs);
 
 		while (rs.next()) {
 			row = rs.getString("first_name") + " " + rs.getString("last_name") + ", " + rs.getString("age") + ", ssn: "
 					+ rs.getString("ssn") + ", credit card #: " + rs.getString("credit_card");
 		}
 
-		System.out.println("Found record " + row + " from database " + dbName);
+		System.out.println("Found record " + row + " from database " + super.getDbName());
 		
 		return rs;
 	}
 
 	@Override
 	public void deleteOne(String ssn) throws SQLException {
-		String sql = "DELETE FROM PERSON " + "WHERE ssn=" + ssn;
+		String sql =  String.format("DELETE FROM PERSON WHERE `ssn`='%s'", ssn.toString());
 
 		String row = null;
 
@@ -176,7 +174,7 @@ public class PeopleDB extends DataBase {
 		}
 
 		getStmt().executeUpdate(sql);
-		System.out.println("Deleted record " + row + " from database " + dbName);
+		System.out.println("Deleted record " + row + " from database " + super.getDbName());
 	}
 
 	/**
