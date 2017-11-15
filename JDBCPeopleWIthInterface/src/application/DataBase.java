@@ -90,9 +90,14 @@ public abstract class DataBase {
 
 	public abstract void insert(String table) throws SQLException;
 
-	public abstract ResultSet findOne(String ssn) throws SQLException;
+	public ResultSet findOne(String ssn) throws SQLException {
+		return null;
+		
+	};
 
-	public abstract void deleteOne(String ssn) throws SQLException;
+	public void deleteOne(String ssn) throws SQLException {
+		
+	};
 
 	
 	/**

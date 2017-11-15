@@ -19,7 +19,7 @@ import javafx.scene.layout.GridPane;
 public class Main extends Application {
 
 	// database
-	static DBUser dbCredentials = new DBUser("root", "UFPhD2012");
+	static DBUser dbCredentials = new DBUser("root", "root");
 	static DataBase db;
 	static String dbName = "PEOPLE";
 	
@@ -216,11 +216,12 @@ public class Main extends Application {
 		// labels
 		Label labelOne = new Label("Enter database name: ");
 		Label labelTwo = new Label("Enter table name: ");
-		Label labelThree = new Label("Enter column names in snake case format and separated by comma (i.e. first_name, last_name, etc): ");
+		Label labelThree = new Label("Enter column names and types to create query \n (i.e. fist_name VARCHAR(30) NOT NULL)\n Separate columns by comma.");
 
 		// inputs
 		TextField fieldOne = new TextField();
 		TextField fieldTwo = new TextField();
+		TextField fieldThree = new TextField();
 
 		// buttons
 		Button buttonDelete = new Button("Create");
@@ -233,8 +234,10 @@ public class Main extends Application {
 		pane.add(fieldOne, 1, 0);
 		pane.add(labelTwo, 0, 2);
 		pane.add(fieldTwo, 1, 2);
-		pane.add(buttonDelete, 0, 3);
-		pane.add(buttonCancel, 1, 3);
+		pane.add(labelThree, 0, 3);
+		pane.add(fieldThree, 1, 3);
+		pane.add(buttonDelete, 0, 4);
+		pane.add(buttonCancel, 1, 4);
 
 		// create new stage and set properties
 		Stage dialog = new Stage();
@@ -248,15 +251,16 @@ public class Main extends Application {
 			@Override
 			public void handle(ActionEvent e) {
 				// create DB instance with first overloaded constructor
-				String dbName = fieldOne.getText();
-				String tableName = fieldTwo.getText();
+				String dbName = fieldOne.getText().toUpperCase();
+				String table = fieldTwo.getText().toUpperCase();
+				String columnsSql = fieldThree.getText().toLowerCase();
 				
 				// creates db with first overloaded constructor
 				db = new PeopleDB(dbName.toUpperCase(), dbCredentials.getUser(), dbCredentials.getPass());
 				
 				try {
 					db.connect();
-					((PeopleDB) db).createTable();
+					db.createTable(table, columnsSql);
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}

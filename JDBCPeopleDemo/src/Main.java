@@ -16,7 +16,7 @@ import javafx.scene.layout.GridPane;
 public class Main extends Application {
 
 	// database
-	static DBUser dbCredentials = new DBUser("root", "UFPhD2012");
+	static DBUser dbCredentials = new DBUser("root", "root");
 	static DataBase db;
 
 	// labels
