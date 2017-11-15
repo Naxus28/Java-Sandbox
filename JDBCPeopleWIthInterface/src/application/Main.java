@@ -1,6 +1,10 @@
 package application;
 
 import java.util.List;
+import java.util.Properties;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javafx.application.Application;
@@ -17,23 +21,32 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class Main extends Application {
+	
+
 
 	// database
-	static DBUser dbCredentials = new DBUser("root", "root");
+	static DBUser dbCredentials;;
 	static DataBase db;
 	static String dbName = "PEOPLE";
 	
 
 	@Override
-	public void start(Stage fxDefaultStage) {
+	public void start(Stage fxDefaultStage) throws FileNotFoundException, IOException {
+		
+		// get properties
+		Properties properties = new Properties();
+		properties.load(new FileInputStream("credentials.properties"));
+		
+		// get credentials
+		 dbCredentials = new DBUser(properties.getProperty("user"), properties.getProperty("password"));
 		
 		// buttons
 		Button createDB = new Button("Create new database");
 		Button createTable = new Button("Create new table");
-		Button insert = new Button("Insert new entry");
-		Button delete = new Button("Delete entry");
-		Button findAll = new Button("Find all entries");
-		Button findOne  = new Button("Find one entry");
+		Button insert = new Button("Insert new entry in PEOPLE DB");
+		Button delete = new Button("Delete entry from PEOPLE DB");
+		Button findAll = new Button("Find all entries in PEOPLE DB");
+		Button findOne  = new Button("Find one entry in PEOPLE DB");
 		
 		// button listeners
 		createDB.setOnAction(new EventHandler<ActionEvent>() {
@@ -211,7 +224,9 @@ public class Main extends Application {
 		dialog.showAndWait();
 	}
 
-	
+	/**
+	 * Modal window for table creation
+	 */
 	private void createTablePanel() {
 		// labels
 		Label labelOne = new Label("Enter database name: ");
@@ -261,6 +276,7 @@ public class Main extends Application {
 				try {
 					db.connect();
 					db.createTable(table, columnsSql);
+					clearInputs();
 				} catch (SQLException e1) {
 					e1.printStackTrace();
 				}
@@ -272,6 +288,8 @@ public class Main extends Application {
 			 */
 			private void clearInputs() {
 				fieldOne.setText("");
+				fieldTwo.setText("");
+				fieldThree.setText("");
 			}
 		});
 
