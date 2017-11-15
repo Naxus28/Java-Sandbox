@@ -12,16 +12,45 @@ public class People {
 	private int age;
 	private long ssn;
 	private long creditCard;
+	private String ssnHash;
+	private String creditCardHash;
 
+	/**
+	 * default constructor
+	 */
 	public People() {
 	}
 
+	/**
+	 * overloaded constructor
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param age
+	 * @param ssn
+	 * @param creditCard
+	 */
 	public People(String firstName, String lastName, int age, long ssn, long creditCard) {
+		this(firstName, lastName, age, "", "");
+		this.ssn = ssn;
+		this.creditCard = creditCard;
+	}
+
+	/**
+	 * overloaded constructor that takes hashed values for ssn and cc
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param age
+	 * @param ssnHash
+	 * @param creditCardHash
+	 */
+	public People(String firstName, String lastName, int age, String ssnHash, String creditCardHash) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
-		this.ssn = ssn;
-		this.creditCard = creditCard;
+		this.ssnHash = ssnHash;
+		this.creditCardHash = creditCardHash;
 	}
 
 	/*** GETTERS AND SETTERS ***/
@@ -70,10 +99,29 @@ public class People {
 	public void setCreditCard(long creditCard) {
 		this.creditCard = creditCard;
 	}
-	
+
+	// hashed ssn
+	public String getSsnHash() {
+		return ssnHash;
+	}
+
+	public void setSsnHash(String ssnHash) {
+		this.ssnHash = ssnHash;
+	}
+
+	// hashed crdit card
+	public String getCreditCardHash() {
+		return creditCardHash;
+	}
+
+	public void setCreditCardHash(String creditCardHash) {
+		this.creditCardHash = creditCardHash;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("DB entry: %-10s %-10s age: %-10d ssn: %-10d credit card: %10d", getFirstName(), getLastName(),  getAge(), getSsn(), getCreditCard());
+		return String.format("DB entry: %-10s %-10s *age*: %-5d *ssn*: %20s *credit card*: %20s", getFirstName(),
+				getLastName(), getAge(), getSsnHash(), getCreditCardHash());
 	}
 
 }

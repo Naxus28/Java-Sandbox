@@ -16,6 +16,8 @@ public class PeopleDB extends DataBase {
 	private String dbPass;
 	private String dbURL;
 	final static String[] personColumns = { "first_name", "last_name", "age", "ssn", "credit_card" };
+	
+	Security security = new Security();
 
 	/**
 	 * default constructor
@@ -31,10 +33,7 @@ public class PeopleDB extends DataBase {
 	 * @param dbPass
 	 */
 	public PeopleDB(String dbName, String dbUser, String dbPass) {
-		super(dbName, dbUser, dbPass);
-		this.dbName = dbName;
-		this.dbUser = dbUser;
-		this.dbPass = dbPass;
+		this(null, dbName, dbUser, dbPass);
 	}
 
 	/**
@@ -60,8 +59,8 @@ public class PeopleDB extends DataBase {
 		// create table query
 		final String columns = "person_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, "
 				+ "fist_name VARCHAR(30) NOT NULL, " + "last_name VARCHAR(30) NOT NULL, "
-				+ "age INT UNSIGNED NOT NULL, " + "ssn BIGINT UNSIGNED UNIQUE NOT NULL, "
-				+ "credit_card BIGINT UNSIGNED";
+				+ "age INT UNSIGNED NOT NULL, " + "ssn VARCHAR(100) UNIQUE NOT NULL, "
+				+ "credit_card VARCHAR(100)";
 
 		try {
 			createTable(table, columns);
@@ -120,13 +119,23 @@ public class PeopleDB extends DataBase {
 	 * @throws SQLException
 	 */
 	private void insertIntoPersonTable(StringBuilder sql) throws SQLException {
+		
+		// convert long to bytes
+		byte[] ssnBytes = Long.toString(person.getSsn()).getBytes();
+		byte[] ccBytes = Long.toString(person.getCreditCard()).getBytes();
+		
+		// create hashes
+		String ssnHash = security.getHash(ssnBytes, "SHA-256");
+		String ccHash = security.getHash(ccBytes, "SHA-256");
+		
+		// create prepared statements
 		PreparedStatement preparedStmt = getConn().prepareStatement(sql.toString());
 		preparedStmt.setNull(1, java.sql.Types.NULL);
 		preparedStmt.setString(2, person.getFirstName());
 		preparedStmt.setString(3, person.getLastName());
 		preparedStmt.setInt(4, person.getAge());
-		preparedStmt.setLong(5, person.getSsn());
-		preparedStmt.setLong(6, person.getCreditCard());
+		preparedStmt.setString(5, ssnHash);
+		preparedStmt.setString(6, ccHash);
 
 		// execute statement
 		preparedStmt.execute();
@@ -135,11 +144,14 @@ public class PeopleDB extends DataBase {
 
 	@Override
 	public ResultSet findOne(String ssn) throws SQLException {
-		String sql = "SELECT * FROM PERSON " + "WHERE ssn=" + ssn;
+		String sql = "SELECT * FROM PERSON WHERE `ssn`=" + ssn;
+		System.out.println("sql: " + sql);
 
 		String row = null;
 
 		ResultSet rs = getStmt().executeQuery(sql);
+		
+		System.out.println("rs: " + rs);
 
 		while (rs.next()) {
 			row = rs.getString("first_name") + " " + rs.getString("last_name") + ", " + rs.getString("age") + ", ssn: "

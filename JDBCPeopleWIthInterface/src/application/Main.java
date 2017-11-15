@@ -21,14 +21,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class Main extends Application {
-	
-
-
 	// database
 	static DBUser dbCredentials;;
 	static DataBase db;
 	static String dbName = "PEOPLE";
-	
 
 	@Override
 	public void start(Stage fxDefaultStage) throws FileNotFoundException, IOException {
@@ -43,7 +39,7 @@ public class Main extends Application {
 		// buttons
 		Button createDB = new Button("Create new database");
 		Button createTable = new Button("Create new table");
-		Button insert = new Button("Insert new entry in PEOPLE DB");
+		Button insert = new Button("Insert entry into PEOPLE DB");
 		Button delete = new Button("Delete entry from PEOPLE DB");
 		Button findAll = new Button("Find all entries in PEOPLE DB");
 		Button findOne  = new Button("Find one entry in PEOPLE DB");
@@ -535,7 +531,7 @@ public class Main extends Application {
 		TextField fieldOne = new TextField();
 
 		// buttons
-		Button buttonDelete = new Button("Delete");
+		Button buttonDelete = new Button("Find");
 		Button buttonCancel = new Button("Cancel");
 		
 		// create grid pane and add nodes

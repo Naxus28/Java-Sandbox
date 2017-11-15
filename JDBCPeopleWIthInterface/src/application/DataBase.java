@@ -90,16 +90,10 @@ public abstract class DataBase {
 
 	public abstract void insert(String table) throws SQLException;
 
-	public ResultSet findOne(String ssn) throws SQLException {
-		return null;
-		
-	};
-
-	public void deleteOne(String ssn) throws SQLException {
-		
-	};
-
+	public abstract ResultSet findOne(String ssn) throws SQLException;
 	
+	public abstract void deleteOne(String ssn) throws SQLException;
+
 	/**
 	 * @param table
 	 * @return
@@ -117,29 +111,33 @@ public abstract class DataBase {
 
 		// print columns--start at 1; 0 is out of range
 		for (int i = 1; i <= columnCount; i++) {
-			System.out.format("%-20s", metadata.getColumnName(i).toUpperCase());
+			String columnName = metadata.getColumnName(i).toUpperCase();
+			String tab = columnName.equals("SSN") ? "%-65s" : "%-30s";
+			
+			System.out.format(tab + " *", metadata.getColumnName(i).toUpperCase() + "*");
 		}
 
 		System.out.println();
 
 		// print rows
 		while (rs.next()) {
+			// builds person using overloaded constructor that takes hashes for ssn and cc
+			// instead of longs
 			person = new People(rs.getString("first_name"), rs.getString("last_name"),
-					Integer.parseInt(rs.getString("age")), Long.parseLong(rs.getString("ssn")),
-					Long.parseLong(rs.getString("credit_card")));
-			
+					Integer.parseInt(rs.getString("age")), rs.getString("ssn"), rs.getString("credit_card"));
+
 			people.add(person);
 
 			String row = "";
 
 			for (int i = 1; i <= columnCount; i++) {
-				row += String.format("%-20s", rs.getString(i));
+				row += String.format("%-30s *", rs.getString(i) + "*");
 			}
 
 			System.out.println(row);
-			
+
 		}
-		
+
 		return people;
 	}
 
