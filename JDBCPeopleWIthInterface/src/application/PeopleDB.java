@@ -144,7 +144,7 @@ public class PeopleDB extends DataBase {
 	}
 
 	@Override
-	public ResultSet findOne(String ssn) throws SQLException {
+	public void findOne(String ssn) throws SQLException {
 		String sql =  String.format("SELECT * FROM PERSON WHERE `ssn`='%s'", ssn.toString());
 
 		String row = null;
@@ -157,24 +157,14 @@ public class PeopleDB extends DataBase {
 		}
 
 		System.out.println("Found record " + row + " from database " + super.getDbName());
-		
-		return rs;
 	}
 
 	@Override
 	public void deleteOne(String ssn) throws SQLException {
 		String sql =  String.format("DELETE FROM PERSON WHERE `ssn`='%s'", ssn.toString());
 
-		String row = null;
-
-		ResultSet rs = findOne(ssn);
-
-		while (rs.next()) {
-			row = rs.getString("first_name") + " " + rs.getString("last_name");
-		}
-
 		getStmt().executeUpdate(sql);
-		System.out.println("Deleted record " + row + " from database " + super.getDbName());
+		System.out.println("Deleted record from database " + super.getDbName());
 	}
 
 	/**

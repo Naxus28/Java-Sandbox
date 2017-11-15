@@ -1,6 +1,6 @@
 package application;
 
-import java.util.List;
+//import java.util.List;
 import java.util.Properties;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -449,12 +449,14 @@ public class Main extends Application {
 		
 		try {
 			db.connect();
-			List<People> results = db.findAll("PERSON");
-
+			db.findAll("PERSON");
 			
-			for(People person : results) {
-				System.out.println("\n" + person);
-			}
+			// List<People> results = db.findAll("PERSON");
+
+			// already printing info out on 
+			//for(People person : results) {
+			//	System.out.println("\n" + person);
+			//}
 			
 		} catch (SQLException e1) {
 			e1.printStackTrace();
