@@ -39,6 +39,7 @@ public class NumbersAverage {
 		return sc.nextLine();
 	}
 	
+	// the ... mean that one or more values (or an array) may be passed to this method
 	static private double addValues(String ... values) {
         double result = 0;
 
