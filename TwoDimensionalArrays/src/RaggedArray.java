@@ -3,7 +3,7 @@ public class RaggedArray {
 
 	public static void main(String[] args) {
 		double [][] data;
-		data = new double [4][]; // we don't specify the length of the inner array because it is no a square array
+		data = new double [4][]; // we don't specify the length of the inner array because it is not a square array
 		
 		data[0] = new double [3];
 		data[1] = new double [5];
